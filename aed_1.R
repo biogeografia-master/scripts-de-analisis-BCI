@@ -2,6 +2,7 @@
 #' title: "Análisis exploratorio de datos, parte 1"
 #' author: "JR"
 #' date: "13 de octubre, 2020"
+#' output: github_document
 #' ---
 
 #' ### Área de cargar paquetes
