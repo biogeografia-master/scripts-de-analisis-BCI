@@ -1,0 +1,73 @@
+---
+# output: github_document
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: true
+    latex_engine: pdflatex
+    template: svm-latex-ms.tex
+    number_sections: true
+title: | 
+        | Mis hormigas
+        | Subtítulo
+        | Subtítulo
+author:
+- name: Tali tali tali
+  affiliation: Estudiante, Universidad Autónoma de Santo Domingo (UASD)
+abstract: "Mi resumen"
+keywords: "palabra clave 1, palabra clave 2"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 11pt
+# spacing: double
+bibliography: bibliography.bib
+# csl: plos-one.csl
+csl: apa.csl
+header-includes:
+  \usepackage{pdflscape}
+  \newcommand{\blandscape}{\begin{landscape}}
+  \newcommand{\elandscape}{\end{landscape}}
+---
+
+```{r, include=FALSE}
+source("aed_1.R", local = knitr::knit_global())
+```
+
+# Introducción
+
+\ldots
+
+# Metodología
+
+\ldots
+
+# Resultados
+
+En el conjunto de la parcela, se censaron un total de 18426 individuos pertenecientes a 16 especies. La riqueza por cuadro fue de 11 especies y la mediana de la abundancia por cuadro fue de 328 individuos.
+
+La especie más abundante fue *Trichilia tuberculata*, con casi 11000 individuos, y las más raras fueron *Pouteria fossicola* y *Rauvolfia littoralis* con 3 y 1 individuos, respectivamente. La tabla \ref{tab:abun_sp} y la figura \ref{fig:abund_sp_q} resume estos resultados.
+
+```{r, echo=FALSE}
+knitr::kable(abun_sp,
+             caption = "\\label{tab:abun_sp}Abundancia por especie de las familia Apocynaceae, Meliacea y Sapotaceae")
+```
+
+```{r, echo=FALSE, fig.cap="\\label{fig:abun_sp_q}Abundancia por especie por quadrat"}
+abun_sp_q
+```
+
+
+# Discusión
+
+# Agradecimientos
+
+# Información de soporte
+
+\ldots
+
+# *Script* reproducible
+
+\ldots
+
+# Referencias
