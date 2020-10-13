@@ -46,7 +46,7 @@ source("aed_1.R", local = knitr::knit_global())
 
 En el conjunto de la parcela, se censaron un total de 18426 individuos pertenecientes a 16 especies. La riqueza por cuadro fue de 11 especies y la mediana de la abundancia por cuadro fue de 328 individuos.
 
-La especie más abundante fue *Trichilia tuberculata*, con casi 11000 individuos, y las más raras fueron *Pouteria fossicola* y *Rauvolfia littoralis* con 3 y 1 individuos, respectivamente. La tabla \ref{tab:abun_sp} y la figura \ref{fig:abund_sp_q} resume estos resultados.
+La especie más abundante fue *Trichilia tuberculata*, con casi 11000 individuos, y las más raras fueron *Pouteria fossicola* y *Rauvolfia littoralis* con 3 y 1 individuos, respectivamente. La tabla \ref{tab:abun_sp} y la figura \ref{fig:abun_sp_q} resume estos resultados.
 
 ```{r, echo=FALSE}
 knitr::kable(abun_sp,
