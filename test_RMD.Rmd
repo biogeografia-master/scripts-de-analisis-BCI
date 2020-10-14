@@ -7,15 +7,8 @@ output:
     latex_engine: pdflatex
     template: svm-latex-ms.tex
     number_sections: true
-title: | 
-        | Mis hormigas
-        | Subtítulo
-        | Subtítulo
-author:
-- name: Tali tali tali
-  affiliation: Estudiante, Universidad Autónoma de Santo Domingo (UASD)
-abstract: "Mi resumen"
-keywords: "palabra clave 1, palabra clave 2"
+title: Un documento RMarkdown para probar insertar gráficos y tablas de R
+author: JR
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
 fontfamily: mathpazo
