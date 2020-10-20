@@ -1,5 +1,5 @@
 #' ---
-#' title: "Análisis exploratorio de datos, parte 1"
+#' title: "Análisis exploratorio de datos. Riqueza y abundancia"
 #' author: "JR"
 #' date: "13 de octubre, 2020"
 #' output: github_document

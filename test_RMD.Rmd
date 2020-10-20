@@ -25,6 +25,7 @@ header-includes:
 
 ```{r, include=FALSE}
 source("aed_1.R", local = knitr::knit_global())
+source("aed_2.R", local = knitr::knit_global())
 ```
 
 # Introducción
@@ -48,6 +49,10 @@ knitr::kable(abun_sp,
 
 ```{r, echo=FALSE, fig.cap="\\label{fig:abun_sp_q}Abundancia por especie por quadrat"}
 abun_sp_q
+```
+
+```{r, echo=FALSE, fig.cap="\\label{fig:map}Mapa de quadrats", dpi = 125}
+m
 ```
 
 
