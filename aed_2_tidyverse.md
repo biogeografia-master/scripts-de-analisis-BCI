@@ -3,37 +3,7 @@ Análisis exploratorio de datos. Colección tidyverse
 JR
 18 de octubre, 2020
 
-### Cargar paquetes
-
-``` r
-library(tidyverse)
-```
-
-    ## ── Attaching packages ────────────────────────────────── tidyverse 1.2.1 ──
-
-    ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-    ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
-    ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
-    ## ✓ readr   1.3.1     ✓ forcats 0.4.0
-
-    ## ── Conflicts ───────────────────────────────────── tidyverse_conflicts() ──
-    ## x dplyr::filter() masks stats::filter()
-    ## x dplyr::lag()    masks stats::lag()
-
-``` r
-library(sf)
-```
-
-    ## Linking to GEOS 3.6.2, GDAL 2.2.3, PROJ 4.9.3
-
-### Cargar datos
-
-``` r
-load('biodata/matriz_ambiental.Rdata')
-load('biodata/Apocynaceae-Meliaceae-Sapotaceae.Rdata')
-```
-
-### ¿Qué es tidyverse?
+# ¿Qué es tidyverse?
 
 Es una colección de paquetes con los que podrás importar, transformar,
 visualizar, modelar y presentar datos. La colección se compone de 8
@@ -44,13 +14,19 @@ Todos estos paquetes comparten estructuras comunes. Una de las
 herramientas que incorpora la colección es la pipa `%>%` (**SHORTCUT:
 `CTRL+SHIFT+M`**), la cual importa desde el paquete `magrittr`. Usarás
 la pipa para construir “tuberías” de procesamiento sin necesidad de
-crear objetos intermedios. En una tubería es posible interpretar la pipa
-como **“luego”**, verás abajo por qué. La pipa pasa el objeto a su
-izquierda como primer argumento de la función a su derecha. El siguiente
-ejemplo explica su uso:
+crear objetos intermedios. En una tubería, puedes interpretar la pipa
+como **“luego”**, y verás más adelante por qué. La función principal de
+la pipa (tiene muchas, pero esta es la más importante) es pasar el
+resultado del objeto a su izquierda como primer argumento de la función
+a su derecha. El siguiente ejemplo explica su uso:
 
 `objeto1 %>% funcion1()` es equivalente a `funcion1(argumento1 =
 objeto1)`
+
+> La idea del *pipe* pertenece a la tradición de sistemas Unix y, en
+> origen, su función era comunicar distintos procesos, usando la salida
+> estándar de uno (*stdout*) como entrada estándar (*stdin*) del
+> siguiente.
 
 Su ventaja radica en que, si necesitaras continuar procesando los datos,
 no tendrás que anidar ni crear objetos intermedios. En el siguiente
@@ -75,22 +51,67 @@ O alternativamente, crear objetos intermedios:
 funcion3(tmp2)`
 
 Notarás que la tubería es más limpia que estas dos últimas opciones. La
-tubería puedes leerla de forma encandenada, mientras que el anidado y la
-creación de objetos intermedios añade más complejidad. Principalmente
-por esta razón decidí introducir la colección tidyverse para mostrarte
-algunas ideas que podrás aplicar a tus datos y, en principio, para
-facilitarte la vida (no me ayude’ tali).
+tubería puedes leerla de forma encandenada, a diferencia del estilo
+anidado y de creación de objetos intermedios, que añade una cierta
+complejidad de lectura para el usuario/a, sobre todo para personas sin
+conocimientos de programación. Precisamente por esta razón fue que
+decidí introducir la colección tidyverse, para así mostrarte algunas
+ideas que podrás aplicar a tus datos y, en principio, para facilitarte
+la vida (“*no me ayude’ tali*”). Ahora bien, si decides programar en R
+más adelante, deberás aprender las capacidades de programación
+orientada a objetos y programación funcional de
+    R.
 
-### `dplyr`
+¡Comencemos\!
+
+## Paquetes
+
+``` r
+library(tidyverse)
+```
+
+    ## ── Attaching packages ──────────────────────────────────── tidyverse 1.2.1 ──
+
+    ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
+    ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
+    ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
+    ## ✓ readr   1.3.1     ✓ forcats 0.4.0
+
+    ## ── Conflicts ─────────────────────────────────────── tidyverse_conflicts() ──
+    ## x dplyr::filter() masks stats::filter()
+    ## x dplyr::lag()    masks stats::lag()
+
+``` r
+library(sf)
+```
+
+    ## Linking to GEOS 3.6.2, GDAL 2.2.3, PROJ 4.9.3
+
+> `sf` te ayudará a leer el objeto `bci_env_grid` como un *simple
+> feature*, el cual se encuentra dentro del archivo
+> `biodata/matriz_ambiental.Rdata`. Esto extenderá las capacidades
+> espaciales del objeto.
+
+## Cargar datos
+
+``` r
+load('biodata/matriz_ambiental.Rdata')
+load('biodata/Apocynaceae-Meliaceae-Sapotaceae.Rdata')
+```
+
+## Paquete `dplyr`
 
 Te servirá para manipular datos mediante verbos. Los verbos de `dplyr`
 que conocerás son (hay muchos otros): `select()`, `filter()`,
 `arrange()`, `mutate()`, `group_by()` y `summarise()`.
 
-Algo que comúnmente haces al maniupar una tabla es seleccionar una o
-varias columnas. Para esto existe el verbo `select`. Te muestro un
-ejemplo aplicado a la matriz de comunidad, seleccionando las columnas
-`id` (número identificador de quadrat) y `pH` (pH del suelo):
+### Verbo `select`
+
+Comúnmente, necesitas seleccionar una o varias columnas de una tabla.
+Para esto existe el verbo `select`. Te muestro un ejemplo aplicado a la
+matriz de comunidad (que por ahora la verás como `simple feature`),
+seleccionando las columnas `id` (número identificador de quadrat) y `pH`
+(pH del suelo):
 
 ``` r
 bci_env_grid %>%
@@ -116,11 +137,10 @@ bci_env_grid %>%
     ## 9   9 4.53336 POLYGON ((625804 1011819, 6...
     ## 10 10 4.55500 POLYGON ((625804 1011919, 6...
 
-> Un detalle extremadamente importante: el objeto `bci_env_grid`
-> permanece intacto, a menos que se use dicho nombre para reasignarlo a
-> otro objeto. Mientras no se use el asignador `<-`, sólo verás que
-> manipulo y visualizo copias del objeto original. Fíjate en la clase
-> del objeto `bci_env_grid`:
+> Importante: el objeto `bci_env_grid` permanece intacto, a menos que se
+> use dicho nombre para reasignarlo a otro objeto. Mientras no se use el
+> asignador `<-`, sólo verás que manipulo y visualizo copias del objeto
+> original. Fíjate en la clase del objeto `bci_env_grid`:
 
 ``` r
 bci_env_grid %>%
@@ -130,9 +150,9 @@ bci_env_grid %>%
     ## [1] "sf"         "data.frame"
 
 El objeto `bci_env_grid` es a la vez de clase `sf` (*simple feature*) y
-`data.frame`, es decir, es tanto tabla como objeto espacial que se puede
-representar en un mapa. Este objeto no pierde la clase `sf`, por lo que
-siempre verás que aparece información geométrica y geoespacial en el
+`data.frame`, es decir, es tanto tabla como objeto espacial, por lo que
+se puede representar en un mapa. Este objeto no pierde la clase `sf`,
+por lo que verás que aparece información geométrica y geoespacial en el
 encabezado, y luego un extracto de la tabla de datos (como máximo, las
 10 primeras filas). Para convertirlo a un simple `data.frame`, hay que
 “tumbar” su geometría con `st_drop_geometry`:
@@ -207,16 +227,19 @@ bci_env_grid %>%
 
     ## [1] "data.frame"
 
-> Nota que al introducir un enter después de la pipa, el código puede
+> Al introducir un `<enter>` después de la pipa, el código puede
 > continuar en la línea siguiente. Esto se hace para evitar que la línea
-> de código sea legible sin necesidad de desplazarse hacia la derecha.
-> Como convención, escribiré un enter después de cada operador pipa.
-> Seleccionaré y a la vez cambiaré el nombre de dos columnas con
-> `select` (recuerda: no estoy modificando el objeto original,
-> simplemente trabajo en copias no asignadas). De paso, sólo mostraré
-> las 6 primeras filas al aplicar `head` al final de la tubería (no sólo
-> se admiten verbos `dplyr`, cualquier función de R puede entrar en la
-> tubería):
+> de código sea legible sin necesidad de desplazarse hacia la derecha
+> (es aconsejable no superar los 80 caracteres en una misma línea de
+> código, según recomiendan en la [Google’s R Style
+> Guide](https://google.github.io/styleguide/Rguide.html)). Como
+> convención, escribiré un `<enter>` después de cada operador pipa.
+
+Seleccionaré, y a la vez renombraré, dos columnas con `select`
+(recuerda: no estoy modificando el objeto original, simplemente trabajo
+en copias no asignadas). De paso, sólo mostraré las 6 primeras filas al
+aplicar `head` al final de la tubería (no sólo se admiten verbos
+`dplyr`, cualquier función de R puede entrar en la tubería):
 
 ``` r
 bci_env_grid %>%
@@ -233,7 +256,7 @@ bci_env_grid %>%
     ## 5             5      4.40128
     ## 6             6      4.57252
 
-Ahora mostraré sólo los elementos con pH mayor que 5, usando el verbo
+Ahora mostraré sólo los elementos con `pH` mayor que 5, usando el verbo
 `filter`
 
 ``` r
@@ -252,7 +275,7 @@ bci_env_grid %>%
     ## 6 49 5.00388
     ## 7 50 5.02052
 
-O filtro por aquellos con id 31 y 50:
+O filtro por aquellos con `id` 31 y 50:
 
 ``` r
 bci_env_grid %>%
@@ -266,8 +289,9 @@ bci_env_grid %>%
     ## 2 50 5.02052
 
 Pruebo también con la matriz de comunidad. Por ejemplo, introduzco en la
-tubería la función `colSums`, que devuelve una matriz de una fila con la
-abundancia por especie
+tubería la función `colSums`, que devuelve un vector cuyos elementos
+están nombrados (tienen un atributo, en este caso, el nombre de
+especie), donde cada elemento representa la abundancia por especie.
 
 ``` r
 mc_apcyn_melic_saptc %>%
@@ -287,7 +311,7 @@ mc_apcyn_melic_saptc %>%
     ##   Trichilia tuberculata 
     ##                   10842
 
-Y también obtengo la abundancia por quadrat
+Y también obtengo la abundancia por quadrat.
 
 ``` r
 mc_apcyn_melic_saptc %>%
@@ -302,7 +326,7 @@ mc_apcyn_melic_saptc %>%
     ## 340 359 555 593 361 298 430 684 609 167 257 724 745 494
 
 Uso a continuación el verbo `arrange` para mostrar los registros de la
-matriz ambiental ordenados ascendentemente por pH
+matriz ambiental ordenados ascendentemente por pH.
 
 ``` r
 bci_env_grid %>%
@@ -363,8 +387,8 @@ bci_env_grid %>%
     ## 49 33 5.05812
     ## 50 32 5.15908
 
-Ahora usaré `arrange`, para mostrar los registros de la matriz ambiental
-ordenados DESCendentemente por pH
+Ahora usaré `arrange` para mostrar los registros de la matriz ambiental
+ordenados DESCendentemente por pH.
 
 ``` r
 bci_env_grid %>%
@@ -487,8 +511,8 @@ bci_env_grid %>%
     ## 49   OldLow       No       OldLow, No
     ## 50 OldSlope      Yes    OldSlope, Yes
 
-Ahora algo numérico: creo una columna de área de cada cuadro (necesitas
-también la función `st_area`, del paquete `sf`):
+Ahora `mutate`, pero con números: creo una columna de área de cada
+cuadro (necesitas también la función `st_area`, del paquete `sf`):
 
 ``` r
 bci_env_grid %>%
@@ -506,9 +530,9 @@ bci_env_grid %>%
     ## 5  5 10000 [m^2]
     ## 6  6 10000 [m^2]
 
-…y más complejo: obtengo la densidad de individuos por metro cuadrado,
-ordenados descendentemente por dicha densidad, y conservando sólo los 6
-registros con mayores densidades.
+…y ahora más complejo: obtengo la densidad de individuos por metro
+cuadrado, ordenados descendentemente por dicha densidad, y conservando
+sólo los 6 registros con mayores densidades.
 
 ``` r
 bci_env_grid %>%
@@ -531,7 +555,7 @@ Finalmente, te muestro los verbos `group_by` y `summarise`, los cuales
 son útiles para producir resúmenes por grupos. Agruparé la matriz
 ambiental por la columna `habitat`, dejando sólo las variables numericas
 que hagan sentido (por ejemplo, excluyo `id`, `UTM.EW`, `UTM.NS`), y lo
-asignaré a `agrupado_por_habitat`:
+asignaré a `agrupado_por_habitat` para luego reutilizarlo:
 
 ``` r
 agrupado_por_habitat <- bci_env_grid %>%
@@ -568,7 +592,7 @@ agrupado_por_habitat
     ## #   abundancia_global <dbl>, riqueza_global <int>
 
 Observa el encabezado: el objeto es `A tibble: 50 x 32` y hay 5 grupos
-(`Groups: habitat [5]`). Obtendré cuántos elementos (filas) hay por
+(`Groups: habitat [5]`). Calculo cuántos elementos (filas) hay por
 grupo:
 
 ``` r
@@ -584,8 +608,8 @@ agrupado_por_habitat %>% summarise(n = n())
     ## 4 Swamp        2
     ## 5 Young        2
 
-…y también los estadísticos de las columnas `pH`, `abundancia_global` y
-`riqueza_global` por ejemplo:
+…y también algunos estadísticos de las columnas `pH`,
+`abundancia_global` y `riqueza_global` por ejemplo:
 
 ``` r
 agrupado_por_habitat %>%
@@ -606,7 +630,7 @@ agrupado_por_habitat %>%
     ## 4 Swamp        2     4.17            3832.          188.
     ## 5 Young        2     4.81            3882           160
 
-…o los mismos estadísticos de todas las variables numéricas
+…o la media de todas las variables numéricas
 
 ``` r
 agrupado_por_habitat %>%
@@ -740,6 +764,83 @@ agrupado_por_habitat %>%
     ## 4           188.
     ## 5           160
 
+…y no sólo un estadístico, sino varios:
+
+``` r
+agrupado_por_habitat %>%
+  summarise_all(
+    list(
+      media = mean,
+      mediana = median,
+      varianza = var,
+      minimo = min,
+      maximo = max
+    )
+  )
+```
+
+    ## # A tibble: 5 x 156
+    ##   habitat heterogeneidad_… geomorf_llanura… geomorf_pico_pc…
+    ##   <fct>              <dbl>            <dbl>            <dbl>
+    ## 1 OldHigh            0.305            15.5            0     
+    ## 2 OldLow             0.235            14.1            0.0308
+    ## 3 OldSlo…            0.396             6.90           0     
+    ## 4 Swamp              0.642             1.7            0     
+    ## 5 Young              0.474            32.4            0     
+    ## # … with 152 more variables: geomorf_interfluvio_pct_media <dbl>,
+    ## #   geomorf_hombrera_pct_media <dbl>,
+    ## #   `geomorf_espolón/gajo_pct_media` <dbl>,
+    ## #   geomorf_vertiente_pct_media <dbl>, geomorf_vaguada_pct_media <dbl>,
+    ## #   geomorf_piedemonte_pct_media <dbl>, geomorf_valle_pct_media <dbl>,
+    ## #   geomorf_sima_pct_media <dbl>, Al_media <dbl>, B_media <dbl>,
+    ## #   Ca_media <dbl>, Cu_media <dbl>, Fe_media <dbl>, K_media <dbl>,
+    ## #   Mg_media <dbl>, Mn_media <dbl>, P_media <dbl>, Zn_media <dbl>,
+    ## #   N_media <dbl>, N.min._media <dbl>, pH_media <dbl>,
+    ## #   elevacion_media_media <dbl>, pendiente_media_media <dbl>,
+    ## #   orientacion_media_media <dbl>, curvatura_perfil_media_media <dbl>,
+    ## #   curvatura_tangencial_media_media <dbl>, abundancia_global_media <dbl>,
+    ## #   riqueza_global_media <dbl>, heterogeneidad_ambiental_mediana <dbl>,
+    ## #   geomorf_llanura_pct_mediana <dbl>, geomorf_pico_pct_mediana <dbl>,
+    ## #   geomorf_interfluvio_pct_mediana <dbl>,
+    ## #   geomorf_hombrera_pct_mediana <dbl>,
+    ## #   `geomorf_espolón/gajo_pct_mediana` <dbl>,
+    ## #   geomorf_vertiente_pct_mediana <dbl>,
+    ## #   geomorf_vaguada_pct_mediana <dbl>,
+    ## #   geomorf_piedemonte_pct_mediana <dbl>, geomorf_valle_pct_mediana <dbl>,
+    ## #   geomorf_sima_pct_mediana <dbl>, Al_mediana <dbl>, B_mediana <dbl>,
+    ## #   Ca_mediana <dbl>, Cu_mediana <dbl>, Fe_mediana <dbl>, K_mediana <dbl>,
+    ## #   Mg_mediana <dbl>, Mn_mediana <dbl>, P_mediana <dbl>, Zn_mediana <dbl>,
+    ## #   N_mediana <dbl>, N.min._mediana <dbl>, pH_mediana <dbl>,
+    ## #   elevacion_media_mediana <dbl>, pendiente_media_mediana <dbl>,
+    ## #   orientacion_media_mediana <dbl>, curvatura_perfil_media_mediana <dbl>,
+    ## #   curvatura_tangencial_media_mediana <dbl>,
+    ## #   abundancia_global_mediana <dbl>, riqueza_global_mediana <dbl>,
+    ## #   heterogeneidad_ambiental_varianza <dbl>,
+    ## #   geomorf_llanura_pct_varianza <dbl>, geomorf_pico_pct_varianza <dbl>,
+    ## #   geomorf_interfluvio_pct_varianza <dbl>,
+    ## #   geomorf_hombrera_pct_varianza <dbl>,
+    ## #   `geomorf_espolón/gajo_pct_varianza` <dbl>,
+    ## #   geomorf_vertiente_pct_varianza <dbl>,
+    ## #   geomorf_vaguada_pct_varianza <dbl>,
+    ## #   geomorf_piedemonte_pct_varianza <dbl>,
+    ## #   geomorf_valle_pct_varianza <dbl>, geomorf_sima_pct_varianza <dbl>,
+    ## #   Al_varianza <dbl>, B_varianza <dbl>, Ca_varianza <dbl>,
+    ## #   Cu_varianza <dbl>, Fe_varianza <dbl>, K_varianza <dbl>,
+    ## #   Mg_varianza <dbl>, Mn_varianza <dbl>, P_varianza <dbl>,
+    ## #   Zn_varianza <dbl>, N_varianza <dbl>, N.min._varianza <dbl>,
+    ## #   pH_varianza <dbl>, elevacion_media_varianza <dbl>,
+    ## #   pendiente_media_varianza <dbl>, orientacion_media_varianza <dbl>,
+    ## #   curvatura_perfil_media_varianza <dbl>,
+    ## #   curvatura_tangencial_media_varianza <dbl>,
+    ## #   abundancia_global_varianza <dbl>, riqueza_global_varianza <dbl>,
+    ## #   heterogeneidad_ambiental_minimo <dbl>,
+    ## #   geomorf_llanura_pct_minimo <dbl>, geomorf_pico_pct_minimo <dbl>,
+    ## #   geomorf_interfluvio_pct_minimo <dbl>,
+    ## #   geomorf_hombrera_pct_minimo <dbl>,
+    ## #   `geomorf_espolón/gajo_pct_minimo` <dbl>,
+    ## #   geomorf_vertiente_pct_minimo <dbl>, geomorf_vaguada_pct_minimo <dbl>,
+    ## #   geomorf_piedemonte_pct_minimo <dbl>, geomorf_valle_pct_minimo <dbl>, …
+
 Ejecuto también un ANOVA de una vía, de la `riqueza_global` respecto de
 `habitat` de tipo `Old*` (e.g. `OldHigh`, `OldLow`, `OldSlope`)
 
@@ -758,8 +859,10 @@ agrupado_por_habitat %>%
 El resultado sugiere que “existen ‘diferencias significativas’ de
 `riqueza_global` entre `habitat` de tipo `Old*`”. Esta expresión,
 “diferencias significativas”, resuena mucho en ciencia hoy en día, y
-más bien “chirría” hoy. De esto hablaré más adelante, por lo pronto,
-donde quiera que la veas, levanta una ceja. \#\#\# `tidyr`
+más bien “chirría”. De esto hablaré más adelante, por lo pronto, donde
+quiera que la veas, levanta una ceja.
+
+### `tidyr`
 
 Te ayudará a transformar tus datos para organizarlos de forma “tidy”.
 Las funciones de `tidyr` que conocerás son (también cuenta con muchas
