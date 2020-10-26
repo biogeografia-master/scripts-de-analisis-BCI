@@ -1,5 +1,5 @@
 #' ---
-#' title: "Análisis exploratorio de datos. Mapas de riqueza y abundancia globales y de mi familia"
+#' title: "Análisis exploratorio de datos. Mapas de riqueza y abundancia global y de mi familia"
 #' author: "JR"
 #' date: "25 de octubre, 2020"
 #' output: github_document
