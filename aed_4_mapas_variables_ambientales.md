@@ -66,6 +66,10 @@ mapa_cuadros_pendiente
 
 ![](aed_4_mapas_variables_ambientales_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
+``` r
+mapa_cuadros_pendiente %>% mapshot(file = 'mapa_cuadros_pendiente.png') #Genera archivo
+```
+
 ### Mapa de cuadros, simbología por Nitrógeno
 
 ``` r
@@ -87,6 +91,10 @@ mapa_cuadros_nit
 
 ![](aed_4_mapas_variables_ambientales_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
+``` r
+mapa_cuadros_nit %>% mapshot(file = 'mapa_cuadros_nit.png')
+```
+
 ### Mapa de cuadros, simbología por pH
 
 ``` r
@@ -107,3 +115,7 @@ mapa_cuadros_ph
 ```
 
 ![](aed_4_mapas_variables_ambientales_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+``` r
+mapa_cuadros_ph %>% mapshot(file = 'mapa_cuadros_ph.png')
+```

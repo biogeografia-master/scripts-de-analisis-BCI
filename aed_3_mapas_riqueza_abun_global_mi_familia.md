@@ -11,14 +11,14 @@ library(mapview)
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ─────────────────────────────── tidyverse 1.2.1 ──
+    ## ── Attaching packages ──────────────────────────────── tidyverse 1.2.1 ──
 
     ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
     ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
     ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
     ## ✓ readr   1.3.1     ✓ forcats 0.4.0
 
-    ## ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -181,6 +181,10 @@ mapa_cuadros
 
 ![](aed_3_mapas_riqueza_abun_global_mi_familia_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
+``` r
+mapa_cuadros %>% mapshot(file = 'mapa_cuadros.png') #Genera archivo
+```
+
 ### Paletas
 
 ``` r
@@ -209,6 +213,10 @@ mapa_cuadros_abun_global
 
 ![](aed_3_mapas_riqueza_abun_global_mi_familia_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
+``` r
+mapa_cuadros_abun_global %>% mapshot(file = 'mapa_cuadros_abun_global.png') 
+```
+
 ### Mapa de cuadros, simbología por riqueza global
 
 ``` r
@@ -218,7 +226,7 @@ mapa_cuadros_riq_global <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T, zoom = 14,
-  col.regions = azul,
+  col.regions = rojo,
   zcol = 'riqueza_global') %>%
   addStaticLabels(label = bci_env_grid$riqueza_global, textsize = "7pt") %>%
   leaflet::setView(
@@ -229,6 +237,10 @@ mapa_cuadros_riq_global
 ```
 
 ![](aed_3_mapas_riqueza_abun_global_mi_familia_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+``` r
+mapa_cuadros_riq_global %>% mapshot(file = 'mapa_cuadros_riq_global.png')
+```
 
 ### Mapa de cuadros, simbología por abundancia de mi familia
 
@@ -251,6 +263,10 @@ mapa_cuadros_abun_mi_familia
 
 ![](aed_3_mapas_riqueza_abun_global_mi_familia_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
+``` r
+mapa_cuadros_abun_mi_familia %>% mapshot(file = 'mapa_cuadros_abun_mi_familia.png')
+```
+
 ### Mapa de cuadros, simbología por riqueza de mi familia
 
 ``` r
@@ -260,7 +276,7 @@ mapa_cuadros_riq_mi_familia <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T, zoom = 14,
-  col.regions = azul,
+  col.regions = rojo,
   zcol = 'riq') %>%
   addStaticLabels(label = specnumber(mc_apcyn_melic_saptc)) %>%
   leaflet::setView(
@@ -271,3 +287,7 @@ mapa_cuadros_riq_mi_familia
 ```
 
 ![](aed_3_mapas_riqueza_abun_global_mi_familia_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+``` r
+mapa_cuadros_riq_mi_familia %>% mapshot(file = 'mapa_cuadros_riq_mi_familia.png')
+```

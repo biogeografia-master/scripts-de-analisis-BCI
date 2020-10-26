@@ -32,6 +32,7 @@ mapa_cuadros <- mapView(
     lat = 9.15097,
     zoom = 15)
 mapa_cuadros
+mapa_cuadros %>% mapshot(file = 'mapa_cuadros.png') #Genera archivo
 
 #' ### Paletas
 azul <- colorRampPalette(brewer.pal(8, "Blues"))
@@ -52,6 +53,7 @@ mapa_cuadros_abun_global <- mapView(
     lat = 9.15097,
     zoom = 15)
 mapa_cuadros_abun_global
+mapa_cuadros_abun_global %>% mapshot(file = 'mapa_cuadros_abun_global.png') 
 
 #' ### Mapa de cuadros, simbología por riqueza global
 mapa_cuadros_riq_global <- mapView(
@@ -60,7 +62,7 @@ mapa_cuadros_riq_global <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T, zoom = 14,
-  col.regions = azul,
+  col.regions = rojo,
   zcol = 'riqueza_global') %>%
   addStaticLabels(label = bci_env_grid$riqueza_global, textsize = "7pt") %>%
   leaflet::setView(
@@ -68,6 +70,7 @@ mapa_cuadros_riq_global <- mapView(
     lat = 9.15097,
     zoom = 15)
 mapa_cuadros_riq_global
+mapa_cuadros_riq_global %>% mapshot(file = 'mapa_cuadros_riq_global.png')
 
 #' ### Mapa de cuadros, simbología por abundancia de mi familia
 mapa_cuadros_abun_mi_familia <- mapView(
@@ -84,6 +87,7 @@ mapa_cuadros_abun_mi_familia <- mapView(
     lat = 9.15097,
     zoom = 15)
 mapa_cuadros_abun_mi_familia
+mapa_cuadros_abun_mi_familia %>% mapshot(file = 'mapa_cuadros_abun_mi_familia.png')
 
 #' ### Mapa de cuadros, simbología por riqueza de mi familia
 mapa_cuadros_riq_mi_familia <- mapView(
@@ -92,7 +96,7 @@ mapa_cuadros_riq_mi_familia <- mapView(
   alpha.regions = 0.6,
   map.types = 'OpenTopoMap',
   legend = T, zoom = 14,
-  col.regions = azul,
+  col.regions = rojo,
   zcol = 'riq') %>%
   addStaticLabels(label = specnumber(mc_apcyn_melic_saptc)) %>%
   leaflet::setView(
@@ -100,3 +104,4 @@ mapa_cuadros_riq_mi_familia <- mapView(
     lat = 9.15097,
     zoom = 15)
 mapa_cuadros_riq_mi_familia
+mapa_cuadros_riq_mi_familia %>% mapshot(file = 'mapa_cuadros_riq_mi_familia.png')

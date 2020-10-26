@@ -34,6 +34,7 @@ mapa_cuadros_pendiente <- mapView(
     lat = 9.15097,
     zoom = 15)
 mapa_cuadros_pendiente
+mapa_cuadros_pendiente %>% mapshot(file = 'mapa_cuadros_pendiente.png') #Genera archivo
 
 #' ### Mapa de cuadros, simbología por Nitrógeno
 mapa_cuadros_nit <- mapView(
@@ -50,6 +51,7 @@ mapa_cuadros_nit <- mapView(
     lat = 9.15097,
     zoom = 15)
 mapa_cuadros_nit
+mapa_cuadros_nit %>% mapshot(file = 'mapa_cuadros_nit.png')
 
 #' ### Mapa de cuadros, simbología por pH
 mapa_cuadros_ph <- mapView(
@@ -66,3 +68,4 @@ mapa_cuadros_ph <- mapView(
     lat = 9.15097,
     zoom = 15)
 mapa_cuadros_ph
+mapa_cuadros_ph %>% mapshot(file = 'mapa_cuadros_ph.png')
