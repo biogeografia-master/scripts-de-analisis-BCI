@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+treecover2000_crop.tif
+poligonos_raster_cobertura.RDS
