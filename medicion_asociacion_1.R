@@ -99,20 +99,7 @@ mi_fam_d_pa <- vegdist(mc_apcyn_melic_saptc, method = 'jac', binary = T)
 #' `binary=T` realiza primero `decostand(mc_apcyn_melic_saptc, method = 'pa')`
 #' En esta matriz, valor pequeño significa que los sitios comparados son muy parecidos.
 coldiss(mi_fam_d_pa, diag = T)
-#
-
-
-
-
-
-
-
-
-
-
-
-
-
+# ...
 
 #' ### Asociación entre especies
 #' 
