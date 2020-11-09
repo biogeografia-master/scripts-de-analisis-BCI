@@ -17,6 +17,8 @@ library(adespatial)
 library(broom)
 library(tidyverse)
 library(sf)
+library(cluster)
+library(gclus)
 source('biodata/funciones.R')
 
 #' ### Cargar datos

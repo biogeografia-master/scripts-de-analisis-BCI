@@ -90,6 +90,15 @@ library(sf)
     ## Linking to GEOS 3.6.2, GDAL 2.2.3, PROJ 4.9.3
 
 ``` r
+library(cluster)
+library(gclus)
+```
+
+    ## Registered S3 method overwritten by 'gclus':
+    ##   method         from 
+    ##   reorder.hclust vegan
+
+``` r
 source('biodata/funciones.R')
 ```
 
@@ -130,19 +139,12 @@ mi_fam_d_hel %>% tidy # Para evitar desbordar la consola
 Para interpretar esta matriz, es necesario representarla gráficamente.
 En la representación elegida a continuación, color fucsia (magenta,
 rosa) significa “corta distancia=muy similares”, y cian (celeste)
-significa “gran distancia=poco similares”:
+significa “gran distancia=poco
+similares”:
 
 ``` r
 coldiss(mi_fam_d_hel, diag = T)
 ```
-
-    ## Loading required package: gclus
-
-    ## Loading required package: cluster
-
-    ## Registered S3 method overwritten by 'gclus':
-    ##   method         from 
-    ##   reorder.hclust vegan
 
 ![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
