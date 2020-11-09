@@ -4,15 +4,16 @@
 #' date: "3 de noviembre, 2020"
 #' output: github_document
 #' ---
-
-knitr::opts_chunk$set(fig.width=12, fig.height=8)
-
-#' ## Preámbulo
-
+#'
+knitr::opts_chunk$set(fig.width=8, fig.height=5)
+#'
+#'  ## Preámbulo
+#'  
 #' ### Cargar paquetes
 library(vegan)
 library(adespatial)
 library(tidyverse)
+library(gridExtra)
 source('biodata/funciones.R')
 #' 
 #' ## Modos Q y R
@@ -45,8 +46,14 @@ source('biodata/funciones.R')
 #' 
 #' Te muestro un gráfico de dispersión de los sitios según la abundancia de especies (los ejes representan la abundancia de cada especie). Puedes comprobar que la distancia entre `sit1` y `sit2` es pequeña, mientras que entre `sit1` y `sit3` es grande.
 #' 
-plot(mc_orloci, xlim = c(0, 5), ylim = c(0, 10), cex = 2, cex.axis = 2, cex.lab = 2, pch = 19)
-text(mc_orloci$sp1+0.2, mc_orloci$sp2+0.2, rownames(mc_orloci), cex = 2)
+mc_orloci %>% rownames_to_column('id') %>% 
+  ggplot() +
+  aes(x = sp1, y = sp2, label = id) +
+  geom_point(size = 3) +
+  geom_text(vjust="inward",hjust="inward", size = 5, color = 'grey40') +
+  coord_equal() +
+  theme_bw() +
+  theme(text = element_text(size = 16))
 #'
 #' Para facilitar la lectura de las distancias, en esta explicación ordeneré las matrices de distancia en columnas, usando la función de ayuda `organizar_matriz_distancia`. La primera que generaré es la de distancias euclideas a partir de datos brutos:
 #' 
@@ -93,8 +100,27 @@ mc_orloci_norm
 #' 
 #' Al graficar los sitios sobre un espacio bidimensional, cada eje representando una especie, se obtienen resultados diferentes a los que se obtuvieron con la matriz original:
 #' 
-plot(mc_orloci_norm, xlim = c(0, 1), ylim = c(0, 1), cex = 2, cex.axis = 2, cex.lab = 2, pch = 19)
-text(mc_orloci_norm$sp1+0.05, mc_orloci_norm$sp2+0.05, rownames(mc_orloci), cex = 2)
+p1 <- mc_orloci %>%
+  rownames_to_column('id') %>% 
+  ggplot() +
+  aes(x = sp1, y = sp2, label = id) +
+  geom_point(size = 3) +
+  geom_text(vjust="inward",hjust="inward", size = 5, color = 'grey40') +
+  coord_equal() +
+  theme_bw() +
+  theme(text = element_text(size = 16)) +
+  ggtitle('mc original')
+p2 <- mc_orloci_norm %>%
+  rownames_to_column('id') %>% 
+  ggplot() +
+  aes(x = sp1, y = sp2, label = id) +
+  geom_point(size = 3) +
+  geom_text(vjust="inward",hjust="inward", size = 5, color = 'grey40') +
+  coord_equal() +
+  theme_bw() +
+  theme(text = element_text(size = 16)) +
+  ggtitle('mc transformada')
+grid.arrange(p1, p2, nrow = 1)
 #'   
 #' - Por último, para completar el proceso realizado por `dist.ldc`, debes calcular la distancia euclidea a partir de esta matriz. Verás que obtienes el mismo resultado que con la función `dist.ldc`:
 #' 

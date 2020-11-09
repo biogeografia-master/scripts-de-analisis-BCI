@@ -5,10 +5,10 @@ JR
 3 de noviembre, 2020
 
 ``` r
-knitr::opts_chunk$set(fig.width=12, fig.height=8)
+knitr::opts_chunk$set(fig.width=8, fig.height=5)
 ```
 
-## Preámbulo
+\#\# Preámbulo
 
 ### Cargar paquetes
 
@@ -58,16 +58,27 @@ library(adespatial)
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ──────────────────────────────── tidyverse 1.2.1 ──
+    ## ── Attaching packages ─────────────────────────────────────────────────────── tidyverse 1.2.1 ──
 
     ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
     ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
     ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
     ## ✓ readr   1.3.1     ✓ forcats 0.4.0
 
-    ## ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ────────────────────────────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
+
+``` r
+library(gridExtra)
+```
+
+    ## 
+    ## Attaching package: 'gridExtra'
+
+    ## The following object is masked from 'package:dplyr':
+    ## 
+    ##     combine
 
 ``` r
 source('biodata/funciones.R')
@@ -141,12 +152,17 @@ sólo el triángulo inferior):
 Te muestro un gráfico de dispersión de los sitios según la abundancia de
 especies (los ejes representan la abundancia de cada especie). Puedes
 comprobar que la distancia entre `sit1` y `sit2` es pequeña, mientras
-que entre `sit1` y `sit3` es
-grande.
+que entre `sit1` y `sit3` es grande.
 
 ``` r
-plot(mc_orloci, xlim = c(0, 5), ylim = c(0, 10), cex = 2, cex.axis = 2, cex.lab = 2, pch = 19)
-text(mc_orloci$sp1+0.2, mc_orloci$sp2+0.2, rownames(mc_orloci), cex = 2)
+mc_orloci %>% rownames_to_column('id') %>% 
+  ggplot() +
+  aes(x = sp1, y = sp2, label = id) +
+  geom_point(size = 3) +
+  geom_text(vjust="inward",hjust="inward", size = 5, color = 'grey40') +
+  coord_equal() +
+  theme_bw() +
+  theme(text = element_text(size = 16))
 ```
 
 ![](medicion_asociacion_1_modo_Q_paradoja_orloci_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
@@ -287,12 +303,30 @@ idéntico):
 
 Al graficar los sitios sobre un espacio bidimensional, cada eje
 representando una especie, se obtienen resultados diferentes a los que
-se obtuvieron con la matriz
-original:
+se obtuvieron con la matriz original:
 
 ``` r
-plot(mc_orloci_norm, xlim = c(0, 1), ylim = c(0, 1), cex = 2, cex.axis = 2, cex.lab = 2, pch = 19)
-text(mc_orloci_norm$sp1+0.05, mc_orloci_norm$sp2+0.05, rownames(mc_orloci), cex = 2)
+p1 <- mc_orloci %>%
+  rownames_to_column('id') %>% 
+  ggplot() +
+  aes(x = sp1, y = sp2, label = id) +
+  geom_point(size = 3) +
+  geom_text(vjust="inward",hjust="inward", size = 5, color = 'grey40') +
+  coord_equal() +
+  theme_bw() +
+  theme(text = element_text(size = 16)) +
+  ggtitle('mc original')
+p2 <- mc_orloci_norm %>%
+  rownames_to_column('id') %>% 
+  ggplot() +
+  aes(x = sp1, y = sp2, label = id) +
+  geom_point(size = 3) +
+  geom_text(vjust="inward",hjust="inward", size = 5, color = 'grey40') +
+  coord_equal() +
+  theme_bw() +
+  theme(text = element_text(size = 16)) +
+  ggtitle('mc transformada')
+grid.arrange(p1, p2, nrow = 1)
 ```
 
 ![](medicion_asociacion_1_modo_Q_paradoja_orloci_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
