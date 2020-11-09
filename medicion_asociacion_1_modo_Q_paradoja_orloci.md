@@ -58,14 +58,14 @@ library(adespatial)
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ─────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+    ## ── Attaching packages ──────────────────────────────────── tidyverse 1.2.1 ──
 
     ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
     ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
     ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
     ## ✓ readr   1.3.1     ✓ forcats 0.4.0
 
-    ## ── Conflicts ────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ─────────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -93,7 +93,7 @@ usando métricas como la **distancia euclídea o la similaridad de
 Jaccard**.
 
 En modo R mides asociación entre pares de descriptores, como por
-ejemplo, entre sdos variables, o dos especies. En este caso mides la
+ejemplo, entre dos variables, o dos especies. En este caso mides la
 asociación por medio de **la dependencia entre variables**, usando por
 ejemplo la **covarianza o el índice de
 correlación**.
@@ -347,7 +347,7 @@ grid.arrange(p1, p2, nrow = 1)
     ##   <chr>                            <dbl>           <dbl>           <dbl>
     ## 1 Chord en dos pasos                1.00           0.320            1.00
 
-Compara la anterior con la generada por `dist.ldc`:
+Compara la matriz anterior con la generada por `dist.ldc`:
 
 ``` r
 d_cho

@@ -20,7 +20,7 @@ source('biodata/funciones.R')
 #' 
 #' En modo Q mides asociación entre pares de objetos, como por ejemplo, entre dos sitios de muestreo. En este modo, mides la asociación por medio de **la disimilaridad y la similaridad** entre pares de objetos, usando métricas como la **distancia euclídea o la similaridad de Jaccard**.
 #' 
-#' En modo R mides asociación entre pares de descriptores, como por ejemplo, entre sdos variables, o dos especies. En este caso mides la asociación por medio de **la dependencia entre variables**, usando por ejemplo la **covarianza o el índice de correlación**.
+#' En modo R mides asociación entre pares de descriptores, como por ejemplo, entre dos variables, o dos especies. En este caso mides la asociación por medio de **la dependencia entre variables**, usando por ejemplo la **covarianza o el índice de correlación**.
 #' 
 #' ## Modo Q: matrices de disimilaridad entre objetos
 #' 
@@ -126,6 +126,7 @@ grid.arrange(p1, p2, nrow = 1)
 #' 
 (d_cho_2_pasos <- dist(mc_orloci_norm, method = 'euclidean')) %>% 
   organizar_matriz_distancia(func_dist = 'Chord en dos pasos')
-#' Compara la anterior con la generada por `dist.ldc`:
+#'
+#'  Compara la matriz anterior con la generada por `dist.ldc`, objeto `d_cho`:
 d_cho
 #' 
