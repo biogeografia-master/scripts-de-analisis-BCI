@@ -379,6 +379,24 @@ p_cor_suelo_ar_spearman
 ![](medicion_asociacion_3_modo_R_mi_familia_files/figure-gfm/unnamed-chunk-9-2.png)<!-- -->
 
 ``` r
+png(
+  filename = 'matriz_correlacion_suelo_abun_riq_spearman.png',
+  width = 1920, height = 1080, res = 125
+)
+p_cor_suelo_ar_spearman
+```
+
+    ## `geom_smooth()` using formula 'y ~ x'
+    ## `geom_smooth()` using formula 'y ~ x'
+
+``` r
+dev.off() #NO OLVIDAR ESTA IMPORTANTE SENTENCIA
+```
+
+    ## png 
+    ##   2
+
+``` r
 p_cor_geomorf_ar <- env_num %>%
   dplyr::select(-matches('^[A-T,Z]|pH', ignore.case = F)) %>%
   ezCorM(r_size_lims = c(4,8), label_size = 3, method = 'pearson')
@@ -401,3 +419,21 @@ p_cor_geomorf_ar_spearman
     ## `geom_smooth()` using formula 'y ~ x'
 
 ![](medicion_asociacion_3_modo_R_mi_familia_files/figure-gfm/unnamed-chunk-9-4.png)<!-- -->
+
+``` r
+png(
+  filename = 'matriz_correlacion_geomorf_abun_riq_spearman.png',
+  width = 1920, height = 1080, res = 110
+)
+p_cor_geomorf_ar_spearman
+```
+
+    ## `geom_smooth()` using formula 'y ~ x'
+    ## `geom_smooth()` using formula 'y ~ x'
+
+``` r
+dev.off() #NO OLVIDAR ESTA IMPORTANTE SENTENCIA
+```
+
+    ## png 
+    ##   2
