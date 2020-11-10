@@ -12,18 +12,6 @@ knitr::opts_chunk$set(fig.width=12, fig.height=8)
 ### Cargar paquetes
 
 ``` r
-library(ez)
-```
-
-    ## Registered S3 methods overwritten by 'lme4':
-    ##   method                          from
-    ##   cooks.distance.influence.merMod car 
-    ##   influence.merMod                car 
-    ##   dfbeta.influence.merMod         car 
-    ##   dfbetas.influence.merMod        car
-
-``` r
-library(psych)
 library(vegan)
 ```
 
@@ -78,10 +66,8 @@ library(tidyverse)
     ## ✓ readr   1.3.1     ✓ forcats 0.4.0
 
     ## ── Conflicts ─────────────────────────────────────── tidyverse_conflicts() ──
-    ## x ggplot2::%+%()   masks psych::%+%()
-    ## x ggplot2::alpha() masks psych::alpha()
-    ## x dplyr::filter()  masks stats::filter()
-    ## x dplyr::lag()     masks stats::lag()
+    ## x dplyr::filter() masks stats::filter()
+    ## x dplyr::lag()    masks stats::lag()
 
 ``` r
 library(sf)
@@ -267,22 +253,22 @@ distancia, para obtener la similaridad, sólo hay que restarle el valor
 de distancia a 1 (**S<sub>J</sub>=1-D<sub>J</sub>**).
 
 ``` r
-(1 - mi_fam_jac) %>% tidy #Similaridad
+(1 - mi_fam_jac) %>% tidy %>% rename(similaridad=distance) #Similaridad
 ```
 
     ## # A tibble: 1,225 x 3
-    ##    item1 item2 distance
-    ##    <int> <int>    <dbl>
-    ##  1     2     1    0.917
-    ##  2     3     1    0.846
-    ##  3     4     1    0.846
-    ##  4     5     1    0.733
-    ##  5     6     1    0.769
-    ##  6     7     1    0.769
-    ##  7     8     1    0.769
-    ##  8     9     1    0.769
-    ##  9    10     1    0.769
-    ## 10    11     1    0.846
+    ##    item1 item2 similaridad
+    ##    <int> <int>       <dbl>
+    ##  1     2     1       0.917
+    ##  2     3     1       0.846
+    ##  3     4     1       0.846
+    ##  4     5     1       0.733
+    ##  5     6     1       0.769
+    ##  6     7     1       0.769
+    ##  7     8     1       0.769
+    ##  8     9     1       0.769
+    ##  9    10     1       0.769
+    ## 10    11     1       0.846
     ## # … with 1,215 more rows
 
 Dado que este resultado muestra la similaridad, podemos leerlo como “el
