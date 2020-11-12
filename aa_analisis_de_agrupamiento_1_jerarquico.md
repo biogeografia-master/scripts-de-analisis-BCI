@@ -179,7 +179,7 @@ plot(cl_single, labels = rownames(mc_apcyn_melic_saptc),
      xlab = 'Sitios', ylab = 'Altura')
 ```
 
-![](aa_analisis_de_agrupamiento_1_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](aa_analisis_de_agrupamiento_1_jerarquico_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ### Agrupamiento “aglomerativo” por enlace completo
 
@@ -206,7 +206,7 @@ plot(cl_complete, labels = rownames(mc_apcyn_melic_saptc),
      xlab = 'Sitios', ylab = 'Altura')
 ```
 
-![](aa_analisis_de_agrupamiento_1_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](aa_analisis_de_agrupamiento_1_jerarquico_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ### Agrupamiento “aglomerativo” por enlace promedio
 
@@ -247,4 +247,4 @@ plot(cl_upgma, labels = rownames(mc_apcyn_melic_saptc),
      xlab = 'Sitios', ylab = 'Altura')
 ```
 
-![](aa_analisis_de_agrupamiento_1_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+![](aa_analisis_de_agrupamiento_1_jerarquico_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
