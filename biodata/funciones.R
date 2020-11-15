@@ -472,3 +472,20 @@ ezCorM <- function (data, r_size_lims = c(10, 30), point_alpha = 0.5, density_he
            dens_layer + label_layer + cor_text_layer + f + o + x_scale + 
            size_scale)
 }
+
+calcular_anchuras_siluetas <- function(mc_orig, distancias, cluster) {
+  siluetas <- numeric(nrow(mc_orig)) # Vector vacío, que acogera las siluetas
+  i <- NULL; sil_i <- NULL
+  for (i in 2:(nrow(mc_orig) - 1)) {
+    sil_i <- silhouette(cutree(cluster, k = i), distancias)
+    siluetas[i] <- summary(sil_i)$avg.width
+  }
+  siluetas
+  n_grupos_optimo <- which.max(siluetas)
+  return(
+    list(
+      anchuras_siluetas = siluetas,
+      n_grupos_optimo = n_grupos_optimo
+    )
+  )
+}

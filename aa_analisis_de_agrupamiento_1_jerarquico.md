@@ -23,55 +23,8 @@ library(vegan)
     ## This is vegan 2.5-6
 
 ``` r
-library(adespatial)
-```
-
-    ## Registered S3 methods overwritten by 'adegraphics':
-    ##   method         from
-    ##   biplot.dudi    ade4
-    ##   kplot.foucart  ade4
-    ##   kplot.mcoa     ade4
-    ##   kplot.mfa      ade4
-    ##   kplot.pta      ade4
-    ##   kplot.sepan    ade4
-    ##   kplot.statis   ade4
-    ##   scatter.coa    ade4
-    ##   scatter.dudi   ade4
-    ##   scatter.nipals ade4
-    ##   scatter.pco    ade4
-    ##   score.acm      ade4
-    ##   score.mix      ade4
-    ##   score.pca      ade4
-    ##   screeplot.dudi ade4
-
-    ## Registered S3 method overwritten by 'spdep':
-    ##   method   from
-    ##   plot.mst ape
-
-    ## Registered S3 methods overwritten by 'adespatial':
-    ##   method             from       
-    ##   plot.multispati    adegraphics
-    ##   print.multispati   ade4       
-    ##   summary.multispati ade4
-
-``` r
-library(tidyverse)
-```
-
-    ## ── Attaching packages ────────────────────────────────────── tidyverse 1.2.1 ──
-
-    ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-    ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
-    ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
-    ## ✓ readr   1.3.1     ✓ forcats 0.4.0
-
-    ## ── Conflicts ───────────────────────────────────────── tidyverse_conflicts() ──
-    ## x dplyr::filter() masks stats::filter()
-    ## x dplyr::lag()    masks stats::lag()
-
-``` r
+library(magrittr)
 library(broom)
-library(cluster)
 source('biodata/funciones.R')
 ```
 
@@ -79,6 +32,7 @@ source('biodata/funciones.R')
 
 ``` r
 load('biodata/Apocynaceae-Meliaceae-Sapotaceae.Rdata')
+mi_fam <- mc_apcyn_melic_saptc
 ```
 
 ## Características de las técnicas de agrupamiento
@@ -114,6 +68,21 @@ agrupamiento por pares, que son los denominados **“criterios de
 enlace”**. Los más usados son: “de enlace simple”, “de enlace
 completo” y “de enlace promedio”.
 
+Normalmente, en el análisis de agrupamiento nos interesa agrupar sitios
+en función de sus descriptores que, en una matriz de comunidad, son sus
+especies, y en una matriz ambiental son las variables que caracterizan
+los microhábitats. En mi caso y en el de ustedes, los sitios son los 50
+cuadros de 1 Ha (quadrats); el resultado de este primer script serán
+dendrogramas con los que podremos explorar, de manera visual y
+analítica, cuántos grupos hacen sentido y, con suerte, determinar a qué
+grupo parece pertenecer cada sitio (siguiente script).
+
+Dado que los cuadros en BCI están autocorrelacionados espacialmente,
+violamos el supuesto de independencia de las observaciones. Esto limita
+el alcance de nuestros resultados, pero no los invalida, y al mismo
+tiempo nos ofrecen una oportunidad estupenda para evaluar las técnicas
+mostradas a continuación.
+
 ### Agrupamiento “aglomerativo” por enlace simple
 
 Este método utiliza, como criterio de enlace para agrupar sucesivamente
@@ -127,7 +96,7 @@ asociación. En este caso, utilizaré el método de normalización y luego
 obtendré la distancia euclidea (distancia de cuerdas o *chord*).
 
 ``` r
-mi_fam_norm <- decostand(mc_apcyn_melic_saptc, "normalize")
+mi_fam_norm <- decostand(mi_fam, "normalize")
 mi_fam_norm_d <- vegdist(mi_fam_norm, "euc")
 mi_fam_norm_d %>% tidy
 ```
@@ -152,7 +121,7 @@ asignar los nombres de sitios al atributo `labels` del objeto de
 distancias.
 
 ``` r
-attr(mi_fam_norm_d, "labels") <- rownames(mc_apcyn_melic_saptc)
+attr(mi_fam_norm_d, "labels") <- rownames(mi_fam)
 ```
 
 Posteriormente, el agrupamiento jerárquico lo realizaré con la función
@@ -174,8 +143,8 @@ especificando el argumento `method = 'single'`:
 Finalmente, el dendrograma a continuación:
 
 ``` r
-plot(cl_single, labels = rownames(mc_apcyn_melic_saptc),
-     main = "Sitios de BCI de según composición de Apocynaceae, Meliaceae, Sapotaceae\nEnlace sencillo a partir de matriz de distancia de cuerdas",
+plot(cl_single, labels = rownames(mi_fam), hang = -1,
+     main = "Sitios de BCI según composición de especies de Apocynaceae, Meliaceae, Sapotaceae\nEnlace simple a partir de matriz de distancia de cuerdas",
      xlab = 'Sitios', ylab = 'Altura')
 ```
 
@@ -201,8 +170,8 @@ distancia de cuerdas empleada en el dendrograma anterior.
     ## Number of objects: 50
 
 ``` r
-plot(cl_complete, labels = rownames(mc_apcyn_melic_saptc),
-     main = "Sitios de BCI de según composición de Apocynaceae, Meliaceae, Sapotaceae\nEnlace completo a partir de matriz de distancia de cuerdas",
+plot(cl_complete, labels = rownames(mi_fam),
+     main = "Sitios de BCI según composición de especies de Apocynaceae, Meliaceae, Sapotaceae\nEnlace completo a partir de matriz de distancia de cuerdas",
      xlab = 'Sitios', ylab = 'Altura')
 ```
 
@@ -217,15 +186,15 @@ submétodos, clasificados en función del tipo de promedio empleado y el
 peso asignado a las distancias originales (número de elementos de los
 clusters que se agrupan progresivamente).
 
-Así, en función de si se usa media o centroide, o si se ponderan o no
-las distancias originales, se producen cuatro combinaciones de
-submétodos: grupos de pares no ponderados con media aritmética
-(unweighted pair-group method using arithmetic averages, UPGMA), grupos
-de pares ponderados con media aritmética (WPGMA), grupos de pares no
-ponderados con centroide (UPGMC) y grupos de pares ponderados con
-centroide (WPGMC). El más usado es UPGMA, porque máximiza la correlación
-entre la distancia cofenética (ver más adelante) y la matriz de
-distancia original.
+Así, dependiendo de si se media o centroide, o si se ponderan o no las
+distancias originales, se producen cuatro combinaciones de submétodos:
+grupos de pares no ponderados con media aritmética (unweighted
+pair-group method using arithmetic averages, UPGMA), grupos de pares
+ponderados con media aritmética (WPGMA), grupos de pares no ponderados
+con centroide (UPGMC) y grupos de pares ponderados con centroide
+(WPGMC). El más usado es UPGMA, porque máximiza la correlación entre la
+distancia cofenética (ver siguiente script) y la matriz de distancia
+original.
 
 Sólo crearé el dendrograma del método UPGMA.
 
@@ -242,9 +211,37 @@ Sólo crearé el dendrograma del método UPGMA.
     ## Number of objects: 50
 
 ``` r
-plot(cl_upgma, labels = rownames(mc_apcyn_melic_saptc),
-     main = "Sitios de BCI de según composición de Apocynaceae, Meliaceae, Sapotaceae\nUPGMA a partir de matriz de distancia de cuerdas",
+plot(cl_upgma, labels = rownames(mi_fam),
+     main = "Sitios de BCI según composición de especies de Apocynaceae, Meliaceae, Sapotaceae\nUPGMA a partir de matriz de distancia de cuerdas",
      xlab = 'Sitios', ylab = 'Altura')
 ```
 
 ![](aa_analisis_de_agrupamiento_1_jerarquico_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
+
+### Agrupamiento por el método de Ward de varianza mínima
+
+Se basa en los mismos supuestos y criterios de la regresión lineal por
+mínimos cuadrados, similar a lo establecido para el ANOVA, que a fin de
+cuentas es un caso particular de regresión lineal. El objetivo es
+definir grupos de manera que la suma de cuadrados se minimice dentro de
+cada uno de ellos.
+
+``` r
+(cl_ward <- hclust(mi_fam_norm_d, method = 'ward.D2'))
+```
+
+    ## 
+    ## Call:
+    ## hclust(d = mi_fam_norm_d, method = "ward.D2")
+    ## 
+    ## Cluster method   : ward.D2 
+    ## Distance         : euclidean 
+    ## Number of objects: 50
+
+``` r
+plot(cl_ward, labels = rownames(mi_fam),
+     main = "Sitios de BCI según composición de especies de Apocynaceae, Meliaceae, Sapotaceae\nMétodo de Ward a partir de matriz de distancia de cuerdas",
+     xlab = 'Sitios', ylab = 'Altura')
+```
+
+![](aa_analisis_de_agrupamiento_1_jerarquico_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
