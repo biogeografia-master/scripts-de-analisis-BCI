@@ -31,9 +31,10 @@ iva_upgma_k2 <- multipatt(
   x = mi_fam,
   cluster = grupos_upgma_k2,
   func = 'IndVal.g',
-  max.order = 2,
+  max.order = 1,
   control = how(nperm = 999))
 summary(iva_upgma_k2, indvalcomp = TRUE)
+colSums(mi_fam)
 (p_upgma_adj <- p.adjust(iva_upgma_k2$sign$p.value))
 (iva_upgma_boot <- strassoc(
   X = mi_fam,
@@ -50,6 +51,7 @@ iva_ward_k3 <- multipatt(
   max.order = 2,
   control = how(nperm = 999))
 summary(iva_ward_k3, indvalcomp = TRUE)
+colSums(mi_fam)
 (p_ward_adj <- p.adjust(iva_ward_k3$sign$p.value))
 (iva_ward_boot <- strassoc(
   X = mi_fam,
@@ -65,9 +67,10 @@ phi_upgma_k2 <- multipatt(
   mi_fam,
   grupos_upgma_k2,
   func = "r.g",
-  max.order = 2,
+  max.order = 1,
   control = how(nperm = 999))
-summary(phi_upgma_k2, alpha = 0.01)
+summary(phi_upgma_k2)
+colSums(mi_fam)
 (phi_upgma_boot <- strassoc(
   X = mi_fam,
   cluster = grupos_upgma_k2,
@@ -82,7 +85,8 @@ phi_ward_k3 <- multipatt(
   func = "r.g",
   max.order = 2,
   control = how(nperm = 999))
-summary(phi_ward_k3, alpha = 0.05)
+summary(phi_ward_k3)
+colSums(mi_fam)
 (phi_ward_boot <- strassoc(
   X = mi_fam,
   cluster = grupos_ward_k3,

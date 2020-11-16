@@ -53,7 +53,7 @@ iva_upgma_k2 <- multipatt(
   x = mi_fam,
   cluster = grupos_upgma_k2,
   func = 'IndVal.g',
-  max.order = 2,
+  max.order = 1,
   control = how(nperm = 999))
 summary(iva_upgma_k2, indvalcomp = TRUE)
 ```
@@ -66,19 +66,49 @@ summary(iva_upgma_k2, indvalcomp = TRUE)
     ##  Significance level (alpha): 0.05
     ## 
     ##  Total number of species: 16
-    ##  Selected number of species: 0 
-    ##  Number of species associated to 1 group: 0 
+    ##  Selected number of species: 7 
+    ##  Number of species associated to 1 group: 7 
     ## 
     ##  List of species associated to each combination: 
+    ## 
+    ##  Group 1  #sps.  4 
+    ##                              A      B  stat p.value    
+    ## Trichilia tuberculata   0.7629 1.0000 0.873   0.001 ***
+    ## Aspidosperma spruceanum 0.7780 0.9535 0.861   0.016 *  
+    ## Chrysophyllum cainito   0.7238 0.9070 0.810   0.032 *  
+    ## Guarea guidonia         0.6344 1.0000 0.797   0.033 *  
+    ## 
+    ##  Group 2  #sps.  3 
+    ##                              A      B  stat p.value  
+    ## Chrysophyllum argenteum 0.6294 1.0000 0.793   0.011 *
+    ## Tabernaemontana arborea 0.6196 1.0000 0.787   0.021 *
+    ## Lacmellea panamensis    0.6143 1.0000 0.784   0.044 *
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+colSums(mi_fam)
+```
+
+    ## Aspidosperma spruceanum         Cedrela odorata Chrysophyllum argenteum 
+    ##                     473                      12                     711 
+    ##   Chrysophyllum cainito          Guarea bullata      Guarea grandifolia 
+    ##                     171                     725                      65 
+    ##         Guarea guidonia    Lacmellea panamensis      Pouteria fossicola 
+    ##                    1889                     102                       3 
+    ##     Pouteria reticulata      Pouteria stipitata    Rauvolfia littoralis 
+    ##                    1084                      60                       1 
+    ## Tabernaemontana arborea         Thevetia ahouai       Trichilia pallida 
+    ##                    1732                      84                     472 
+    ##   Trichilia tuberculata 
+    ##                   10842
 
 ``` r
 (p_upgma_adj <- p.adjust(iva_upgma_k2$sign$p.value))
 ```
 
-    ##  [1]    NA    NA    NA    NA    NA    NA    NA    NA 0.774    NA    NA
-    ## [12] 1.000    NA    NA    NA    NA
+    ##  [1] 0.224 1.000 0.165 0.384 1.000 1.000 0.384 0.440 1.000 1.000 1.000
+    ## [12] 1.000 0.273 1.000 1.000 0.016
 
 ``` r
 (iva_upgma_boot <- strassoc(
@@ -109,41 +139,41 @@ summary(iva_upgma_k2, indvalcomp = TRUE)
     ## 
     ## $lowerCI
     ##                                 1         2
-    ## Aspidosperma spruceanum 0.7798149 0.3608012
-    ## Cedrela odorata         0.1143075 0.0000000
-    ## Chrysophyllum argenteum 0.5534121 0.7547011
-    ## Chrysophyllum cainito   0.7234123 0.2050809
-    ## Guarea bullata          0.6163325 0.7177455
-    ## Guarea grandifolia      0.4835455 0.3862027
-    ## Guarea guidonia         0.7428970 0.5359806
-    ## Lacmellea panamensis    0.4620704 0.7181044
+    ## Aspidosperma spruceanum 0.7813540 0.3671940
+    ## Cedrela odorata         0.1147638 0.0000000
+    ## Chrysophyllum argenteum 0.5495272 0.7536406
+    ## Chrysophyllum cainito   0.7083364 0.2084486
+    ## Guarea bullata          0.6127778 0.7193906
+    ## Guarea grandifolia      0.4827641 0.4092753
+    ## Guarea guidonia         0.7410722 0.5435370
+    ## Lacmellea panamensis    0.4595519 0.7185432
     ## Pouteria fossicola      0.0000000 0.0000000
-    ## Pouteria reticulata     0.6421125 0.6777045
-    ## Pouteria stipitata      0.3441090 0.4812265
+    ## Pouteria reticulata     0.6392701 0.6730598
+    ## Pouteria stipitata      0.3416718 0.4847416
     ## Rauvolfia littoralis    0.0000000 0.0000000
-    ## Tabernaemontana arborea 0.5724008 0.7492792
-    ## Thevetia ahouai         0.1905811 0.0000000
-    ## Trichilia pallida       0.5875200 0.5471645
-    ## Trichilia tuberculata   0.8475516 0.4468437
+    ## Tabernaemontana arborea 0.5702817 0.7481751
+    ## Thevetia ahouai         0.2042879 0.0000000
+    ## Trichilia pallida       0.5815853 0.5456596
+    ## Trichilia tuberculata   0.8480616 0.4457490
     ## 
     ## $upperCI
     ##                                 1         2
-    ## Aspidosperma spruceanum 0.9185934 0.5907738
-    ## Cedrela odorata         0.4612656 0.7006490
-    ## Chrysophyllum argenteum 0.6559482 0.8326664
-    ## Chrysophyllum cainito   0.9077181 0.6280305
-    ## Guarea bullata          0.6962305 0.7871800
-    ## Guarea grandifolia      0.7280252 0.7664855
-    ## Guarea guidonia         0.8441442 0.6692231
-    ## Lacmellea panamensis    0.6407155 0.8358169
-    ## Pouteria fossicola      0.3123475 0.6490940
-    ## Pouteria reticulata     0.7352528 0.7665336
-    ## Pouteria stipitata      0.6094883 0.8609161
-    ## Rauvolfia littoralis    0.2886751 0.0000000
-    ## Tabernaemontana arborea 0.6620528 0.8197764
-    ## Thevetia ahouai         0.5577734 0.6479563
-    ## Trichilia pallida       0.8205361 0.7939992
-    ## Trichilia tuberculata   0.8944652 0.5305145
+    ## Aspidosperma spruceanum 0.9184514 0.5889780
+    ## Cedrela odorata         0.4662524 0.7146415
+    ## Chrysophyllum argenteum 0.6572711 0.8347446
+    ## Chrysophyllum cainito   0.8991574 0.6255432
+    ## Guarea bullata          0.6944361 0.7899383
+    ## Guarea grandifolia      0.7124601 0.7638765
+    ## Guarea guidonia         0.8393480 0.6708204
+    ## Lacmellea panamensis    0.6447197 0.8355894
+    ## Pouteria fossicola      0.3261640 0.6650622
+    ## Pouteria reticulata     0.7392821 0.7688097
+    ## Pouteria stipitata      0.6178153 0.8578164
+    ## Rauvolfia littoralis    0.2738613 0.0000000
+    ## Tabernaemontana arborea 0.6633678 0.8212148
+    ## Thevetia ahouai         0.5657995 0.6435382
+    ## Trichilia pallida       0.8148217 0.7982979
+    ## Trichilia tuberculata   0.8950264 0.5298364
 
 Ward
 
@@ -165,33 +195,45 @@ summary(iva_ward_k3, indvalcomp = TRUE)
     ##  Significance level (alpha): 0.05
     ## 
     ##  Total number of species: 16
-    ##  Selected number of species: 4 
+    ##  Selected number of species: 2 
     ##  Number of species associated to 1 group: 0 
-    ##  Number of species associated to 2 groups: 4 
+    ##  Number of species associated to 2 groups: 2 
     ## 
     ##  List of species associated to each combination: 
     ## 
-    ##  Group 1+2  #sps.  2 
-    ##                              A      B  stat p.value    
-    ## Tabernaemontana arborea 0.8014 1.0000 0.895   0.001 ***
-    ## Chrysophyllum argenteum 0.7526 1.0000 0.868   0.048 *  
+    ##  Group 1+2  #sps.  1 
+    ##                              A      B  stat p.value   
+    ## Tabernaemontana arborea 0.8014 1.0000 0.895   0.006 **
     ## 
     ##  Group 1+3  #sps.  1 
-    ##                            A      B  stat p.value    
-    ## Trichilia tuberculata 0.8602 1.0000 0.927   0.001 ***
-    ## 
-    ##  Group 2+3  #sps.  1 
-    ##                     A      B  stat p.value  
-    ## Guarea bullata 0.7552 1.0000 0.869   0.039 *
+    ##                            A      B  stat p.value   
+    ## Trichilia tuberculata 0.8602 1.0000 0.927   0.002 **
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+colSums(mi_fam)
+```
+
+    ## Aspidosperma spruceanum         Cedrela odorata Chrysophyllum argenteum 
+    ##                     473                      12                     711 
+    ##   Chrysophyllum cainito          Guarea bullata      Guarea grandifolia 
+    ##                     171                     725                      65 
+    ##         Guarea guidonia    Lacmellea panamensis      Pouteria fossicola 
+    ##                    1889                     102                       3 
+    ##     Pouteria reticulata      Pouteria stipitata    Rauvolfia littoralis 
+    ##                    1084                      60                       1 
+    ## Tabernaemontana arborea         Thevetia ahouai       Trichilia pallida 
+    ##                    1732                      84                     472 
+    ##   Trichilia tuberculata 
+    ##                   10842
 
 ``` r
 (p_ward_adj <- p.adjust(iva_ward_k3$sign$p.value))
 ```
 
-    ##  [1] 1.000 1.000 0.624 1.000 0.546 1.000 1.000 1.000 1.000 1.000 1.000
-    ## [12] 1.000 0.016 1.000 1.000 0.016
+    ##  [1] 0.948 1.000 0.756 1.000 0.756 1.000 1.000 1.000 1.000 1.000 1.000
+    ## [12] 1.000 0.090 1.000 1.000 0.032
 
 ``` r
 (iva_ward_boot <- strassoc(
@@ -222,41 +264,41 @@ summary(iva_ward_k3, indvalcomp = TRUE)
     ## 
     ## $lowerCI
     ##                                 1         2          3
-    ## Aspidosperma spruceanum 0.3370513 0.2904383 0.70531410
-    ## Cedrela odorata         0.0000000 0.0000000 0.09022199
-    ## Chrysophyllum argenteum 0.4712062 0.6345897 0.44539996
-    ## Chrysophyllum cainito   0.4279181 0.1632022 0.53435079
-    ## Guarea bullata          0.4456249 0.6003775 0.54339433
-    ## Guarea grandifolia      0.3936750 0.4986169 0.25254790
-    ## Guarea guidonia         0.4779667 0.4420826 0.61314514
-    ## Lacmellea panamensis    0.3796459 0.6259240 0.33049591
+    ## Aspidosperma spruceanum 0.3346646 0.2863689 0.70759984
+    ## Cedrela odorata         0.0000000 0.0000000 0.08987182
+    ## Chrysophyllum argenteum 0.4782818 0.6361843 0.44706410
+    ## Chrysophyllum cainito   0.4190203 0.1675416 0.53078379
+    ## Guarea bullata          0.4474066 0.5996285 0.54090219
+    ## Guarea grandifolia      0.3996313 0.4992872 0.26087943
+    ## Guarea guidonia         0.4776207 0.4422923 0.62051911
+    ## Lacmellea panamensis    0.3744990 0.6350803 0.32915005
     ## Pouteria fossicola      0.0000000 0.0000000 0.00000000
-    ## Pouteria reticulata     0.5197860 0.5311765 0.51110282
-    ## Pouteria stipitata      0.3459600 0.2363597 0.21182964
+    ## Pouteria reticulata     0.5206010 0.5314583 0.51468277
+    ## Pouteria stipitata      0.3405835 0.2711718 0.21123850
     ## Rauvolfia littoralis    0.0000000 0.0000000 0.00000000
-    ## Tabernaemontana arborea 0.5333864 0.6234150 0.41140254
-    ## Thevetia ahouai         0.1376653 0.0000000 0.02194744
-    ## Trichilia pallida       0.4158020 0.4837578 0.46385645
-    ## Trichilia tuberculata   0.4659942 0.3323085 0.74561335
+    ## Tabernaemontana arborea 0.5369224 0.6247982 0.41314051
+    ## Thevetia ahouai         0.1226791 0.0000000 0.01685853
+    ## Trichilia pallida       0.4215325 0.4812026 0.45822963
+    ## Trichilia tuberculata   0.4691351 0.3294451 0.74572488
     ## 
     ## $upperCI
     ##                                 1         2         3
-    ## Aspidosperma spruceanum 0.5701113 0.5007403 0.8585663
-    ## Cedrela odorata         0.2806849 0.8192597 0.5002127
-    ## Chrysophyllum argenteum 0.5803989 0.7438092 0.5491941
-    ## Chrysophyllum cainito   0.6721638 0.5553108 0.7351052
-    ## Guarea bullata          0.5478293 0.6856766 0.6230853
-    ## Guarea grandifolia      0.6788829 0.6798425 0.5207770
-    ## Guarea guidonia         0.5982204 0.5750475 0.7340778
-    ## Lacmellea panamensis    0.6041190 0.7461361 0.5181044
-    ## Pouteria fossicola      0.4588315 0.7453560 0.0000000
-    ## Pouteria reticulata     0.6217447 0.6640449 0.6053032
-    ## Pouteria stipitata      0.6620830 0.7709951 0.5031314
+    ## Aspidosperma spruceanum 0.5611074 0.4948717 0.8572863
+    ## Cedrela odorata         0.2881952 0.8289085 0.5051435
+    ## Chrysophyllum argenteum 0.5803257 0.7409525 0.5431567
+    ## Chrysophyllum cainito   0.6645650 0.5565966 0.7274623
+    ## Guarea bullata          0.5424890 0.6839698 0.6216221
+    ## Guarea grandifolia      0.6764814 0.6762352 0.5260766
+    ## Guarea guidonia         0.5940423 0.5664224 0.7323037
+    ## Lacmellea panamensis    0.5928105 0.7457545 0.5228315
+    ## Pouteria fossicola      0.4662524 0.7377111 0.0000000
+    ## Pouteria reticulata     0.6189614 0.6656997 0.6059755
+    ## Pouteria stipitata      0.6508483 0.7673233 0.5096472
     ## Rauvolfia littoralis    0.0000000 0.0000000 0.3692745
-    ## Tabernaemontana arborea 0.6382067 0.7201566 0.4795153
-    ## Thevetia ahouai         0.6179144 0.7040077 0.3478466
-    ## Trichilia pallida       0.6407842 0.7226901 0.6553429
-    ## Trichilia tuberculata   0.5464102 0.4093703 0.8059659
+    ## Tabernaemontana arborea 0.6361285 0.7184562 0.4824473
+    ## Thevetia ahouai         0.6154060 0.6892173 0.3567758
+    ## Trichilia pallida       0.6454972 0.7226310 0.6563249
+    ## Trichilia tuberculata   0.5429037 0.4095112 0.8075115
 
 ## Análisis de especies con preferencia por hábitat mediante el coeficiente de correlación biserial puntual
 
@@ -267,9 +309,9 @@ phi_upgma_k2 <- multipatt(
   mi_fam,
   grupos_upgma_k2,
   func = "r.g",
-  max.order = 2,
+  max.order = 1,
   control = how(nperm = 999))
-summary(phi_upgma_k2, alpha = 0.01)
+summary(phi_upgma_k2)
 ```
 
     ## 
@@ -277,24 +319,44 @@ summary(phi_upgma_k2, alpha = 0.01)
     ##  ---------------------------
     ## 
     ##  Association function: r.g
-    ##  Significance level (alpha): 0.01
+    ##  Significance level (alpha): 0.05
     ## 
     ##  Total number of species: 16
-    ##  Selected number of species: 3 
-    ##  Number of species associated to 1 group: 3 
+    ##  Selected number of species: 6 
+    ##  Number of species associated to 1 group: 6 
     ## 
     ##  List of species associated to each combination: 
     ## 
-    ##  Group 1  #sps.  1 
-    ##                        stat p.value    
-    ## Trichilia tuberculata 0.676   0.001 ***
+    ##  Group 1  #sps.  4 
+    ##                          stat p.value    
+    ## Trichilia tuberculata   0.676   0.001 ***
+    ## Chrysophyllum cainito   0.457   0.022 *  
+    ## Aspidosperma spruceanum 0.446   0.022 *  
+    ## Guarea guidonia         0.409   0.032 *  
     ## 
     ##  Group 2  #sps.  2 
     ##                          stat p.value    
-    ## Chrysophyllum argenteum 0.579   0.001 ***
-    ## Tabernaemontana arborea 0.562   0.002 ** 
+    ## Chrysophyllum argenteum 0.579   0.002 ** 
+    ## Tabernaemontana arborea 0.562   0.001 ***
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+colSums(mi_fam)
+```
+
+    ## Aspidosperma spruceanum         Cedrela odorata Chrysophyllum argenteum 
+    ##                     473                      12                     711 
+    ##   Chrysophyllum cainito          Guarea bullata      Guarea grandifolia 
+    ##                     171                     725                      65 
+    ##         Guarea guidonia    Lacmellea panamensis      Pouteria fossicola 
+    ##                    1889                     102                       3 
+    ##     Pouteria reticulata      Pouteria stipitata    Rauvolfia littoralis 
+    ##                    1084                      60                       1 
+    ## Tabernaemontana arborea         Thevetia ahouai       Trichilia pallida 
+    ##                    1732                      84                     472 
+    ##   Trichilia tuberculata 
+    ##                   10842
 
 ``` r
 (phi_upgma_boot <- strassoc(
@@ -325,41 +387,41 @@ summary(phi_upgma_k2, alpha = 0.01)
     ## 
     ## $lowerCI
     ##                                  1           2
-    ## Aspidosperma spruceanum  0.2956753 -0.57545640
-    ## Cedrela odorata         -0.4731700 -0.29397237
-    ## Chrysophyllum argenteum -0.7388810  0.43996221
-    ## Chrysophyllum cainito    0.2459825 -0.64350120
-    ## Guarea bullata          -0.6690382  0.07563813
-    ## Guarea grandifolia      -0.2675323 -0.34783780
-    ## Guarea guidonia          0.1963678 -0.59296114
-    ## Lacmellea panamensis    -0.6647085  0.06270849
-    ## Pouteria fossicola      -0.5000000 -0.22941573
-    ## Pouteria reticulata     -0.5381022 -0.30838288
-    ## Pouteria stipitata      -0.5803131 -0.19425717
-    ## Rauvolfia littoralis     0.0000000 -0.21320072
-    ## Tabernaemontana arborea -0.7862856  0.32240636
-    ## Thevetia ahouai         -0.3005007 -0.28734759
-    ## Trichilia pallida       -0.3809710 -0.46279985
-    ## Trichilia tuberculata    0.6037522 -0.75559021
+    ## Aspidosperma spruceanum  0.2852706 -0.57180700
+    ## Cedrela odorata         -0.4883149 -0.28697202
+    ## Chrysophyllum argenteum -0.7487606  0.43864385
+    ## Chrysophyllum cainito    0.2526679 -0.63988734
+    ## Guarea bullata          -0.6502324  0.12203381
+    ## Guarea grandifolia      -0.2284558 -0.34982151
+    ## Guarea guidonia          0.1996681 -0.58397902
+    ## Lacmellea panamensis    -0.6640044  0.04788912
+    ## Pouteria fossicola      -0.4628529 -0.22941573
+    ## Pouteria reticulata     -0.5315693 -0.26468319
+    ## Pouteria stipitata      -0.5868994 -0.16920257
+    ## Rauvolfia littoralis     0.0000000 -0.19738551
+    ## Tabernaemontana arborea -0.7798319  0.32106440
+    ## Thevetia ahouai         -0.3074210 -0.28508085
+    ## Trichilia pallida       -0.3524051 -0.46896206
+    ## Trichilia tuberculata    0.6017985 -0.74792709
     ## 
     ## $upperCI
     ##                                   1          2
-    ## Aspidosperma spruceanum  0.57504572 -0.2978240
-    ## Cedrela odorata          0.29397237  0.4713132
-    ## Chrysophyllum argenteum -0.44167394  0.7387060
-    ## Chrysophyllum cainito    0.64215338 -0.2492651
-    ## Guarea bullata          -0.07936946  0.6684915
-    ## Guarea grandifolia       0.34689260  0.2641644
-    ## Guarea guidonia          0.59268602 -0.1989227
-    ## Lacmellea panamensis    -0.06430684  0.6646446
-    ## Pouteria fossicola       0.22645541  0.5000000
-    ## Pouteria reticulata      0.30037545  0.5367369
-    ## Pouteria stipitata       0.19329920  0.5728842
-    ## Rauvolfia littoralis     0.20555661  0.0000000
-    ## Tabernaemontana arborea -0.32400469  0.7847987
-    ## Thevetia ahouai          0.28712177  0.2933258
-    ## Trichilia pallida        0.46254676  0.3736349
-    ## Trichilia tuberculata    0.75468287 -0.6047774
+    ## Aspidosperma spruceanum  0.57178575 -0.2865875
+    ## Cedrela odorata          0.28697202  0.4883149
+    ## Chrysophyllum argenteum -0.43992839  0.7481080
+    ## Chrysophyllum cainito    0.63985587 -0.2566526
+    ## Guarea bullata          -0.12271671  0.6497919
+    ## Guarea grandifolia       0.34530507  0.2259852
+    ## Guarea guidonia          0.58054051 -0.2017531
+    ## Lacmellea panamensis    -0.04858339  0.6609383
+    ## Pouteria fossicola       0.22941573  0.4628529
+    ## Pouteria reticulata      0.25725353  0.5270906
+    ## Pouteria stipitata       0.16807415  0.5841769
+    ## Rauvolfia littoralis     0.19738551  0.0000000
+    ## Tabernaemontana arborea -0.32122790  0.7779341
+    ## Thevetia ahouai          0.28485729  0.3019397
+    ## Trichilia pallida        0.46802565  0.3449822
+    ## Trichilia tuberculata    0.74784894 -0.6057331
 
 Ward
 
@@ -370,7 +432,7 @@ phi_ward_k3 <- multipatt(
   func = "r.g",
   max.order = 2,
   control = how(nperm = 999))
-summary(phi_ward_k3, alpha = 0.05)
+summary(phi_ward_k3)
 ```
 
     ## 
@@ -395,18 +457,35 @@ summary(phi_ward_k3, alpha = 0.05)
     ##  Group 3  #sps.  3 
     ##                          stat p.value    
     ## Trichilia tuberculata   0.794   0.001 ***
-    ## Aspidosperma spruceanum 0.520   0.005 ** 
-    ## Guarea guidonia         0.414   0.040 *  
+    ## Aspidosperma spruceanum 0.520   0.007 ** 
+    ## Guarea guidonia         0.414   0.031 *  
     ## 
     ##  Group 1+2  #sps.  1 
     ##                         stat p.value   
-    ## Tabernaemontana arborea 0.61   0.002 **
+    ## Tabernaemontana arborea 0.61   0.005 **
     ## 
     ##  Group 2+3  #sps.  1 
     ##                 stat p.value  
-    ## Guarea bullata 0.475   0.036 *
+    ## Guarea bullata 0.475   0.029 *
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+``` r
+colSums(mi_fam)
+```
+
+    ## Aspidosperma spruceanum         Cedrela odorata Chrysophyllum argenteum 
+    ##                     473                      12                     711 
+    ##   Chrysophyllum cainito          Guarea bullata      Guarea grandifolia 
+    ##                     171                     725                      65 
+    ##         Guarea guidonia    Lacmellea panamensis      Pouteria fossicola 
+    ##                    1889                     102                       3 
+    ##     Pouteria reticulata      Pouteria stipitata    Rauvolfia littoralis 
+    ##                    1084                      60                       1 
+    ## Tabernaemontana arborea         Thevetia ahouai       Trichilia pallida 
+    ##                    1732                      84                     472 
+    ##   Trichilia tuberculata 
+    ##                   10842
 
 ``` r
 (phi_ward_boot <- strassoc(
@@ -437,38 +516,38 @@ summary(phi_ward_k3, alpha = 0.05)
     ## 
     ## $lowerCI
     ##                                  1          2            3
-    ## Aspidosperma spruceanum -0.3810717 -0.4658156  0.342474353
-    ## Cedrela odorata         -0.4370934 -0.2413899 -0.324604299
-    ## Chrysophyllum argenteum -0.4333855  0.3953495 -0.534073498
-    ## Chrysophyllum cainito   -0.1989332 -0.5496328 -0.006548647
-    ## Guarea bullata          -0.6663942  0.1713286 -0.216759929
-    ## Guarea grandifolia      -0.1574209 -0.2110079 -0.442291490
-    ## Guarea guidonia         -0.3514338 -0.4529795  0.181502085
-    ## Lacmellea panamensis    -0.3649330  0.2222787 -0.567108820
-    ## Pouteria fossicola      -0.3123790 -0.1889822 -0.418330013
-    ## Pouteria reticulata     -0.3549829 -0.3572597 -0.411309276
-    ## Pouteria stipitata      -0.2526181 -0.3688541 -0.448413977
-    ## Rauvolfia littoralis    -0.1524986 -0.1524986  0.000000000
-    ## Tabernaemontana arborea -0.2011049  0.2397294 -0.713333312
-    ## Thevetia ahouai         -0.2024183 -0.2325441 -0.313677107
-    ## Trichilia pallida       -0.4047980 -0.2993815 -0.291684718
-    ## Trichilia tuberculata   -0.3205511 -0.6453552  0.714880958
+    ## Aspidosperma spruceanum -0.3690424 -0.4534220  0.332181218
+    ## Cedrela odorata         -0.4406233 -0.2212524 -0.301735409
+    ## Chrysophyllum argenteum -0.4376245  0.4345974 -0.559994784
+    ## Chrysophyllum cainito   -0.2112656 -0.5206719 -0.008829348
+    ## Guarea bullata          -0.6656606  0.1862935 -0.227964376
+    ## Guarea grandifolia      -0.1307664 -0.2083868 -0.454603500
+    ## Guarea guidonia         -0.3600590 -0.4351491  0.189246158
+    ## Lacmellea panamensis    -0.3794816  0.2428361 -0.560027496
+    ## Pouteria fossicola      -0.3162278 -0.1889822 -0.411113226
+    ## Pouteria reticulata     -0.3480698 -0.3171528 -0.406773656
+    ## Pouteria stipitata      -0.2687544 -0.3180328 -0.454907693
+    ## Rauvolfia littoralis    -0.1507557 -0.1507557  0.000000000
+    ## Tabernaemontana arborea -0.1876511  0.2984195 -0.715193747
+    ## Thevetia ahouai         -0.2023950 -0.2298729 -0.335530206
+    ## Trichilia pallida       -0.4152433 -0.2487789 -0.326354268
+    ## Trichilia tuberculata   -0.3214949 -0.6374619  0.712807147
     ## 
     ## $upperCI
-    ##                                    1           2           3
-    ## Aspidosperma spruceanum  0.009655634 -0.15566325  0.67187485
-    ## Cedrela odorata          0.061765775  0.66712438  0.33896557
-    ## Chrysophyllum argenteum  0.047254082  0.79350808 -0.18715570
-    ## Chrysophyllum cainito    0.307353562 -0.09193373  0.50170733
-    ## Guarea bullata          -0.235344445  0.66461099  0.29403418
-    ## Guarea grandifolia       0.418811522  0.33086712  0.08313122
-    ## Guarea guidonia          0.081515313 -0.01123553  0.59221315
-    ## Lacmellea panamensis     0.221878440  0.66213537 -0.12680586
-    ## Pouteria fossicola       0.377964473  0.68041382  0.00000000
-    ## Pouteria reticulata      0.366848097  0.64839864  0.24411753
-    ## Pouteria stipitata       0.399470176  0.55939055  0.15616068
-    ## Rauvolfia littoralis     0.000000000  0.00000000  0.30151134
-    ## Tabernaemontana arborea  0.384416389  0.78839277 -0.49375568
-    ## Thevetia ahouai          0.364259480  0.38644464  0.15965291
-    ## Trichilia pallida        0.252103500  0.53589683  0.32912767
-    ## Trichilia tuberculata   -0.112544888 -0.50592280  0.86614349
+    ##                                   1           2           3
+    ## Aspidosperma spruceanum  0.01444028 -0.15347342  0.67702625
+    ## Cedrela odorata          0.01972596  0.63733435  0.33404844
+    ## Chrysophyllum argenteum  0.01689096  0.80955625 -0.20629141
+    ## Chrysophyllum cainito    0.32841007 -0.09357760  0.49709377
+    ## Guarea bullata          -0.23978797  0.67083643  0.26785524
+    ## Guarea grandifolia       0.42358904  0.30753179  0.08164415
+    ## Guarea guidonia          0.08196809 -0.01991513  0.58170727
+    ## Lacmellea panamensis     0.20696757  0.68843635 -0.12680872
+    ## Pouteria fossicola       0.37796447  0.63245553  0.00000000
+    ## Pouteria reticulata      0.29854327  0.63183654  0.20185150
+    ## Pouteria stipitata       0.39098735  0.60192775  0.14282101
+    ## Rauvolfia littoralis     0.00000000  0.00000000  0.30151134
+    ## Tabernaemontana arborea  0.32696357  0.78922613 -0.51552611
+    ## Thevetia ahouai          0.38200081  0.38589023  0.15326788
+    ## Trichilia pallida        0.21590137  0.55900437  0.31792226
+    ## Trichilia tuberculata   -0.11244564 -0.50468007  0.86768054
