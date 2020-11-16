@@ -67,8 +67,8 @@ m_amb_upgma_k2 %>%
   ggplot() + aes(x = grupos_upgma_k2, y = valor, fill = grupos_upgma_k2) + 
   geom_boxplot() + 
   scale_fill_brewer(palette = 'Accent') +
-  theme(legend.position="none") +
   theme_bw() +
+  theme(legend.position="none") +
   facet_wrap(~ variable, scales = 'free_y')
 #' 
 #' Mapas:
@@ -140,8 +140,8 @@ m_amb_ward_k3 %>%
   ggplot() + aes(x = grupos_ward_k3, y = valor, fill = grupos_ward_k3) + 
   geom_boxplot() + 
   scale_fill_brewer(palette = 'Accent') +
-  theme(legend.position="none") +
   theme_bw() +
+  theme(legend.position="none") +
   facet_wrap(~ variable, scales = 'free_y')
 #' 
 #' Mapas:

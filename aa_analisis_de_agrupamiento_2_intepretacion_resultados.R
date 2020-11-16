@@ -88,7 +88,11 @@ map_df(lista_cl, function(x) {
 #' 
 #' Elegiré UPGMA como método de agrupamiento y determinaré cuántos grupos son idóneos de acuerdo a su anchura de silueta (*silhouette width*). Sin embargo, no lo haré sólo para UPGMA, también contrastaré con Ward. ¿Por qué? De entrada, se sabe que UPGMA tendrá una buena correlación cofenética, dado que dicho método está diseñado para maximizarla. Sin embargo, me interesa explorar patrones con sentido ecológico, no sólo seguir procedimientos mecánicos y, al menos en mi caso, el método de Ward podría hacer más sentido ecológico que UPGMA.
 #' 
-#' El objetivo de la función `calcular_anchuras_siluetas` está implícito en su nombre. Esta función requiere de tres argumentos: matriz de comunidad original, matriz de distancias, y objeto de clúster. La función `calcular_anchuras_siluetas` devuelve como resultado una lista con dos objetos (los explico más abajo): 1) Las anchuras promedio para cada partición, excepto para la partición `i=1` y `i=50`, por ser irrelevantes (se les asigna 0); 2) Número óptimo de grupos. Haré los cálculos para UPGMA y Ward, y luego explico en qué consisten los resultados.
+#' El objetivo de la función `calcular_anchuras_siluetas` está implícito en su nombre, y requiere de tres argumentos: matriz de comunidad original, matriz de distancias, y objeto de clúster. Devuelve como resultado una lista con dos objetos (los explico más abajo):
+#' 
+#' 1. Las anchuras promedio para cada partición, excepto para las particiones `i=1` y `i=50`, por ser irrelevantes (se les asigna 0);
+#' 
+#' 2. Número óptimo de grupos. Haré los cálculos para UPGMA y Ward, y luego explico en qué consisten los resultados.
 #' 
 #' Para UPGMA:
 #' 

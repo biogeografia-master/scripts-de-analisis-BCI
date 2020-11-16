@@ -17,14 +17,14 @@ library(mapview)
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ───────────────────────────────────────── tidyverse 1.2.1 ──
+    ## ── Attaching packages ────────────────────────────────────────────── tidyverse 1.2.1 ──
 
     ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
     ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
     ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
     ## ✓ readr   1.3.1     ✓ forcats 0.4.0
 
-    ## ── Conflicts ──────────────────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ───────────────────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -178,8 +178,8 @@ m_amb_upgma_k2 %>%
   ggplot() + aes(x = grupos_upgma_k2, y = valor, fill = grupos_upgma_k2) + 
   geom_boxplot() + 
   scale_fill_brewer(palette = 'Accent') +
-  theme(legend.position="none") +
   theme_bw() +
+  theme(legend.position="none") +
   facet_wrap(~ variable, scales = 'free_y')
 ```
 
@@ -328,8 +328,8 @@ m_amb_ward_k3 %>%
   ggplot() + aes(x = grupos_ward_k3, y = valor, fill = grupos_ward_k3) + 
   geom_boxplot() + 
   scale_fill_brewer(palette = 'Accent') +
-  theme(legend.position="none") +
   theme_bw() +
+  theme(legend.position="none") +
   facet_wrap(~ variable, scales = 'free_y')
 ```
 
