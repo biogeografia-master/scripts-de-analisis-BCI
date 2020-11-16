@@ -170,7 +170,7 @@ distancia de cuerdas empleada en el dendrograma anterior.
     ## Number of objects: 50
 
 ``` r
-plot(cl_complete, labels = rownames(mi_fam),
+plot(cl_complete, labels = rownames(mi_fam), hang = -1,
      main = "Sitios de BCI según composición de especies de Apocynaceae, Meliaceae, Sapotaceae\nEnlace completo a partir de matriz de distancia de cuerdas",
      xlab = 'Sitios', ylab = 'Altura')
 ```
@@ -211,7 +211,7 @@ Sólo crearé el dendrograma del método UPGMA.
     ## Number of objects: 50
 
 ``` r
-plot(cl_upgma, labels = rownames(mi_fam),
+plot(cl_upgma, labels = rownames(mi_fam), hang = -1,
      main = "Sitios de BCI según composición de especies de Apocynaceae, Meliaceae, Sapotaceae\nUPGMA a partir de matriz de distancia de cuerdas",
      xlab = 'Sitios', ylab = 'Altura')
 ```
@@ -239,7 +239,7 @@ cada uno de ellos.
     ## Number of objects: 50
 
 ``` r
-plot(cl_ward, labels = rownames(mi_fam),
+plot(cl_ward, labels = rownames(mi_fam), hang = -1,
      main = "Sitios de BCI según composición de especies de Apocynaceae, Meliaceae, Sapotaceae\nMétodo de Ward a partir de matriz de distancia de cuerdas",
      xlab = 'Sitios', ylab = 'Altura')
 ```

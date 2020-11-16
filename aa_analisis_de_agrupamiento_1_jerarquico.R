@@ -71,7 +71,7 @@ plot(cl_single, labels = rownames(mi_fam), hang = -1,
 #' En este caso, el criterio de enlace para agrupar sucesivamente pares de objetos es la menor similaridad ("máxima distancia" o "vecino más lejano"). Crearé el dendrograma a partir de la misma matriz de distancia de cuerdas empleada en el dendrograma anterior.
 #' 
 (cl_complete <- hclust(mi_fam_norm_d, method = 'complete'))
-plot(cl_complete, labels = rownames(mi_fam),
+plot(cl_complete, labels = rownames(mi_fam), hang = -1,
      main = "Sitios de BCI según composición de especies de Apocynaceae, Meliaceae, Sapotaceae\nEnlace completo a partir de matriz de distancia de cuerdas",
      xlab = 'Sitios', ylab = 'Altura')
 #' 
@@ -84,7 +84,7 @@ plot(cl_complete, labels = rownames(mi_fam),
 #' Sólo crearé el dendrograma del método UPGMA.
 #' 
 (cl_upgma <- hclust(mi_fam_norm_d, method = 'average'))
-plot(cl_upgma, labels = rownames(mi_fam),
+plot(cl_upgma, labels = rownames(mi_fam), hang = -1,
      main = "Sitios de BCI según composición de especies de Apocynaceae, Meliaceae, Sapotaceae\nUPGMA a partir de matriz de distancia de cuerdas",
      xlab = 'Sitios', ylab = 'Altura')
 #' 
@@ -93,6 +93,6 @@ plot(cl_upgma, labels = rownames(mi_fam),
 #' Se basa en los mismos supuestos y criterios de la regresión lineal por mínimos cuadrados, similar a lo establecido para el ANOVA, que a fin de cuentas es un caso particular de regresión lineal. El objetivo es definir grupos de manera que la suma de cuadrados se minimice dentro de cada uno de ellos.
 #' 
 (cl_ward <- hclust(mi_fam_norm_d, method = 'ward.D2'))
-plot(cl_ward, labels = rownames(mi_fam),
+plot(cl_ward, labels = rownames(mi_fam), hang = -1,
      main = "Sitios de BCI según composición de especies de Apocynaceae, Meliaceae, Sapotaceae\nMétodo de Ward a partir de matriz de distancia de cuerdas",
      xlab = 'Sitios', ylab = 'Altura')
