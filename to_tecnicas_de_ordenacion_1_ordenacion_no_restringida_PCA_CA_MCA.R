@@ -279,7 +279,11 @@ par(mfrow = c(1, 1))
 #' La función que realiza el PCoA en `{vegan}` es `cmdscale` (de *Classical (Metric) Multidimensional Scaling*), y se le suministra una matriz de distancias.
 #' 
 mi_fam_d_bray <- vegdist(mi_fam, method = 'bray') # En realidad, 'bray' es la opción por defecto
-mi_fam_d_bray_pcoa <- cmdscale(mi_fam_d_bray, k = (nrow(mi_fam) - 1), eig = TRUE)
+mi_fam_d_bray_pcoa <- cmdscale(
+  mi_fam_d_bray,
+  k = (nrow(mi_fam) - 1),
+  add = T,
+  eig = TRUE)
 round(mi_fam_d_bray_pcoa$eig, 2)
 round(sum(mi_fam_d_bray_pcoa$eig[mi_fam_d_bray_pcoa$eig<0]),2)
 round(sum(mi_fam_d_bray_pcoa$eig[mi_fam_d_bray_pcoa$eig>=0]),2)
