@@ -280,8 +280,9 @@ par(mfrow = c(1, 1))
 #' 
 mi_fam_d_bray <- vegdist(mi_fam, method = 'bray') # En realidad, 'bray' es la opción por defecto
 mi_fam_d_bray_pcoa <- cmdscale(mi_fam_d_bray, k = (nrow(mi_fam) - 1), eig = TRUE)
-sp_orig <- getOption('scipen')
-options(scipen = 1000)
+round(mi_fam_d_bray_pcoa$eig, 2)
+round(sum(mi_fam_d_bray_pcoa$eig[mi_fam_d_bray_pcoa$eig<0]),2)
+round(sum(mi_fam_d_bray_pcoa$eig[mi_fam_d_bray_pcoa$eig>=0]),2)
 ordiplot(scores(mi_fam_d_bray_pcoa, choices = c(1, 2)),
          type = "t",
          main = "PCoA con promedios ponderados de especies")
@@ -294,4 +295,3 @@ text(
   cex = 0.7, col = "red")
 (mi_fam_d_bray_pcoa_env <- envfit(mi_fam_d_bray_pcoa, env_num))
 plot(mi_fam_d_bray_pcoa_env, p.max = 0.05, col = 3)
-options(scipen = sp_orig)
