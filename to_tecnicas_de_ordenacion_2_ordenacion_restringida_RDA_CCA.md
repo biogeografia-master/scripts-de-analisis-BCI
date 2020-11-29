@@ -26,14 +26,14 @@ library(vegan)
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ───────────────────────────── tidyverse 1.2.1 ──
+    ## ── Attaching packages ───────────────────────────────────────────────────────── tidyverse 1.2.1 ──
 
     ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
     ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
     ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
     ## ✓ readr   1.3.1     ✓ forcats 0.4.0
 
-    ## ── Conflicts ──────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ──────────────────────────────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -590,16 +590,24 @@ arrows(0, 0,
 
 El RDA anterior mostró que las variables de suelo son útiles para
 predecir la matriz de comunidad. No obstante, se evidenciaron dos cosas:
-1) Hay mucha colinealidad entre ellas; 2) No se probó mejoras del modelo
-añadiendo otras variables, además de las de suelo. Si selecciono las
-variables que obtuve como significativas en la ordenación no
-restringida, me quedaría con una tabla tal que esta:
+
+  - Hay mucha colinealidad entre ellas.
+
+  - No se probó mejorar el modelo añadiendo otras variables, además de
+    las de suelo.
+
+Crearé una matriz ambiental con las variables que resultaron
+significativas en el ajuste *post-hoc* (pasivo) durante la ordenación no
+restringida, para obtener un RDA comprensivo. A continuación, evaluaré
+colinealidad tanto mediante VIF como gráficamente, e iré excluyendo
+variables paulatinamente:
 
 ``` r
 env_selec <- bci_env_grid %>%
   select(
     heterogeneidad_ambiental,
     riqueza_global,
+    UTM.EW,
     Al, B, Ca, Cu, Fe, K, Mg, Mn, P, Zn, N, N.min., pH) %>% 
   st_drop_geometry
 mi_fam_hel_rda_selec <- rda(mi_fam_hel ~ ., env_selec)
@@ -609,63 +617,129 @@ mi_fam_hel_rda_selec <- rda(mi_fam_hel ~ ., env_selec)
 vif.cca(mi_fam_hel_rda_selec)
 ```
 
-    ## heterogeneidad_ambiental           riqueza_global                       Al 
-    ##                 2.132603                 2.566228                 6.208143 
-    ##                        B                       Ca                       Cu 
-    ##                17.006022                45.421129                10.291574 
-    ##                       Fe                        K                       Mg 
-    ##                 6.010731                29.406934                22.413885 
-    ##                       Mn                        P                       Zn 
-    ##                 8.801069                 4.177185                14.374572 
-    ##                        N                   N.min.                       pH 
-    ##                 3.217640                 6.329986                 6.985638
+    ## heterogeneidad_ambiental           riqueza_global                   UTM.EW 
+    ##                 2.287086                 2.714486                46.563406 
+    ##                       Al                        B                       Ca 
+    ##                 6.232094                19.025574                51.061648 
+    ##                       Cu                       Fe                        K 
+    ##                11.071318                 6.380872                29.827401 
+    ##                       Mg                       Mn                        P 
+    ##                24.486207                 9.041437                 4.196094 
+    ##                       Zn                        N                   N.min. 
+    ##                49.440476                 5.780633                11.707230 
+    ##                       pH 
+    ##                 7.044038
+
+Haré el plot del escalamiento 2 para comprobar gráficamente asociación
+entre variables sin las flechas de especies (para simplificar):
+
+``` r
+plot(mi_fam_hel_rda_selec,
+     scaling = 2,
+     display = c("sp", "lc", "cn"),
+     main = "Triplot de RDA especies ~ var. selec, escalamiento 2"
+)
+```
+
+![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
 Tal como comenté arriba, variables con valores VIF por encima de 10,
-deben ser examinadas. `Ca` y `K` tienen los valores más altos. Como su
-interacción es fuerte, sacar sólo una no resolverá el problema de
-multicolinealidad, y es preferible sacarlas del modelo a ambas; otras
-variables ya podrán explicar la varianza debida a ellas. Si yo
-considerara que `Ca` o `K` tuviese un sentido geoquímico especial, o
-sospechara que alguna especie está asociada a ellas, entonces la
-conservaría.
+deben ser examinadas. En el arreglo actual, parecen estar asociadas
+`Ca`, y `Mg` y, por otra parte, `Zn` y `K`. Es preferible sacar una de
+cada par, para que la retenida explique la varianza correspondiente en
+cada caso. Entre `Mg` y `Ca`, no tengo preferencia por razones
+biogeoquímicas, así que excluyo a `Ca` por tener mayor VIF. No
+obstante, entre `K` y `Zn`, sin duda prefiero excluir a `K`, puesto que
+el zinc participa en la síntesis de proteínas de las plantas.
+Finalmente, nótese que `pH` y `N` lucen asociadas en este arreglo, pero
+esto podría deberse a la introducción de nuevas variables o a la
+colinealidad preexistente, así que las conservo para decidir con ellas
+más adelante.
 
 ``` r
 env_selec2 <- bci_env_grid %>%
   select(
     heterogeneidad_ambiental,
     riqueza_global,
+    UTM.EW,
     Al, B, Cu, Fe, Mg, Mn, P, Zn, N, N.min., pH) %>% 
   st_drop_geometry
 mi_fam_hel_rda_selec2 <- rda(mi_fam_hel ~ ., env_selec2)
 vif.cca(mi_fam_hel_rda_selec2)
 ```
 
-    ## heterogeneidad_ambiental           riqueza_global                       Al 
-    ##                 2.066019                 2.395747                 5.615456 
-    ##                        B                       Cu                       Fe 
-    ##                15.659197                 7.992989                 5.668667 
-    ##                       Mg                       Mn                        P 
-    ##                10.239942                 8.660104                 4.169703 
-    ##                       Zn                        N                   N.min. 
-    ##                13.198206                 3.147621                 5.850929 
-    ##                       pH 
-    ##                 5.835614
+    ## heterogeneidad_ambiental           riqueza_global                   UTM.EW 
+    ##                 2.182026                 2.595791                41.286914 
+    ##                       Al                        B                       Cu 
+    ##                 5.779056                16.949641                 8.823716 
+    ##                       Fe                       Mg                       Mn 
+    ##                 5.863905                15.753061                 9.002946 
+    ##                        P                       Zn                        N 
+    ##                 4.188033                41.022529                 5.685852 
+    ##                   N.min.                       pH 
+    ##                10.986159                 5.997200
 
-Correspondería excluir `B`. Si es importante en términos geoquímicos, no
-la excluiría, pero parece estar fuertemente correlacionada con `Zn`, la
-cual sí que me interesa conservar. Por otra parte, `Fe` y `Mg`
-interactúan fuertemente, por lo que es preferible excluir `Mg` (con VIF
-más alto).
+``` r
+plot(mi_fam_hel_rda_selec2,
+     scaling = 2,
+     display = c("sp", "lc", "cn"),
+     main = "Triplot de RDA especies ~ var. selec2, escalamiento 2"
+)
+```
+
+![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+Nota que las posiciones rotaron, no así la asociación entre la mayoría
+de las variables. `B` ahora luce asociado con `N.min.`, pero este último
+es muy importante para las plantas, por lo que excluiré al primero, que
+además presenta VIF más alto. Por otra parte, `Fe` y `Mg` interactúan
+fuertemente en este arreglo, por lo que excluiré `Mg` (con VIF más
+alto).
 
 ``` r
 env_selec3 <- bci_env_grid %>%
   select(
     heterogeneidad_ambiental,
     riqueza_global,
+    UTM.EW,
     Al, Cu, Fe, Mn, P, Zn, N, N.min., pH) %>% 
   st_drop_geometry
 mi_fam_hel_rda_selec3 <- rda(mi_fam_hel ~ ., env_selec3)
 vif.cca(mi_fam_hel_rda_selec3)
+```
+
+    ## heterogeneidad_ambiental           riqueza_global                   UTM.EW 
+    ##                 1.758323                 2.194698                26.565965 
+    ##                       Al                       Cu                       Fe 
+    ##                 4.461413                 7.921516                 5.702132 
+    ##                       Mn                        P                       Zn 
+    ##                 6.574945                 2.918408                15.211183 
+    ##                        N                   N.min.                       pH 
+    ##                 5.146690                10.145388                 5.500391
+
+``` r
+plot(mi_fam_hel_rda_selec3,
+     scaling = 2,
+     display = c("sp", "lc", "cn"),
+     main = "Triplot de RDA especies ~ var. selec3, escalamiento 2"
+)
+```
+
+![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+
+Finalmente, la coordenada `UTM.EW` tiene un alto valor VIF, por lo que
+es preferible excluirla; su retiro mejorará los VIF de las demás
+variables, como por ejemplo `Zn` y `N.min.`.
+
+``` r
+env_selec4 <- bci_env_grid %>%
+  select(
+    heterogeneidad_ambiental,
+    riqueza_global,
+    Al, Cu, Fe, Mn, P, Zn, N, N.min., pH) %>% 
+  st_drop_geometry
+mi_fam_hel_rda_selec4 <- rda(mi_fam_hel ~ ., env_selec4)
+vif.cca(mi_fam_hel_rda_selec4)
 ```
 
     ## heterogeneidad_ambiental           riqueza_global                       Al 
@@ -677,28 +751,34 @@ vif.cca(mi_fam_hel_rda_selec3)
     ##                   N.min.                       pH 
     ##                 5.532047                 5.087608
 
-Las variables `Fe` y `Zn` ahora presentan valores VIF aceptables.
-Conservar la variable zinc es importante desde un punto de vista
-ecológico, puesto que el zinc participa en la síntesis de proteínas de
-las plantas.
+``` r
+plot(mi_fam_hel_rda_selec4,
+     scaling = 2,
+     display = c("sp", "lc", "cn"),
+     main = "Triplot de RDA especies ~ var. selec4, escalamiento 2"
+)
+```
 
-En fin, es todo un arte la selección interactiva de variables; si este
-enfoque te parece complejo o arbitrario, hay alternativas
+![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
+Las variables `N.min.` y `Zn` ahora presentan valores VIF aceptables.
+Habrás notado que es todo un arte la selección interactiva de variables;
+si este enfoque te parece complejo o arbitrario, hay alternativas
 semiautomáticas. Tal como comenté anteriormente, es posible localizar
 modelos de manera algorítmica usando la función `step` (y otros métodos
-de la misma función), ahorrando algunos pasos, pero su desarrollo supera
-el alcance de esta guía. Considero válido (y oportuno) desde el punto de
-vista didáctico, buscar variables de manera interactiva, puesto que la
-selección debe estar controlada por el criterio ecológico y humano, más
-que por el meramente numérico.
+de la misma función, aunque en `{vegan}` se usa `ordistep`), ahorrando
+algunos pasos, pero su desarrollo supera el alcance de esta guía.
+Considero válido (y oportuno) buscar variables de manera interactiva,
+puesto que la selección debe estar controlada por el criterio ecológico
+y humano, más que por el meramente numérico.
 
 ``` r
-summary(mi_fam_hel_rda_selec3)
+summary(mi_fam_hel_rda_selec4)
 ```
 
     ## 
     ## Call:
-    ## rda(formula = mi_fam_hel ~ heterogeneidad_ambiental + riqueza_global +      Al + Cu + Fe + Mn + P + Zn + N + N.min. + pH, data = env_selec3) 
+    ## rda(formula = mi_fam_hel ~ heterogeneidad_ambiental + riqueza_global +      Al + Cu + Fe + Mn + P + Zn + N + N.min. + pH, data = env_selec4) 
     ## 
     ## Partitioning of variance:
     ##               Inertia Proportion
@@ -914,75 +994,75 @@ summary(mi_fam_hel_rda_selec3)
     ## pH                        0.086628
 
 ``` r
-RsquareAdj(mi_fam_hel_rda_selec3)$adj.r.squared
+RsquareAdj(mi_fam_hel_rda_selec4)$adj.r.squared
 ```
 
     ## [1] 0.4597308
 
-Triplot
+Triplot, pero ahora con las flechas para las especies.
 
 Escalamiento 1:
 
 ``` r
-plot(mi_fam_hel_rda_selec3,
+plot(mi_fam_hel_rda_selec4,
      scaling = 1,
      display = c("sp", "lc", "cn"),
-     main = "Triplot de RDA especies ~ var. selec3, escalamiento 1"
+     main = "Triplot de RDA especies ~ var. selec4, escalamiento 1"
 )
-mi_fam_hel_rda_selec3_sc1 <-
-  scores(mi_fam_hel_rda_selec3,
+mi_fam_hel_rda_selec4_sc1 <-
+  scores(mi_fam_hel_rda_selec4,
          choices = 1:2,
          scaling = 1,
          display = "sp"
   )
 arrows(0, 0,
-       mi_fam_hel_rda_selec3_sc1[, 1] * 0.9,
-       mi_fam_hel_rda_selec3_sc1[, 2] * 0.9,
+       mi_fam_hel_rda_selec4_sc1[, 1] * 0.9,
+       mi_fam_hel_rda_selec4_sc1[, 2] * 0.9,
        length = 0,
        lty = 1,
        col = "red"
 )
 ```
 
-![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 Escalamiento 2
 
 ``` r
-plot(mi_fam_hel_rda_selec3,
+plot(mi_fam_hel_rda_selec4,
      scaling = 2,
      display = c("sp", "lc", "cn"),
-     main = "Triplot de RDA especies ~ var. selec3, escalamiento 2"
+     main = "Triplot de RDA especies ~ var. selec4, escalamiento 2"
 )
-mi_fam_hel_rda_selec3_sc2 <-
-  scores(mi_fam_hel_rda_selec3,
+mi_fam_hel_rda_selec4_sc2 <-
+  scores(mi_fam_hel_rda_selec4,
          scaling = 2,
          choices = 1:2,
          display = "sp"
   )
 arrows(0, 0,
-       mi_fam_hel_rda_selec3_sc2[, 1] * 0.9,
-       mi_fam_hel_rda_selec3_sc2[, 2] * 0.9,
+       mi_fam_hel_rda_selec4_sc2[, 1] * 0.9,
+       mi_fam_hel_rda_selec4_sc2[, 2] * 0.9,
        length = 0,
        lty = 1,
        col = "red"
 )
 ```
 
-![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 ### Análisis de correspondencia canónica (CCA)
 
 #### Ejemplo usando las matriz ambiental con variables seleccionadas:
 
 ``` r
-mi_fam_cca_selec3 <- cca(mi_fam ~ ., env_selec3)
-summary(mi_fam_cca_selec3)
+mi_fam_cca_selec4 <- cca(mi_fam ~ ., env_selec4)
+summary(mi_fam_cca_selec4)
 ```
 
     ## 
     ## Call:
-    ## cca(formula = mi_fam ~ heterogeneidad_ambiental + riqueza_global +      Al + Cu + Fe + Mn + P + Zn + N + N.min. + pH, data = env_selec3) 
+    ## cca(formula = mi_fam ~ heterogeneidad_ambiental + riqueza_global +      Al + Cu + Fe + Mn + P + Zn + N + N.min. + pH, data = env_selec4) 
     ## 
     ## Partitioning of scaled Chi-square:
     ##               Inertia Proportion
@@ -1189,38 +1269,38 @@ summary(mi_fam_cca_selec3)
     ## pH                        0.07466
 
 ``` r
-RsquareAdj(mi_fam_cca_selec3)
+RsquareAdj(mi_fam_cca_selec4)
 ```
 
     ## $r.squared
     ## [1] 0.5549217
     ## 
     ## $adj.r.squared
-    ## [1] 0.4271799
+    ## [1] 0.4270587
 
 Escalamiento 1
 
 ``` r
-plot(mi_fam_cca_selec3,
+plot(mi_fam_cca_selec4,
      scaling = 1,
      display = c("sp", "lc", "cn"),
-     main = "Triplot de CCA especies ~ var. selec3, escalamiento 1"
+     main = "Triplot de CCA especies ~ var. selec4, escalamiento 1"
 )
 ```
 
-![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 Escalamiento 2
 
 ``` r
-plot(mi_fam_cca_selec3,
+plot(mi_fam_cca_selec4,
      scaling = 2,
      display = c("sp", "lc", "cn"),
-     main = "Triplot de CCA especies ~ var. selec3, escalamiento 2"
+     main = "Triplot de CCA especies ~ var. selec4, escalamiento 2"
 )
 ```
 
-![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 Excluyendo especies con abundancia menor a 100
     individuos
@@ -1249,13 +1329,13 @@ setdiff(colnames(mi_fam), colnames(mi_fam_no_raras))
     ## [1] "Cedrodor" "Guargran" "Poutfoss" "Poutstip" "Rauvlitt" "Thevahou"
 
 ``` r
-mi_fam_no_raras_cca_selec3 <- cca(mi_fam_no_raras ~ ., env_selec3)
-summary(mi_fam_no_raras_cca_selec3)
+mi_fam_no_raras_cca_selec4 <- cca(mi_fam_no_raras ~ ., env_selec4)
+summary(mi_fam_no_raras_cca_selec4)
 ```
 
     ## 
     ## Call:
-    ## cca(formula = mi_fam_no_raras ~ heterogeneidad_ambiental + riqueza_global +      Al + Cu + Fe + Mn + P + Zn + N + N.min. + pH, data = env_selec3) 
+    ## cca(formula = mi_fam_no_raras ~ heterogeneidad_ambiental + riqueza_global +      Al + Cu + Fe + Mn + P + Zn + N + N.min. + pH, data = env_selec4) 
     ## 
     ## Partitioning of scaled Chi-square:
     ##               Inertia Proportion
@@ -1452,35 +1532,35 @@ summary(mi_fam_no_raras_cca_selec3)
     ## pH                       -0.12448
 
 ``` r
-RsquareAdj(mi_fam_no_raras_cca_selec3)
+RsquareAdj(mi_fam_no_raras_cca_selec4)
 ```
 
     ## $r.squared
     ## [1] 0.623665
     ## 
     ## $adj.r.squared
-    ## [1] 0.516884
+    ## [1] 0.5158976
 
 Escalamiento 1
 
 ``` r
-plot(mi_fam_no_raras_cca_selec3,
+plot(mi_fam_no_raras_cca_selec4,
      scaling = 1,
      display = c("sp", "lc", "cn"),
-     main = "Triplot de CCA especies no raras ~ var. selec3, escalamiento 1"
+     main = "Triplot de CCA especies no raras ~ var. selec4, escalamiento 1"
 )
 ```
 
-![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
+![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
 
 Escalamiento 2
 
 ``` r
-plot(mi_fam_no_raras_cca_selec3,
+plot(mi_fam_no_raras_cca_selec4,
      scaling = 2,
      display = c("sp", "lc", "cn"),
-     main = "Triplot de CCA especies no raras ~ var. selec3, escalamiento 2"
+     main = "Triplot de CCA especies no raras ~ var. selec4, escalamiento 2"
 )
 ```
 
-![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
