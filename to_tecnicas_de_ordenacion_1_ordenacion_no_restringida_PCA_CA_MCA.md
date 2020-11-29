@@ -161,15 +161,15 @@ comunidad, y sólo en ella. En el segundo caso, las tendencias detectadas
 en un conjunto de datos se asocian a otro conjunto, por ejemplo, si
 buscamos tendencias en una matriz de comunidad pero restringiéndolas a
 una matriz ambiental. En este script me concentraré en la ordenación no
-restringidao simple.
+restringida o simple.
 
-Las principales técnicas de ordenación no restringidas son análisis de
-componentes principales o PCA (siglas de *Principal Components
-Analysis*), análisis de correspondencia o CA (*Correspondence
-Analysis*), análisis de correspondencia múltiple o MCA (*Multiple
-Correspondence Analysis*), análisis de coordenadas principales o PCoA
-(*Principal Coordinates Analysis*) y escalamiento multidimensional no
-métrico o NMDS (*Non-metric Multidimensional Scaling*). Salvo el NMDS,
+Las principales técnicas de ordenación no restringida son análisis de
+componentes principales o PCA (siglas de *principal components
+analysis*), análisis de correspondencia o CA (*correspondence
+analysis*), análisis de correspondencia múltiple o MCA (*multiple
+correspondence analysis*), análisis de coordenadas principales o PCoA
+(*principal coordinates analysis*) y escalamiento multidimensional no
+métrico o NMDS (*non-metric multidimensional scaling*). Salvo el NMDS,
 todas estas técnicas se basan en la extracción de los vectores propios
 (*eigenvectors*) de una matriz de asociación. Explicaré PCA, CA y PCoA a
 continuación.
@@ -821,11 +821,11 @@ biplot(
     ## B       0.86077 -0.50900 0.6025  0.001 ***
     ## Ca      0.65508 -0.75556 0.5406  0.001 ***
     ## Cu      0.49245 -0.87034 0.3258  0.001 ***
-    ## Fe      0.73288 -0.68036 0.1713  0.014 *  
+    ## Fe      0.73288 -0.68036 0.1713  0.013 *  
     ## K       0.78293 -0.62211 0.5754  0.001 ***
     ## Mg      0.65459 -0.75598 0.4447  0.001 ***
-    ## Mn      0.36991 -0.92907 0.2694  0.001 ***
-    ## P       0.42924  0.90319 0.1753  0.016 *  
+    ## Mn      0.36991 -0.92907 0.2694  0.003 ** 
+    ## P       0.42924  0.90319 0.1753  0.017 *  
     ## Zn      0.78392 -0.62087 0.5866  0.001 ***
     ## N       0.93046 -0.36638 0.3305  0.001 ***
     ## N.min.  0.88037 -0.47429 0.4024  0.001 ***
@@ -857,39 +857,39 @@ env_num <- bci_env_grid %>%
     ## ***VECTORS
     ## 
     ##                                 PC1      PC2     r2 Pr(>r)    
-    ## heterogeneidad_ambiental    0.86198  0.50694 0.1362  0.033 *  
+    ## heterogeneidad_ambiental    0.86198  0.50694 0.1362  0.036 *  
     ## UTM.EW                      0.91300 -0.40797 0.6577  0.001 ***
-    ## UTM.NS                     -0.11834  0.99297 0.0687  0.199    
-    ## geomorf_llanura_pct         0.61758  0.78651 0.0167  0.667    
-    ## geomorf_pico_pct           -0.44921  0.89343 0.0789  0.152    
-    ## geomorf_interfluvio_pct    -0.87619 -0.48197 0.0037  0.917    
-    ## geomorf_hombrera_pct       -0.13181  0.99128 0.0728  0.183    
-    ## geomorf_espolón/gajo_pct   -0.59521 -0.80357 0.0553  0.268    
-    ## geomorf_vertiente_pct      -0.19817 -0.98017 0.0077  0.828    
-    ## geomorf_vaguada_pct        -0.63948 -0.76881 0.0933  0.117    
+    ## UTM.NS                     -0.11834  0.99297 0.0687  0.185    
+    ## geomorf_llanura_pct         0.61758  0.78651 0.0167  0.677    
+    ## geomorf_pico_pct           -0.44921  0.89343 0.0789  0.159    
+    ## geomorf_interfluvio_pct    -0.87619 -0.48197 0.0037  0.913    
+    ## geomorf_hombrera_pct       -0.13181  0.99128 0.0728  0.164    
+    ## geomorf_espolón/gajo_pct   -0.59521 -0.80357 0.0553  0.266    
+    ## geomorf_vertiente_pct      -0.19817 -0.98017 0.0077  0.831    
+    ## geomorf_vaguada_pct        -0.63948 -0.76881 0.0933  0.110    
     ## geomorf_piedemonte_pct      0.86414  0.50325 0.0384  0.405    
-    ## geomorf_valle_pct          -0.99402  0.10922 0.0588  0.248    
-    ## geomorf_sima_pct           -0.99821  0.05982 0.0059  0.865    
+    ## geomorf_valle_pct          -0.99402  0.10922 0.0588  0.264    
+    ## geomorf_sima_pct           -0.99821  0.05982 0.0059  0.861    
     ## Al                         -0.81128  0.58466 0.3031  0.001 ***
     ## B                           0.86077 -0.50900 0.6025  0.001 ***
     ## Ca                          0.65508 -0.75556 0.5406  0.001 ***
     ## Cu                          0.49245 -0.87034 0.3258  0.001 ***
-    ## Fe                          0.73288 -0.68036 0.1713  0.008 ** 
+    ## Fe                          0.73288 -0.68036 0.1713  0.013 *  
     ## K                           0.78293 -0.62211 0.5754  0.001 ***
     ## Mg                          0.65459 -0.75598 0.4447  0.001 ***
     ## Mn                          0.36991 -0.92907 0.2694  0.001 ***
-    ## P                           0.42924  0.90319 0.1753  0.012 *  
+    ## P                           0.42924  0.90319 0.1753  0.017 *  
     ## Zn                          0.78392 -0.62087 0.5866  0.001 ***
     ## N                           0.93046 -0.36638 0.3305  0.001 ***
     ## N.min.                      0.88037 -0.47429 0.4024  0.001 ***
     ## pH                          0.94949 -0.31378 0.6551  0.001 ***
-    ## elevacion_media             0.36513  0.93096 0.0949  0.101    
-    ## pendiente_media            -0.98456  0.17506 0.0052  0.875    
-    ## orientacion_media           0.73513 -0.67792 0.0546  0.274    
-    ## curvatura_perfil_media     -0.99920 -0.03994 0.0032  0.941    
-    ## curvatura_tangencial_media  0.90401  0.42752 0.0379  0.387    
-    ## abundancia_global          -0.93002 -0.36752 0.0460  0.317    
-    ## riqueza_global             -0.99599 -0.08942 0.1506  0.018 *  
+    ## elevacion_media             0.36513  0.93096 0.0949  0.118    
+    ## pendiente_media            -0.98456  0.17506 0.0052  0.884    
+    ## orientacion_media           0.73513 -0.67792 0.0546  0.269    
+    ## curvatura_perfil_media     -0.99920 -0.03994 0.0032  0.930    
+    ## curvatura_tangencial_media  0.90401  0.42752 0.0379  0.408    
+    ## abundancia_global          -0.93002 -0.36752 0.0460  0.312    
+    ## riqueza_global             -0.99599 -0.08942 0.1506  0.022 *  
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## Permutation: free
@@ -1482,39 +1482,39 @@ text(
     ## ***VECTORS
     ## 
     ##                                Dim1     Dim2     r2 Pr(>r)    
-    ## heterogeneidad_ambiental    0.58373  0.81195 0.1978  0.014 *  
+    ## heterogeneidad_ambiental    0.58373  0.81195 0.1978  0.004 ** 
     ## UTM.EW                      0.95627  0.29248 0.4791  0.001 ***
-    ## UTM.NS                      0.18427 -0.98288 0.3400  0.001 ***
-    ## geomorf_llanura_pct         0.35884 -0.93340 0.0439  0.375    
-    ## geomorf_pico_pct           -0.97236  0.23348 0.0239  0.662    
-    ## geomorf_interfluvio_pct    -0.51410  0.85773 0.0970  0.097 .  
-    ## geomorf_hombrera_pct       -0.12318  0.99238 0.0069  0.866    
-    ## geomorf_espolón/gajo_pct   -0.52667  0.85007 0.1421  0.033 *  
-    ## geomorf_vertiente_pct       0.00003  1.00000 0.0056  0.865    
-    ## geomorf_vaguada_pct        -0.62778  0.77839 0.1435  0.029 *  
-    ## geomorf_piedemonte_pct      0.95163 -0.30726 0.0472  0.329    
-    ## geomorf_valle_pct          -0.98551  0.16961 0.1598  0.013 *  
-    ## geomorf_sima_pct           -0.88548 -0.46468 0.0333  0.479    
-    ## Al                         -0.94187 -0.33598 0.1730  0.014 *  
+    ## UTM.NS                      0.18427 -0.98288 0.3400  0.002 ** 
+    ## geomorf_llanura_pct         0.35884 -0.93340 0.0439  0.349    
+    ## geomorf_pico_pct           -0.97236  0.23348 0.0239  0.666    
+    ## geomorf_interfluvio_pct    -0.51410  0.85773 0.0970  0.079 .  
+    ## geomorf_hombrera_pct       -0.12318  0.99238 0.0069  0.833    
+    ## geomorf_espolón/gajo_pct   -0.52667  0.85007 0.1421  0.024 *  
+    ## geomorf_vertiente_pct       0.00003  1.00000 0.0056  0.878    
+    ## geomorf_vaguada_pct        -0.62778  0.77839 0.1435  0.033 *  
+    ## geomorf_piedemonte_pct      0.95163 -0.30726 0.0472  0.306    
+    ## geomorf_valle_pct          -0.98551  0.16961 0.1598  0.010 ** 
+    ## geomorf_sima_pct           -0.88548 -0.46468 0.0333  0.470    
+    ## Al                         -0.94187 -0.33598 0.1730  0.013 *  
     ## B                           0.96742  0.25317 0.3816  0.001 ***
-    ## Ca                          0.99726 -0.07392 0.1723  0.012 *  
-    ## Cu                          0.87163 -0.49016 0.1172  0.066 .  
-    ## Fe                          0.87856 -0.47764 0.1534  0.022 *  
-    ## K                           0.98752  0.15748 0.3106  0.002 ** 
-    ## Mg                          0.99857  0.05354 0.1180  0.052 .  
-    ## Mn                          0.62755 -0.77858 0.0392  0.381    
-    ## P                           0.64624  0.76313 0.0571  0.262    
+    ## Ca                          0.99726 -0.07392 0.1723  0.010 ** 
+    ## Cu                          0.87163 -0.49016 0.1172  0.062 .  
+    ## Fe                          0.87856 -0.47764 0.1534  0.019 *  
+    ## K                           0.98752  0.15748 0.3106  0.001 ***
+    ## Mg                          0.99857  0.05354 0.1180  0.042 *  
+    ## Mn                          0.62755 -0.77858 0.0392  0.383    
+    ## P                           0.64624  0.76313 0.0571  0.261    
     ## Zn                          0.99610  0.08828 0.2799  0.001 ***
-    ## N                           0.69428  0.71971 0.2753  0.003 ** 
+    ## N                           0.69428  0.71971 0.2753  0.002 ** 
     ## N.min.                      0.99939  0.03500 0.2799  0.001 ***
     ## pH                          0.99474  0.10248 0.4651  0.001 ***
     ## elevacion_media             0.33226 -0.94319 0.3092  0.002 ** 
-    ## pendiente_media            -0.22538  0.97427 0.0425  0.356    
-    ## orientacion_media           0.48992  0.87176 0.0209  0.573    
-    ## curvatura_perfil_media     -0.88516 -0.46528 0.0043  0.909    
-    ## curvatura_tangencial_media  0.79566 -0.60575 0.0593  0.242    
-    ## abundancia_global          -0.00374 -0.99999 0.1308  0.033 *  
-    ## riqueza_global             -0.93889 -0.34421 0.0608  0.226    
+    ## pendiente_media            -0.22538  0.97427 0.0425  0.339    
+    ## orientacion_media           0.48992  0.87176 0.0209  0.606    
+    ## curvatura_perfil_media     -0.88516 -0.46528 0.0043  0.917    
+    ## curvatura_tangencial_media  0.79566 -0.60575 0.0593  0.237    
+    ## abundancia_global          -0.00374 -0.99999 0.1308  0.039 *  
+    ## riqueza_global             -0.93889 -0.34421 0.0608  0.235    
     ## ---
     ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
     ## Permutation: free
