@@ -727,3 +727,92 @@ calcular_anchuras_siluetas <- function(mc_orig, distancias, cluster) {
   if(!silent) cat("\nSpecies arrows and the radius of the equilibrium circle are stretched by a factor of", mult.spe*fact.spe)
   if(!silent) cat("\nThe radius of the equilibrium circle is thus", (2/p)^0.5, "*", mult.spe, "*", fact.spe, "=", radius,"\n")
 }
+
+dind <- function(mc, nomsitios=NA){
+  require(vegan)
+  require(BiodiversityR)
+  require(fossil)
+  zz1 <- cbind(
+    ID=rownames(mc),
+    as.data.frame(
+      sapply(
+        c("richness",
+          "abundance",
+          "Shannon",
+          "Simpson",
+          "inverseSimpson",
+          "Logalpha",
+          "Berger",
+          "Jevenness",
+          "Eevenness" ),
+        function(x)
+          if(
+            package_version(packageVersion("BiodiversityR")) >
+            package_version("2.9-1"))
+            diversityresult(mc,index=x,method='each site', digits = 4) else
+              diversityresult(mc,index=x,method='s', digits = 4)
+      )
+    )
+  )
+  chao <- data.frame(ID=rownames(mc), `estimador Chao1`=sapply(rownames(mc), function(x) chao1(mc[x,], taxa.row = F)))
+  jack <- data.frame(ID=rownames(mc), `estimador Jackknife`=sapply(rownames(mc), function(x) jack1(mc[x,], taxa.row = F)))
+  zz2 <- Reduce(function(x, y) merge(x, y, all=TRUE), list(zz1, chao, jack))
+  # zz2 <- base::merge(zz, chao)
+  colnames(zz2)[2:ncol(zz2)] <- c('riqueza','abundancia','Shannon','Gini-Simpson','inverso de Simpson','Fisher-alpha o Logalpha','Berger-Parker','equidad de Pielou o J-evenness','equidad de Buzas-Gibson o E-evenness', 'estimador Chao1', 'estimador Jackknife')
+  if(!is.na(nomsitios)) colnames(zz2)[1] <- nomsitios
+  return(zz2)
+}
+
+alpha_div <- function(mc = mi_fam) {
+  # Tomado de: Borcard et al., 2018
+  library(vegan)
+  N0 <- specnumber(mc) # Riqueza de especies
+  H <- diversity(mc) # Entropía de Shanon, base e
+  Hb2 <- diversity(mc, base = 2) # Entropía de Shanon, base 2
+  N1 <- exp(H) # Número de diversidad Hill 1, base e. Num. de sp. abundantes
+  N1b2 <- 2^Hb2 # Número de diversidad de Hill 1, base 2.
+  N2 <- diversity(mc, "inv") # Inverso de Simpson, diversidad. Num. de sp. dominantes
+  J <- H / log(N0) # Equidad de Pielou
+  E10 <- N1 / N0 # Equidad de Shannon (ratio de Hill)
+  E20 <- N2 / N0 # Equidad de Simpson (ratio de Hill)
+  div <- data.frame(N0, H, Hb2, N1, N1b2, N2, J, E10, E20)
+  return(div)
+}
+
+estimacion_riqueza_chao <- function(mc, tamano_rarefaccion, n_raras = 10) {
+  library(RColorBrewer)
+  library(SpadeR)
+  library(iNEXT)
+  mc_lista <- sapply(
+    rownames(mc), function(x) as.numeric(mc[x,]), simplify = F)
+  asin_resumen_estimadores <- if(is.list(mc))
+    sapply(
+      mc_lista,
+      function(x) 
+        SpadeR::ChaoSpecies(x, datatype = 'abundance', k = n_raras, conf = 0.95),
+      simplify = F)
+  else
+    SpadeR::ChaoSpecies(mc, datatype = 'abundance', k = n_raras, conf = 0.95)
+   nasin_raref <- iNEXT::iNEXT(
+    if(is.list(mc)) mc_lista else mc,
+    q=0,
+    knots = 400,
+    datatype ="abundance",
+    endpoint = tamano_rarefaccion)
+  acumulacion_especies <- iNEXT::ggiNEXT(nasin_raref, type=1) +
+    theme_bw() +
+    theme(
+      text = element_text(size = 20),
+      panel.background = element_rect(fill = 'white', colour = 'black'),
+      panel.grid.major = element_line(colour = "grey", linetype = "dashed", size = 0.25)
+    ) +
+    ylab('Riqueza de especies') +
+    xlab('Número de individuos') +
+    scale_y_continuous(breaks = seq(0,80, length.out = 9)) +
+    scale_color_manual(values = brewer.pal(8, 'Set2')) +
+    scale_fill_manual(values = brewer.pal(8, 'Set2'))
+  return(list(
+    asintoticos_estimacion = asin_resumen_estimadores,
+    no_asintoticos_rarefaccion_extrapolacion = nasin_raref,
+    no_asintoticos_rarefaccion_extrapolacion_grafico = acumulacion_especies))
+}
