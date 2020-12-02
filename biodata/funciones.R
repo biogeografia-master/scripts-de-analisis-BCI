@@ -779,7 +779,7 @@ alpha_div <- function(mc = mi_fam) {
   return(div)
 }
 
-estimacion_riqueza_chao <- function(mc, tamano_rarefaccion, n_raras = 10) {
+estimacion_riqueza_chao <- function(mc, n_raras = 10) {
   library(RColorBrewer)
   library(SpadeR)
   library(iNEXT)
@@ -797,8 +797,7 @@ estimacion_riqueza_chao <- function(mc, tamano_rarefaccion, n_raras = 10) {
     if(is.list(mc)) mc_lista else mc,
     q=0,
     knots = 400,
-    datatype ="abundance",
-    endpoint = tamano_rarefaccion)
+    datatype ="abundance")
   acumulacion_especies <- iNEXT::ggiNEXT(nasin_raref, type=1) +
     theme_bw() +
     theme(

@@ -50,44 +50,61 @@ table(grupos_ward_k3)
 #' 
 #' ### La diversidad de especies como un único número
 #' 
-#' Usaré la notación *q* para designar el número de especies o riqueza de especies. Cualquier unidad de muestreo contiene un número determinado de individuos que pertenece a un cierto número de especies y, dado el hecho de que algunas especies son más raras que otras, es decir, son menos detectables, **el número total de especies de una unidad de muestreo o de un conjunto de unidades de muestreo, se incrementa al aumentar el área/volumen o el número de individuos muestreados**. Por lo tanto, la comparación de la riqueza de especies entre dos unidades de muestreo, la cual es un estimado del número de especies real, estará sesgada (Borcard et al., 2018).
+#' Usaré la notación *q* para designar el número de especies o riqueza de especies, y *n* para número de individuos, abundancia. Cualquier unidad de muestreo contiene un número determinado de individuos que pertenece a un cierto número de especies y, dado el hecho de que algunas especies son más raras que otras, es decir, son menos detectables, **el número total de especies de una unidad de muestreo o de un conjunto de unidades de muestreo, se incrementa al aumentar el área/volumen o el número de individuos muestreados**. Por lo tanto, comparar *q* entre dos unidades de muestreo, la cual es un estimado del número de especies real, estará sesgada (Borcard et al., 2018).
 #' 
 #' #### Riqueza de especies y rarefacción
 #' 
-#' Magurran (2004) distingue entre **densidad de especies**, que equivale al número de especies por unidad de área de colecta, y **riqueza numérica de especies**, que es el número de especies por número de individuos o por unidad de biomasa.
+#' Magurran (2004) distingue entre **densidad de especies**, que equivale al número de especies por unidad de área de colecta, y **riqueza numérica de especies**, que es el número de especies por número de individuos o por unidad de biomasa (*q/n*).
 #' 
-#' Para asegurar la comparabilidad entre sitios, se han propuesto distintos métodos. Uno es la rarefacción, propuesta originalmente por Sanders (1968) y estandarizada por Hurlbert (1971), que estima el número de especies en unidades de muestreo conteniendo el mismo número de individuos, usando datos no transformados; se basa, por lo tanto, en el concepto de riqueza numérica de especies. Es decir, se determina *q'* por unidad estándar de muestreo *n'* de un universo que contiene *q* especies, *n* individuos y *n<sub>i</sub>* individuos pertenecientes a *i* especies.
+#' Para asegurar la comparabilidad entre sitios, se han propuesto distintos métodos. Uno es la rarefacción, desarrollada originalmente por Sanders (1968) y estandarizada por Hurlbert (1971), que estima el número de especies en unidades de muestreo conteniendo el mismo número de individuos, usando datos no transformados; se basa, por lo tanto, en el concepto de riqueza numérica de especies. Es decir, se determina *q'* por unidad estándar de muestreo *n'* (elegida comúnmente como el número mínimo del conjunto de muestras) de un universo que contiene *q* especies, *n* individuos y *n<sub>i</sub>* individuos pertenecientes a *i* especies.
 #' 
 #' ![](rarefaccion.jpg)
 #' 
 #' #### Componentes de la diversidad de especies basada en abundancia: riqueza y equidad
 #' 
-#' Si asumimos que un sitio de muestreo es una variable cualitativa, y cada especies un "estado". Bajo esta lógica, la dispersión de esta variable se calcula usando las frecuencias relativas *p<sub>i</sub>* de los *q*-estados usando la conocida entropía de Shannon (1948):
+#' Asumamos que un sitio de muestreo es una variable cualitativa, y cada especie es un "estado". Bajo esta lógica, la dispersión de esta variable se calcula usando las frecuencias relativas *p<sub>i</sub>* de los *q*-estados usando la conocida **entropía de Shannon** o *H* (1948):
 #' 
 #' ![](shannon.jpg)
 #' 
-#' Desde el punto de vista ecológico, la entropía de Shannon tiene dos propiedades importantes: 1) Crece al aumentar la riqueza de especies *q*; 2) Crece con la uniformidad (=equidad o equitabilidad, es decir, qué tan bien repartida se encuentra la abundancia entre las especies). Para una *q* dada, la entropía de Shannon asume su valor máximo cuando todas las especies están igualmente representadas, y es equivalente al logaritmo de la riqueza:
+#' Desde el punto de vista ecológico, la **H** tiene dos propiedades importantes:
+#' 
+#' - Crece al aumentar la riqueza de especies *q*.
+#' - Crece con la uniformidad (=equidad o equitabilidad, es decir, qué tan bien repartida se encuentra la abundancia entre las especies).
+#' 
+#' Para una *q* dada, *H* asume su valor máximo (*H<sub>max</sub>*) cuando todas las especies están igualmente representadas, y es equivalente al logaritmo de la riqueza:
 #' 
 #' ![](shannon_max.jpg)
 #' 
+#' Un ejemplo ilustra lo anterior:
+#' 
+#' - Cinco especies, 55 individuos, abundancias desiguales:
+#' 
 foo1 <- c(25, 16, 9, 4, 1)
 diversity(foo1)
+#' 
+#' - Cinco especies, 55 individuos, abundancias homogéneas
+#' 
 foo2 <- c(11, 11, 11, 11, 11)
 diversity(foo2)
+log(5)
 #' 
-#' Por otra parte, la **equidad de Pielou** (1966) es la razón entre la entropía de Shannon y su valor máximo; también se le conoce como **equidad de Shannon**. La equidad de Pielou es estrechamente dependiente de la riqueza, pero es un índice muy usado en trabajos ecológicos:
+#' Otros índices miden exclusivamente la homogeneidad de la abundancia, a lo que se denomina equidad. Se trata de una de las componentes de la diversidad, y existen muchos índices "en el mercado" para medirla.
+#' 
+#' Uno de los más usados es la **equidad de Pielou** o *J* (1966), que es la razón entre la entropía de Shannon y su valor máximo; a la **equidad de Pielou** también se le conoce como **equidad de Shannon**.
 #'  
 #' ![](pielou.jpg)
 #'
-#' La equidad (en general, no sólo la medida por Pielou), se relaciona con la forma de los modelos de abundancia de especies, que son funciones ajustadas a los gráficos a los gráficos rango-abundancia (horizontal=especies por rango de abundancia, vertical=logaritmo de las abundancias). Los principales modelos son, ordenados de menor a mayor equidad representada, geométrico, log, lognormal y de la vara quebrada. Los modelos de abundancia de especies se pueden consultar mediante la función `radfit` de `{vegan}`. La mayoría de estos modelos son realmente modelos lineales generalizados.
+#' Teóricamente, **este índice sólo debería aumentar cuando aumenta la homogeneidad de la abundancia**. Sin embargo, *J* se ha determinado que *J* también se incrementa al aumentar la riqueza; por lo tanto, se trata de un índice sesgado. No obstante, *J* es muy usado en trabajos ecológicos, por lo que es apropiado considerarlo como referente básico.
 #' 
-#' Otra medida común es el índice de concentración de Simpson (1949), λ, que equivale a la probabilidad de que dos individuos elegidos al azar pertenezcan a la misma especie.
+#' Todos los **índices de equidad se relacionan con la forma de los modelos de abundancia de especies**, que son funciones ajustadas a las distribuciones de abundancia. Estos modelos se construyen a partir de gráficos rango-abundancia, donde la horizontal representa las especies ordenadas de mayor a menor por rango de abundancia, y la vertical representa el logaritmo de las abundancias. Ordenados de menor a mayor equidad representada, los principales modelos son: geométrico, log, lognormal y de la vara quebrada. Los modelos de abundancia de especies se pueden consultar mediante la función `radfit` de `{vegan}`. La mayoría de estos modelos son realmente modelos lineales generalizados.
+#' 
+#' Otra medida común en trabajos de ecología numérica, pero que es inversa o contraria a la equidad, es el denominado **índice de concentración de Simpson** (1949), representado por *λ*, que equivale a la probabilidad de que dos individuos elegidos al azar pertenezcan a la misma especie.
 #' 
 #' ![](simpson.jpg)
 #' 
-#' Este valor aumenta con la dominancia (de ahí su nombre "índice de concentración"), por lo que realmente no mide diversidad, sino más bien dominancia. Para transformarlo en un índice de diversidad, se utiliza D=1-λ, que es el índice de Gini-Simpson, o D=1/λ, que es el inverso de Simpson (**menos sensible a cambios de la abundancia en las especies muy comunes**).
+#' Este valor aumenta con la dominancia, por lo que realmente no mide diversidad, sino más bien inequidad o concentración. Para transformarlo en un índice de diversidad, se utiliza el índice de Gini-Simpson *D=1-λ*, o el inverso de Simpson *D=1/λ*. **Este último es menos sensible a cambios de la abundancia en las especies muy comunes**.
 #' 
-#' La riqueza de especies, la entropía de Shannon y la **diversidad** de Simpson son realmente casos especiales de la entropía generalizada de Renyi (1961):
+#' La riqueza de especies (*q*), la entropía de Shannon (*H*), la equidad de Pielou (*J*) y el inverso de Simpson (*1/λ*) son realmente casos especiales de la entropía generalizada de Renyi (1961):
 #' 
 #' ![](renyi.jpg)
 #' 
@@ -95,18 +112,28 @@ diversity(foo2)
 #' 
 #' ![](hill.jpg)
 #' 
-#' Las tres primeras entropias de Renyi (*H<sub>a</sub>*), donde *a=0, 1 y 2*, y los correspondientes números de diversidad de Hill, (*N<sub>a</sub>*), son realmente índices que ya conocemos: *H<sub>0</sub>=H<sub>max</sub>=log(q)*, *H<sub>1</sub>=H=entropia de Shannon*, *H<sub>2</sub>=-log(λ)*. Por otra parte, los tres primeros números de diversidad de Hill, *N<sub>0</sub>=q*, simplemente la riqueza de especies, *N<sub>1</sub>=exp(H)*, número de especies abundantes, y *N<sub>1</sub>=1/λ*, inverso de Simpson. De lo anterior se deriva que, **a medida que se incrementa *a*, se le da mayor importancia a la o las especies más abundantes**.
+#' Las tres primeras entropias de Renyi (*H<sub>a</sub>*), donde *a=0, 1 y 2*, y los correspondientes números de diversidad de Hill, (*N<sub>a</sub>*), son realmente índices que ya conocemos: *H<sub>0</sub>=H<sub>max</sub>=log(q)*, *H<sub>1</sub>=H=entropia de Shannon*, *H<sub>2</sub>=-log(λ)*.
+#' 
+#' Por otra parte, los tres primeros números de diversidad de Hill tienen significados que conocemos: *N<sub>0</sub>=q*, simplemente la riqueza de especies, *N<sub>1</sub>=exp(H)*, número de especies abundantes, y *N<sub>1</sub>=1/λ*, inverso de Simpson. De lo anterior se deriva que, **a medida que se incrementa *a*, se le da mayor importancia a la o las especies más abundantes**.
 #' 
 #' ![](tres_entro_renyi_hill_div_num.jpg) <br> 
 #' > Según Borcard et al., 2018.
 #' 
-#' Bajo esta notación, el índice de equidad de Pielou (o equidad de Shannon) equivale a *J=H<sub>1</sub>/H<sub>0</sub>*, que es a fin de cuentas una ratio. Hill propuso también otras ratios: *E<sub>1</sub>=N<sub>1</sub>/N<sub>0</sub>* a la cual el propio Hill denominó como su versión de la equidad de Shannon y *E<sub>2</sub>=N<sub>2</sub>/N<sub>0</sub>*. Por lo tanto, Hill no sólo propuso números de diversidad, sino también ratios.
+#' Bajo esta notación:
 #' 
-#' Los números de diversidad y las ratios de Hill son menos sensibles a las matrices de comunidad con fuerte dominancia, y producen los denominados "números equivalentes". Se pueden interpretar como "el número de elementos igualmente probables (individuos, especies, etc.) necesarios para producir el valor observado del índice de diversidad" (Ellison, 2010, modificado por Jost, 2007). Además, **los números de diversidad de Hill son preferibles para la interpretación a través de modelos lineales, porque tienen mayor probabilidad de estar relacionados linealmente con variables ambientales**.
+#' - La entropía 2 de Renyi es la equidad de Pielou (denominada también equidad de Shannon) equivale a *J=H<sub>1</sub>/H<sub>0</sub>*, que es a fin de cuentas una ratio.
 #' 
-#' **Estas afirmaciones tienen implicaciones muy importantes desde el punto de vista ecológico, puesto que tus datos podrían mostrar tendencias antes los números de Hill y no necesariamente con la entropia de Shannon o el clásico índice de Simpson**.
+#' Usando la misma aproximación basada en ratios, Hill propuso también otras que, a diferencia *J*, no están afectadas por la riqueza (es decir, no sólo propuso los números de diversidad, sino también ratios):
 #' 
-#' **Índices**
+#' - *E<sub>1</sub>=N<sub>1</sub>/N<sub>0</sub>* a la cual el propio Hill denominó como su versión de la **equidad de Shannon** y
+#' 
+#' - *E<sub>2</sub>=N<sub>2</sub>/N<sub>0</sub>*, a la cual Hill denominó como su versión de la **equidad de Simpson**.
+#' 
+#' Los números de diversidad y las ratios de Hill son menos sensibles a las matrices de comunidad con fuerte dominancia, y producen los denominados "números equivalentes". Se pueden interpretar como **"el número de elementos igualmente probables (individuos, especies, etc.) necesarios para producir el valor observado del índice de diversidad"** (Ellison, 2010, modificado por Jost, 2007). Además, los números de diversidad de Hill son preferibles para la interpretación a través de modelos lineales, porque **tienen mayor probabilidad de estar relacionados linealmente con variables ambientales**.
+#' 
+#' **Estas afirmaciones tienen implicaciones muy importantes desde el punto de vista ecológico, puesto que tus datos podrían reflejar patrones consistentes usando los números y las ratios de Hill, pero no necesariamente con la entropia de Shannon o el clásico índice de Simpson**.
+#' 
+#' **Índices, entropías, equidades, ratios**
 #' 
 (indices <- alpha_div(mi_fam))
 pairs(indices,
@@ -131,23 +158,23 @@ plot(mi_fam_mae)
 #' 
 #' **Rarefacción**
 #' 
-#' Riqueza por sitio
+#' Riqueza por sitios
 #' 
 riqueza <- specnumber(mi_fam)
 riqueza %>% sort
 #' 
-#' Sitios con riqueza máxima y mínima
+#' Sitios con riqueza mínima y máxima
 #' 
 riqueza[riqueza == min(riqueza)]
 riqueza[riqueza == max(riqueza)]
 range(riqueza)
 #' 
-#' Abundancia por sitio
+#' Abundancia por sitios
 #' 
 abundancia <- rowSums(mi_fam)
 abundancia %>% sort
 #' 
-#' Sitios con abundancia máxima y mínima
+#' Sitios con abundancias mínima y máxima
 #' 
 abundancia[abundancia == min(abundancia)]
 abundancia[abundancia == max(abundancia)]
@@ -172,7 +199,6 @@ riqueza[abundancia == max(abundancia)]
 #' Rarefacción a la abundancia más pequeña encontrada
 #' 
 riqueza_menor_abun <- rarefy(mi_fam, sample = rango_abun[1])
-# Compare ranking of observed and rarefied cores
 sort(riqueza)
 sort(round(riqueza_menor_abun))
 rarecurve(
@@ -186,6 +212,8 @@ rarecurve(
 )
 #' 
 #' ### Riqueza de especies, estimación y comparación, "completitud de muestra" (existe en el diccionario) (Chao y Chiu, 2016)
+#' 
+#' Aproximación básica:
 #' 
 specpool(mi_fam)
 specpool(mi_fam)[[1]]/specpool(mi_fam)*100
@@ -204,18 +232,22 @@ specpool(mi_fam)[[1]]/specpool(mi_fam)*100
 #'     - Basados en tamaño de la muestra
 #'     - Basados en "cobertura" o "completitud de muestra"
 #' 
-#' Matriz de comunidad combinada (todos los sitios forman uno)
+#' #### Enfoques asintóticos y no asintóticos aplicados a la matriz de comunidad combinada
+#' 
+#' Generar la matriz de comunidad combinada, en la que todos los sitios forman uno.
 #' 
 mi_fam_combinada <- colSums(mi_fam)
 mi_fam_combinada %>% sort
 mi_fam_combinada_chao <- estimacion_riqueza_chao(
   mc = mi_fam_combinada,
-  tamano_rarefaccion = 40000)
+  n_raras = 10)
 mi_fam_combinada_chao$asintoticos_estimacion
 mi_fam_combinada_chao$no_asintoticos_rarefaccion_extrapolacion
 mi_fam_combinada_chao$no_asintoticos_rarefaccion_extrapolacion_grafico
 #'
-#' Matriz de comunidad agrupada según Ward (tres grupos)
+#' #### Enfoques asintóticos y no asintóticos aplicados a una matriz de comunidad agrupada
+#' 
+#' #' Generar matriz de comunidad agrupada según el método de Ward (tres grupos), procedente de pasos previos (ver scripts de análisis de agrupamiento).
 #' 
 mi_fam_k3 <- mi_fam %>%
   mutate(g=grupos_ward_k3) %>%
@@ -226,7 +258,7 @@ mi_fam_k3 <- mi_fam %>%
 mi_fam_k3 %>% rowSums %>% sort
 mi_fam_k3_chao <- estimacion_riqueza_chao(
   mc = mi_fam_k3,
-  tamano_rarefaccion = 20000)
+  n_raras = 10)
 mi_fam_k3_chao$asintoticos_estimacion
 mi_fam_k3_chao$no_asintoticos_rarefaccion_extrapolacion
 mi_fam_k3_chao$no_asintoticos_rarefaccion_extrapolacion_grafico

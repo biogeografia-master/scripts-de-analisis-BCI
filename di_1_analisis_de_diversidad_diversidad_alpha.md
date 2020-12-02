@@ -59,14 +59,14 @@ library(RColorBrewer)
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ──────────────────────────────── tidyverse 1.2.1 ──
+    ## ── Attaching packages ─────────────────────────────── tidyverse 1.2.1 ──
 
     ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
     ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
     ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
     ## ✓ readr   1.3.1     ✓ forcats 0.4.0
 
-    ## ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::arrange()   masks plyr::arrange()
     ## x purrr::compact()   masks plyr::compact()
     ## x dplyr::count()     masks plyr::count()
@@ -206,30 +206,31 @@ número, dan un peso relativo diferenciado a dichos componentes.
 ### La diversidad de especies como un único número
 
 Usaré la notación *q* para designar el número de especies o riqueza de
-especies. Cualquier unidad de muestreo contiene un número determinado de
-individuos que pertenece a un cierto número de especies y, dado el hecho
-de que algunas especies son más raras que otras, es decir, son menos
-detectables, **el número total de especies de una unidad de muestreo o
-de un conjunto de unidades de muestreo, se incrementa al aumentar el
-área/volumen o el número de individuos muestreados**. Por lo tanto, la
-comparación de la riqueza de especies entre dos unidades de muestreo, la
-cual es un estimado del número de especies real, estará sesgada (Borcard
-et al., 2018).
+especies, y *n* para número de individuos, abundancia. Cualquier unidad
+de muestreo contiene un número determinado de individuos que pertenece a
+un cierto número de especies y, dado el hecho de que algunas especies
+son más raras que otras, es decir, son menos detectables, **el número
+total de especies de una unidad de muestreo o de un conjunto de unidades
+de muestreo, se incrementa al aumentar el área/volumen o el número de
+individuos muestreados**. Por lo tanto, comparar *q* entre dos unidades
+de muestreo, la cual es un estimado del número de especies real, estará
+sesgada (Borcard et al., 2018).
 
 #### Riqueza de especies y rarefacción
 
 Magurran (2004) distingue entre **densidad de especies**, que equivale
 al número de especies por unidad de área de colecta, y **riqueza
 numérica de especies**, que es el número de especies por número de
-individuos o por unidad de biomasa.
+individuos o por unidad de biomasa (*q/n*).
 
 Para asegurar la comparabilidad entre sitios, se han propuesto distintos
-métodos. Uno es la rarefacción, propuesta originalmente por Sanders
+métodos. Uno es la rarefacción, desarrollada originalmente por Sanders
 (1968) y estandarizada por Hurlbert (1971), que estima el número de
 especies en unidades de muestreo conteniendo el mismo número de
 individuos, usando datos no transformados; se basa, por lo tanto, en el
 concepto de riqueza numérica de especies. Es decir, se determina *q’*
-por unidad estándar de muestreo *n’* de un universo que contiene *q*
+por unidad estándar de muestreo *n’* (elegida comúnmente como el número
+mínimo del conjunto de muestras) de un universo que contiene *q*
 especies, *n* individuos y *n<sub>i</sub>* individuos pertenecientes a
 *i*
 especies.
@@ -238,22 +239,31 @@ especies.
 
 #### Componentes de la diversidad de especies basada en abundancia: riqueza y equidad
 
-Si asumimos que un sitio de muestreo es una variable cualitativa, y cada
-especies un “estado”. Bajo esta lógica, la dispersión de esta variable
+Asumamos que un sitio de muestreo es una variable cualitativa, y cada
+especie es un “estado”. Bajo esta lógica, la dispersión de esta variable
 se calcula usando las frecuencias relativas *p<sub>i</sub>* de los
-*q*-estados usando la conocida entropía de Shannon (1948):
+*q*-estados usando la conocida **entropía de Shannon** o *H* (1948):
 
 ![](shannon.jpg)
 
-Desde el punto de vista ecológico, la entropía de Shannon tiene dos
-propiedades importantes: 1) Crece al aumentar la riqueza de especies
-*q*; 2) Crece con la uniformidad (=equidad o equitabilidad, es decir,
-qué tan bien repartida se encuentra la abundancia entre las especies).
-Para una *q* dada, la entropía de Shannon asume su valor máximo cuando
+Desde el punto de vista ecológico, la **H** tiene dos propiedades
+importantes:
+
+  - Crece al aumentar la riqueza de especies *q*.
+  - Crece con la uniformidad (=equidad o equitabilidad, es decir, qué
+    tan bien repartida se encuentra la abundancia entre las especies).
+
+Para una *q* dada, *H* asume su valor máximo (*H<sub>max</sub>*) cuando
 todas las especies están igualmente representadas, y es equivalente al
 logaritmo de la riqueza:
 
 ![](shannon_max.jpg)
+
+Un ejemplo ilustra lo anterior:
+
+  - Cinco especies, 55 individuos, abundancias desiguales:
+
+<!-- end list -->
 
 ``` r
 foo1 <- c(25, 16, 9, 4, 1)
@@ -262,6 +272,10 @@ diversity(foo1)
 
     ## [1] 1.277269
 
+  - Cinco especies, 55 individuos, abundancias homogéneas
+
+<!-- end list -->
+
 ``` r
 foo2 <- c(11, 11, 11, 11, 11)
 diversity(foo2)
@@ -269,40 +283,55 @@ diversity(foo2)
 
     ## [1] 1.609438
 
-Por otra parte, la **equidad de Pielou** (1966) es la razón entre la
-entropía de Shannon y su valor máximo; también se le conoce como
-**equidad de Shannon**. La equidad de Pielou es estrechamente
-dependiente de la riqueza, pero es un índice muy usado en trabajos
-ecológicos:
+``` r
+log(5)
+```
+
+    ## [1] 1.609438
+
+Otros índices miden exclusivamente la homogeneidad de la abundancia, a
+lo que se denomina equidad. Se trata de una de las componentes de la
+diversidad, y existen muchos índices “en el mercado” para medirla.
+
+Uno de los más usados es la **equidad de Pielou** o *J* (1966), que es
+la razón entre la entropía de Shannon y su valor máximo; a la **equidad
+de Pielou** también se le conoce como **equidad de Shannon**.
 
 ![](pielou.jpg)
 
-La equidad (en general, no sólo la medida por Pielou), se relaciona con
-la forma de los modelos de abundancia de especies, que son funciones
-ajustadas a los gráficos a los gráficos rango-abundancia
-(horizontal=especies por rango de abundancia, vertical=logaritmo de las
-abundancias). Los principales modelos son, ordenados de menor a mayor
-equidad representada, geométrico, log, lognormal y de la vara quebrada.
-Los modelos de abundancia de especies se pueden consultar mediante la
-función `radfit` de `{vegan}`. La mayoría de estos modelos son realmente
-modelos lineales generalizados.
+Teóricamente, **este índice sólo debería aumentar cuando aumenta la
+homogeneidad de la abundancia**. Sin embargo, *J* se ha determinado que
+*J* también se incrementa al aumentar la riqueza; por lo tanto, se trata
+de un índice sesgado. No obstante, *J* es muy usado en trabajos
+ecológicos, por lo que es apropiado considerarlo como referente básico.
 
-Otra medida común es el índice de concentración de Simpson (1949), λ,
-que equivale a la probabilidad de que dos individuos elegidos al azar
-pertenezcan a la misma especie.
+Todos los **índices de equidad se relacionan con la forma de los modelos
+de abundancia de especies**, que son funciones ajustadas a las
+distribuciones de abundancia. Estos modelos se construyen a partir de
+gráficos rango-abundancia, donde la horizontal representa las especies
+ordenadas de mayor a menor por rango de abundancia, y la vertical
+representa el logaritmo de las abundancias. Ordenados de menor a mayor
+equidad representada, los principales modelos son: geométrico, log,
+lognormal y de la vara quebrada. Los modelos de abundancia de especies
+se pueden consultar mediante la función `radfit` de `{vegan}`. La
+mayoría de estos modelos son realmente modelos lineales generalizados.
+
+Otra medida común en trabajos de ecología numérica, pero que es inversa
+o contraria a la equidad, es el denominado **índice de concentración de
+Simpson** (1949), representado por *λ*, que equivale a la probabilidad
+de que dos individuos elegidos al azar pertenezcan a la misma especie.
 
 ![](simpson.jpg)
 
-Este valor aumenta con la dominancia (de ahí su nombre “índice de
-concentración”), por lo que realmente no mide diversidad, sino más bien
-dominancia. Para transformarlo en un índice de diversidad, se utiliza
-D=1-λ, que es el índice de Gini-Simpson, o D=1/λ, que es el inverso de
-Simpson (**menos sensible a cambios de la abundancia en las especies muy
-comunes**).
+Este valor aumenta con la dominancia, por lo que realmente no mide
+diversidad, sino más bien inequidad o concentración. Para transformarlo
+en un índice de diversidad, se utiliza el índice de Gini-Simpson
+*D=1-λ*, o el inverso de Simpson *D=1/λ*. **Este último es menos
+sensible a cambios de la abundancia en las especies muy comunes**.
 
-La riqueza de especies, la entropía de Shannon y la **diversidad** de
-Simpson son realmente casos especiales de la entropía generalizada de
-Renyi (1961):
+La riqueza de especies (*q*), la entropía de Shannon (*H*), la equidad
+de Pielou (*J*) y el inverso de Simpson (*1/λ*) son realmente casos
+especiales de la entropía generalizada de Renyi (1961):
 
 ![](renyi.jpg)
 
@@ -317,41 +346,52 @@ Las tres primeras entropias de Renyi (*H<sub>a</sub>*), donde *a=0, 1 y
 2*, y los correspondientes números de diversidad de Hill,
 (*N<sub>a</sub>*), son realmente índices que ya conocemos:
 *H<sub>0</sub>=H<sub>max</sub>=log(q)*, *H<sub>1</sub>=H=entropia de
-Shannon*, *H<sub>2</sub>=-log(λ)*. Por otra parte, los tres primeros
-números de diversidad de Hill, *N<sub>0</sub>=q*, simplemente la
-riqueza de especies, *N<sub>1</sub>=exp(H)*, número de especies
-abundantes, y *N<sub>1</sub>=1/λ*, inverso de Simpson. De lo anterior se
-deriva que, **a medida que se incrementa *a*, se le da mayor importancia
-a la o las especies más abundantes**.
+Shannon*, *H<sub>2</sub>=-log(λ)*.
+
+Por otra parte, los tres primeros números de diversidad de Hill tienen
+significados que conocemos: *N<sub>0</sub>=q*, simplemente la riqueza de
+especies, *N<sub>1</sub>=exp(H)*, número de especies abundantes, y
+*N<sub>1</sub>=1/λ*, inverso de Simpson. De lo anterior se deriva que,
+**a medida que se incrementa *a*, se le da mayor importancia a la o las
+especies más abundantes**.
 
 ![](tres_entro_renyi_hill_div_num.jpg) <br> \> Según Borcard et al.,
 2018.
 
-Bajo esta notación, el índice de equidad de Pielou (o equidad de
-Shannon) equivale a *J=H<sub>1</sub>/H<sub>0</sub>*, que es a fin de
-cuentas una ratio. Hill propuso también otras ratios:
-*E<sub>1</sub>=N<sub>1</sub>/N<sub>0</sub>* a la cual el propio Hill
-denominó como su versión de la equidad de Shannon y
-*E<sub>2</sub>=N<sub>2</sub>/N<sub>0</sub>*. Por lo tanto, Hill no sólo
-propuso números de diversidad, sino también ratios.
+Bajo esta notación:
+
+  - La entropía 2 de Renyi es la equidad de Pielou (denominada también
+    equidad de Shannon) equivale a *J=H<sub>1</sub>/H<sub>0</sub>*, que
+    es a fin de cuentas una ratio.
+
+Usando la misma aproximación basada en ratios, Hill propuso también
+otras que, a diferencia *J*, no están afectadas por la riqueza (es
+decir, no sólo propuso los números de diversidad, sino también ratios):
+
+  - *E<sub>1</sub>=N<sub>1</sub>/N<sub>0</sub>* a la cual el propio Hill
+    denominó como su versión de la **equidad de Shannon** y
+
+  - *E<sub>2</sub>=N<sub>2</sub>/N<sub>0</sub>*, a la cual Hill denominó
+    como su versión de la **equidad de Simpson**.
 
 Los números de diversidad y las ratios de Hill son menos sensibles a las
 matrices de comunidad con fuerte dominancia, y producen los denominados
-“números equivalentes”. Se pueden interpretar como “el número de
+“números equivalentes”. Se pueden interpretar como **“el número de
 elementos igualmente probables (individuos, especies, etc.) necesarios
-para producir el valor observado del índice de diversidad” (Ellison,
-2010, modificado por Jost, 2007). Además, **los números de diversidad de
+para producir el valor observado del índice de diversidad”** (Ellison,
+2010, modificado por Jost, 2007). Además, los números de diversidad de
 Hill son preferibles para la interpretación a través de modelos
-lineales, porque tienen mayor probabilidad de estar relacionados
+lineales, porque **tienen mayor probabilidad de estar relacionados
 linealmente con variables ambientales**.
 
 **Estas afirmaciones tienen implicaciones muy importantes desde el punto
-de vista ecológico, puesto que tus datos podrían mostrar tendencias
-antes los números de Hill y no necesariamente con la entropia de Shannon
-o el clásico índice de
-    Simpson**.
+de vista ecológico, puesto que tus datos podrían reflejar patrones
+consistentes usando los números y las ratios de Hill, pero no
+necesariamente con la entropia de Shannon o el clásico índice de
+Simpson**.
 
-**Índices**
+**Índices, entropías, equidades,
+    ratios**
 
 ``` r
 (indices <- alpha_div(mi_fam))
@@ -468,7 +508,7 @@ pairs(indices,
       main = "Pearson Correlation Matrix")
 ```
 
-![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ``` r
 indices_env <- bind_cols(
@@ -515,7 +555,7 @@ ezCorM(indices_env, r_size_lims = c(3,5), label_size = 4)
     ## `geom_smooth()` using formula 'y ~ x'
     ## `geom_smooth()` using formula 'y ~ x'
 
-![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-5-2.png)<!-- -->
+![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-6-2.png)<!-- -->
 
 **Modelos de abundancia de especies**
 
@@ -551,11 +591,11 @@ mi_fam_mae <- radfit(mi_fam)
 plot(mi_fam_mae)
 ```
 
-![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 **Rarefacción**
 
-Riqueza por sitio
+Riqueza por sitios
 
 ``` r
 riqueza <- specnumber(mi_fam)
@@ -567,7 +607,7 @@ riqueza %>% sort
     ## 46 47  1  3  4 11 12 15 18 20 21 25 29 30 32 33 41 48 50 14 23 28 42 44  5 
     ## 11 11 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 12 13 13 13 13 13 14
 
-Sitios con riqueza máxima y mínima
+Sitios con riqueza mínima y máxima
 
 ``` r
 riqueza[riqueza == min(riqueza)]
@@ -589,7 +629,7 @@ range(riqueza)
 
     ## [1]  8 14
 
-Abundancia por sitio
+Abundancia por sitios
 
 ``` r
 abundancia <- rowSums(mi_fam)
@@ -603,7 +643,7 @@ abundancia %>% sort
     ##  31  30  23  50  35  25  39  34  40  45  33  44  48  49 
     ## 432 459 491 494 531 551 555 581 593 609 610 684 724 745
 
-Sitios con abundancia máxima y mínima
+Sitios con abundancias mínima y máxima
 
 ``` r
 abundancia[abundancia == min(abundancia)]
@@ -665,7 +705,6 @@ Rarefacción a la abundancia más pequeña encontrada
 
 ``` r
 riqueza_menor_abun <- rarefy(mi_fam, sample = rango_abun[1])
-# Compare ranking of observed and rarefied cores
 sort(riqueza)
 ```
 
@@ -695,9 +734,12 @@ rarecurve(
 )
 ```
 
-![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ### Riqueza de especies, estimación y comparación, “completitud de muestra” (existe en el diccionario) (Chao y Chiu, 2016)
+
+Aproximación
+    básica:
 
 ``` r
 specpool(mi_fam)
@@ -727,9 +769,13 @@ Lista comprensiva de métodos (incluyendo recientes):
   - **Enfoques no asintóticos. Se utilizan para hacer rarefacción y
     extrapolación**:
       - Basados en tamaño de la muestra
-      - Basados en “cobertura” o “completitud de muestra”
+      - Basados en “cobertura” o “completitud de
+muestra”
 
-Matriz de comunidad combinada (todos los sitios forman uno)
+#### Enfoques asintóticos y no asintóticos aplicados a la matriz de comunidad combinada
+
+Generar la matriz de comunidad combinada, en la que todos los sitios
+forman uno.
 
 ``` r
 mi_fam_combinada <- colSums(mi_fam)
@@ -752,7 +798,7 @@ mi_fam_combinada %>% sort
 ``` r
 mi_fam_combinada_chao <- estimacion_riqueza_chao(
   mc = mi_fam_combinada,
-  tamano_rarefaccion = 40000)
+  n_raras = 10)
 mi_fam_combinada_chao$asintoticos_estimacion
 ```
 
@@ -825,17 +871,17 @@ mi_fam_combinada_chao$no_asintoticos_rarefaccion_extrapolacion
     ## 
     ## $iNextEst: diversity estimates with rarefied and extrapolated samples.
     ##         m       method order     qD qD.LCL qD.UCL    SC SC.LCL SC.UCL
-    ## 1       1 interpolated     0  1.000  1.000  1.000 0.374  0.367   0.38
-    ## 100  9213 interpolated     0 15.375 14.592 16.158 1.000  1.000   1.00
-    ## 200 18426     observed     0 16.000 14.865 17.135 1.000  1.000   1.00
-    ## 300 29159 extrapolated     0 16.000 14.630 17.370 1.000  1.000   1.00
-    ## 400 40000 extrapolated     0 16.000 14.536 17.464 1.000  1.000   1.00
+    ## 1       1 interpolated     0  1.000  1.000  1.000 0.374  0.366  0.382
+    ## 100  9213 interpolated     0 15.375 14.465 16.284 1.000  1.000  1.000
+    ## 200 18426     observed     0 16.000 14.796 17.204 1.000  1.000  1.000
+    ## 300 27593 extrapolated     0 16.000 14.694 17.306 1.000  1.000  1.000
+    ## 400 36852 extrapolated     0 16.000 14.643 17.357 1.000  1.000  1.000
     ## 
     ## $AsyEst: asymptotic diversity estimates along with related statistics.
     ##                   Observed Estimator Est_s.e. 95% Lower 95% Upper
     ## Species Richness    16.000    16.000    0.529    16.000    17.493
-    ## Shannon diversity    4.560     4.562    0.044     4.560     4.648
-    ## Simpson diversity    2.677     2.677    0.027     2.677     2.729
+    ## Shannon diversity    4.560     4.562    0.042     4.560     4.643
+    ## Simpson diversity    2.677     2.677    0.025     2.677     2.726
     ## 
     ## NOTE: Only show five estimates, call iNEXT.object$iNextEst. to show complete output.
 
@@ -843,9 +889,13 @@ mi_fam_combinada_chao$no_asintoticos_rarefaccion_extrapolacion
 mi_fam_combinada_chao$no_asintoticos_rarefaccion_extrapolacion_grafico
 ```
 
-![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
+![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
 
-Matriz de comunidad agrupada según Ward (tres grupos)
+#### Enfoques asintóticos y no asintóticos aplicados a una matriz de comunidad agrupada
+
+\#’ Generar matriz de comunidad agrupada según el método de Ward (tres
+grupos), procedente de pasos previos (ver scripts de análisis de
+agrupamiento).
 
 ``` r
 mi_fam_k3 <- mi_fam %>%
@@ -862,7 +912,7 @@ mi_fam_k3 %>% rowSums %>% sort
 ``` r
 mi_fam_k3_chao <- estimacion_riqueza_chao(
   mc = mi_fam_k3,
-  tamano_rarefaccion = 20000)
+  n_raras = 10)
 ```
 
     ## Warning: In this case, it can't estimate the variance of 2nd-order-jackknife estimation
@@ -1058,40 +1108,40 @@ mi_fam_k3_chao$no_asintoticos_rarefaccion_extrapolacion
     ## $iNextEst: diversity estimates with rarefied and extrapolated samples.
     ## $`1`
     ##         m       method order   qD qD.LCL qD.UCL    SC SC.LCL SC.UCL
-    ## 1       1 interpolated     0  1.0  1.000  1.000 0.275  0.265  0.284
-    ## 100  2767 interpolated     0 14.5 13.674 15.326 1.000  0.999  1.000
-    ## 200  5535     observed     0 15.0 14.030 15.970 1.000  1.000  1.000
-    ## 300 12731 extrapolated     0 15.0 13.873 16.127 1.000  1.000  1.000
-    ## 400 20000 extrapolated     0 15.0 13.855 16.145 1.000  1.000  1.000
+    ## 1       1 interpolated     0  1.0  1.000  1.000 0.275  0.264  0.285
+    ## 100  2767 interpolated     0 14.5 13.685 15.315 1.000  0.999  1.000
+    ## 200  5535     observed     0 15.0 14.010 15.990 1.000  1.000  1.000
+    ## 300  8289 extrapolated     0 15.0 13.818 16.182 1.000  1.000  1.000
+    ## 400 11070 extrapolated     0 15.0 13.721 16.279 1.000  1.000  1.000
     ## 
     ## $`2`
-    ##         m       method order     qD qD.LCL qD.UCL    SC SC.LCL SC.UCL
-    ## 1       1 interpolated     0  1.000  1.000  1.000 0.176  0.166  0.185
-    ## 100   616 interpolated     0 14.228 13.245 15.211 0.998  0.997  1.000
-    ## 200  1233     observed     0 15.000 13.510 16.490 0.999  0.998  1.000
-    ## 300 10569 extrapolated     0 15.500 13.115 17.884 1.000  1.000  1.000
-    ## 400 20000 extrapolated     0 15.500 13.114 17.885 1.000  1.000  1.000
+    ##        m       method order     qD qD.LCL qD.UCL    SC SC.LCL SC.UCL
+    ## 1      1 interpolated     0  1.000  1.000  1.000 0.176  0.165  0.186
+    ## 100  616 interpolated     0 14.228 13.133 15.323 0.998  0.997  1.000
+    ## 200 1233     observed     0 15.000 13.316 16.684 0.999  0.998  1.001
+    ## 300 1846 extrapolated     0 15.315 13.171 17.459 1.000  0.999  1.000
+    ## 400 2466 extrapolated     0 15.432 13.038 17.826 1.000  0.999  1.000
     ## 
     ## $`3`
     ##         m       method order     qD qD.LCL qD.UCL   SC SC.LCL SC.UCL
-    ## 1       1 interpolated     0  1.000  1.000  1.000 0.47  0.457  0.483
-    ## 100  5829 interpolated     0 14.496 13.817 15.175 1.00  1.000  1.000
-    ## 200 11658     observed     0 15.000 14.039 15.961 1.00  1.000  1.000
-    ## 300 15808 extrapolated     0 15.000 14.039 15.961 1.00  1.000  1.000
-    ## 400 20000 extrapolated     0 15.000 14.039 15.961 1.00  1.000  1.000
+    ## 1       1 interpolated     0  1.000  1.000  1.000 0.47  0.461  0.479
+    ## 100  5829 interpolated     0 14.496 13.916 15.076 1.00  1.000  1.000
+    ## 200 11658     observed     0 15.000 14.093 15.907 1.00  1.000  1.000
+    ## 300 17458 extrapolated     0 15.000 14.093 15.907 1.00  1.000  1.000
+    ## 400 23316 extrapolated     0 15.000 14.093 15.907 1.00  1.000  1.000
     ## 
     ## 
     ## $AsyEst: asymptotic diversity estimates along with related statistics.
     ##   Site         Diversity Observed Estimator  s.e.    LCL    UCL
     ## 1    1  Species richness   15.000    15.000 0.484 15.000 16.241
-    ## 2    1 Shannon diversity    5.731     5.738 0.091  5.731  5.917
-    ## 3    1 Simpson diversity    3.638     3.640 0.066  3.638  3.770
+    ## 2    1 Shannon diversity    5.731     5.738 0.095  5.731  5.924
+    ## 3    1 Simpson diversity    3.638     3.640 0.068  3.638  3.773
     ## 4    2  Species richness   15.000    15.500 1.322 15.030 23.436
-    ## 5    2 Shannon diversity    7.321     7.366 0.184  7.321  7.727
-    ## 6    2 Simpson diversity    5.676     5.698 0.180  5.676  6.050
+    ## 5    2 Shannon diversity    7.321     7.366 0.177  7.321  7.712
+    ## 6    2 Simpson diversity    5.676     5.698 0.184  5.676  6.058
     ## 7    3  Species richness   15.000    15.000 0.483 15.000 16.347
-    ## 8    3 Shannon diversity    3.640     3.643 0.047  3.640  3.734
-    ## 9    3 Simpson diversity    2.127     2.127 0.022  2.127  2.171
+    ## 8    3 Shannon diversity    3.640     3.643 0.047  3.640  3.735
+    ## 9    3 Simpson diversity    2.127     2.127 0.025  2.127  2.176
     ## 
     ## NOTE: Only show five estimates, call iNEXT.object$iNextEst. to show complete output.
 
@@ -1099,4 +1149,4 @@ mi_fam_k3_chao$no_asintoticos_rarefaccion_extrapolacion
 mi_fam_k3_chao$no_asintoticos_rarefaccion_extrapolacion_grafico
 ```
 
-![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](di_1_analisis_de_diversidad_diversidad_alpha_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
