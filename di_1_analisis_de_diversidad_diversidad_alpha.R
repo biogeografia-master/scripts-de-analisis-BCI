@@ -121,9 +121,9 @@ log(5)
 #' 
 #' Bajo esta notación:
 #' 
-#' - La entropía 2 de Renyi es la equidad de Pielou (denominada también equidad de Shannon) equivale a *J=H<sub>1</sub>/H<sub>0</sub>*, que es a fin de cuentas una ratio.
+#' - La equidad de Pielou (denominada también equidad de Shannon) equivale a *J=H<sub>1</sub>/H<sub>0</sub>*, que es a fin de cuentas una ratio.
 #' 
-#' Usando la misma aproximación basada en ratios, Hill propuso también otras que, a diferencia *J*, no están afectadas por la riqueza (es decir, no sólo propuso los números de diversidad, sino también ratios):
+#' Usando la misma aproximación, Hill propuso también otras ratios que, a diferencia de lo que ocurre con *J*, no están afectadas por la riqueza:
 #' 
 #' - *E<sub>1</sub>=N<sub>1</sub>/N<sub>0</sub>* a la cual el propio Hill denominó como su versión de la **equidad de Shannon** y
 #' 

@@ -59,14 +59,14 @@ library(RColorBrewer)
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ─────────────────────────────── tidyverse 1.2.1 ──
+    ## ── Attaching packages ──────────────────────────────── tidyverse 1.2.1 ──
 
     ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
     ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
     ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
     ## ✓ readr   1.3.1     ✓ forcats 0.4.0
 
-    ## ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::arrange()   masks plyr::arrange()
     ## x purrr::compact()   masks plyr::compact()
     ## x dplyr::count()     masks plyr::count()
@@ -360,13 +360,12 @@ especies más abundantes**.
 
 Bajo esta notación:
 
-  - La entropía 2 de Renyi es la equidad de Pielou (denominada también
-    equidad de Shannon) equivale a *J=H<sub>1</sub>/H<sub>0</sub>*, que
-    es a fin de cuentas una ratio.
+  - La equidad de Pielou (denominada también equidad de Shannon)
+    equivale a *J=H<sub>1</sub>/H<sub>0</sub>*, que es a fin de cuentas
+    una ratio.
 
-Usando la misma aproximación basada en ratios, Hill propuso también
-otras que, a diferencia *J*, no están afectadas por la riqueza (es
-decir, no sólo propuso los números de diversidad, sino también ratios):
+Usando la misma aproximación, Hill propuso también otras ratios que, a
+diferencia de lo que ocurre con *J*, no están afectadas por la riqueza:
 
   - *E<sub>1</sub>=N<sub>1</sub>/N<sub>0</sub>* a la cual el propio Hill
     denominó como su versión de la **equidad de Shannon** y
@@ -871,17 +870,17 @@ mi_fam_combinada_chao$no_asintoticos_rarefaccion_extrapolacion
     ## 
     ## $iNextEst: diversity estimates with rarefied and extrapolated samples.
     ##         m       method order     qD qD.LCL qD.UCL    SC SC.LCL SC.UCL
-    ## 1       1 interpolated     0  1.000  1.000  1.000 0.374  0.366  0.382
-    ## 100  9213 interpolated     0 15.375 14.465 16.284 1.000  1.000  1.000
-    ## 200 18426     observed     0 16.000 14.796 17.204 1.000  1.000  1.000
-    ## 300 27593 extrapolated     0 16.000 14.694 17.306 1.000  1.000  1.000
-    ## 400 36852 extrapolated     0 16.000 14.643 17.357 1.000  1.000  1.000
+    ## 1       1 interpolated     0  1.000  1.000  1.000 0.374  0.366  0.381
+    ## 100  9213 interpolated     0 15.375 14.641 16.108 1.000  1.000  1.000
+    ## 200 18426     observed     0 16.000 14.995 17.005 1.000  1.000  1.000
+    ## 300 27593 extrapolated     0 16.000 14.884 17.116 1.000  1.000  1.000
+    ## 400 36852 extrapolated     0 16.000 14.828 17.172 1.000  1.000  1.000
     ## 
     ## $AsyEst: asymptotic diversity estimates along with related statistics.
     ##                   Observed Estimator Est_s.e. 95% Lower 95% Upper
     ## Species Richness    16.000    16.000    0.529    16.000    17.493
-    ## Shannon diversity    4.560     4.562    0.042     4.560     4.643
-    ## Simpson diversity    2.677     2.677    0.025     2.677     2.726
+    ## Shannon diversity    4.560     4.562    0.044     4.560     4.647
+    ## Simpson diversity    2.677     2.677    0.028     2.677     2.731
     ## 
     ## NOTE: Only show five estimates, call iNEXT.object$iNextEst. to show complete output.
 
@@ -1108,40 +1107,40 @@ mi_fam_k3_chao$no_asintoticos_rarefaccion_extrapolacion
     ## $iNextEst: diversity estimates with rarefied and extrapolated samples.
     ## $`1`
     ##         m       method order   qD qD.LCL qD.UCL    SC SC.LCL SC.UCL
-    ## 1       1 interpolated     0  1.0  1.000  1.000 0.275  0.264  0.285
-    ## 100  2767 interpolated     0 14.5 13.685 15.315 1.000  0.999  1.000
-    ## 200  5535     observed     0 15.0 14.010 15.990 1.000  1.000  1.000
-    ## 300  8289 extrapolated     0 15.0 13.818 16.182 1.000  1.000  1.000
-    ## 400 11070 extrapolated     0 15.0 13.721 16.279 1.000  1.000  1.000
+    ## 1       1 interpolated     0  1.0  1.000  1.000 0.275  0.265  0.285
+    ## 100  2767 interpolated     0 14.5 13.622 15.378 1.000  0.999  1.000
+    ## 200  5535     observed     0 15.0 13.949 16.051 1.000  1.000  1.000
+    ## 300  8289 extrapolated     0 15.0 13.780 16.220 1.000  1.000  1.000
+    ## 400 11070 extrapolated     0 15.0 13.695 16.305 1.000  1.000  1.000
     ## 
     ## $`2`
     ##        m       method order     qD qD.LCL qD.UCL    SC SC.LCL SC.UCL
     ## 1      1 interpolated     0  1.000  1.000  1.000 0.176  0.165  0.186
-    ## 100  616 interpolated     0 14.228 13.133 15.323 0.998  0.997  1.000
-    ## 200 1233     observed     0 15.000 13.316 16.684 0.999  0.998  1.001
-    ## 300 1846 extrapolated     0 15.315 13.171 17.459 1.000  0.999  1.000
-    ## 400 2466 extrapolated     0 15.432 13.038 17.826 1.000  0.999  1.000
+    ## 100  616 interpolated     0 14.228 13.230 15.226 0.998  0.997  0.999
+    ## 200 1233     observed     0 15.000 13.448 16.552 0.999  0.998  1.001
+    ## 300 1846 extrapolated     0 15.315 13.248 17.381 1.000  0.999  1.001
+    ## 400 2466 extrapolated     0 15.432 13.059 17.805 1.000  0.999  1.000
     ## 
     ## $`3`
     ##         m       method order     qD qD.LCL qD.UCL   SC SC.LCL SC.UCL
-    ## 1       1 interpolated     0  1.000  1.000  1.000 0.47  0.461  0.479
-    ## 100  5829 interpolated     0 14.496 13.916 15.076 1.00  1.000  1.000
-    ## 200 11658     observed     0 15.000 14.093 15.907 1.00  1.000  1.000
-    ## 300 17458 extrapolated     0 15.000 14.093 15.907 1.00  1.000  1.000
-    ## 400 23316 extrapolated     0 15.000 14.093 15.907 1.00  1.000  1.000
+    ## 1       1 interpolated     0  1.000   1.00  1.000 0.47  0.461  0.479
+    ## 100  5829 interpolated     0 14.496  13.81 15.182 1.00  1.000  1.000
+    ## 200 11658     observed     0 15.000  14.05 15.950 1.00  1.000  1.000
+    ## 300 17458 extrapolated     0 15.000  14.05 15.950 1.00  1.000  1.000
+    ## 400 23316 extrapolated     0 15.000  14.05 15.950 1.00  1.000  1.000
     ## 
     ## 
     ## $AsyEst: asymptotic diversity estimates along with related statistics.
     ##   Site         Diversity Observed Estimator  s.e.    LCL    UCL
     ## 1    1  Species richness   15.000    15.000 0.484 15.000 16.241
-    ## 2    1 Shannon diversity    5.731     5.738 0.095  5.731  5.924
-    ## 3    1 Simpson diversity    3.638     3.640 0.068  3.638  3.773
+    ## 2    1 Shannon diversity    5.731     5.738 0.098  5.731  5.930
+    ## 3    1 Simpson diversity    3.638     3.640 0.067  3.638  3.770
     ## 4    2  Species richness   15.000    15.500 1.322 15.030 23.436
-    ## 5    2 Shannon diversity    7.321     7.366 0.177  7.321  7.712
-    ## 6    2 Simpson diversity    5.676     5.698 0.184  5.676  6.058
+    ## 5    2 Shannon diversity    7.321     7.366 0.173  7.321  7.705
+    ## 6    2 Simpson diversity    5.676     5.698 0.174  5.676  6.040
     ## 7    3  Species richness   15.000    15.000 0.483 15.000 16.347
-    ## 8    3 Shannon diversity    3.640     3.643 0.047  3.640  3.735
-    ## 9    3 Simpson diversity    2.127     2.127 0.025  2.127  2.176
+    ## 8    3 Shannon diversity    3.640     3.643 0.045  3.640  3.731
+    ## 9    3 Simpson diversity    2.127     2.127 0.022  2.127  2.171
     ## 
     ## NOTE: Only show five estimates, call iNEXT.object$iNextEst. to show complete output.
 
