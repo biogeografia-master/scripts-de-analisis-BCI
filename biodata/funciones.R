@@ -815,3 +815,31 @@ estimacion_riqueza_chao <- function(mc, n_raras = 10) {
     no_asintoticos_rarefaccion_extrapolacion = nasin_raref,
     no_asintoticos_rarefaccion_extrapolacion_grafico = acumulacion_especies))
 }
+
+calcular_beta_multiplicativa <- function(mc, orden) {
+  tabla <- map_df(orden, function(x) 
+    d(mc, lev = 'beta', q=x, boot = TRUE)) %>% 
+    setNames(c('beta', 'error')) %>% 
+    mutate(orden) %>% 
+    dplyr::select(orden, beta, error)
+  p <- ggplot(tabla, aes(orden, beta)) +
+    geom_point() +
+    geom_line() +
+    geom_errorbar(aes(orden, beta, ymin = beta - error,
+                      ymax = beta + error), width = 0.2) +
+    theme_bw() +
+    labs(y = "Diversidad beta multiplicativa",
+         x = "Orden de la medida de diversidad")
+  return(list(beta_multiplicativa = tabla, grafico = p))
+}
+
+determinar_contrib_local_y_especie <- function(mc, alpha, nperm, metodo = 'hellinger') {
+  library(adespatial)
+  beta <- beta.div(mc, method = metodo, nperm = nperm)
+  scbd <- beta$SCBD[beta$SCBD >= mean(beta$SCBD)]
+  lcbd <- row.names(mc[which(beta$p.LCBD <= alpha),])
+  return(list(
+    betadiv = beta,
+    especies_contribuyes_betadiv = scbd,
+    sitios_contribuyen_betadiv = lcbd))
+}
