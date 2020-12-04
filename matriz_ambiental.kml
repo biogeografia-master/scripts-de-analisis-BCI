@@ -1,0 +1,2245 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="matriz_ambiental" id="matriz_ambiental">
+	<SimpleField name="categoria_de_edad" type="string"></SimpleField>
+	<SimpleField name="geologia" type="string"></SimpleField>
+	<SimpleField name="habitat" type="string"></SimpleField>
+	<SimpleField name="quebrada" type="string"></SimpleField>
+	<SimpleField name="heterogeneidad_ambiental" type="float"></SimpleField>
+	<SimpleField name="UTM.EW" type="float"></SimpleField>
+	<SimpleField name="UTM.NS" type="float"></SimpleField>
+	<SimpleField name="geomorf_llanura_pct" type="float"></SimpleField>
+	<SimpleField name="geomorf_pico_pct" type="float"></SimpleField>
+	<SimpleField name="geomorf_interfluvio_pct" type="float"></SimpleField>
+	<SimpleField name="geomorf_hombrera_pct" type="float"></SimpleField>
+	<SimpleField name="geomorf_espolón/gajo_pct" type="float"></SimpleField>
+	<SimpleField name="geomorf_vertiente_pct" type="float"></SimpleField>
+	<SimpleField name="geomorf_vaguada_pct" type="float"></SimpleField>
+	<SimpleField name="geomorf_piedemonte_pct" type="float"></SimpleField>
+	<SimpleField name="geomorf_valle_pct" type="float"></SimpleField>
+	<SimpleField name="geomorf_sima_pct" type="float"></SimpleField>
+	<SimpleField name="Al" type="float"></SimpleField>
+	<SimpleField name="B" type="float"></SimpleField>
+	<SimpleField name="Ca" type="float"></SimpleField>
+	<SimpleField name="Cu" type="float"></SimpleField>
+	<SimpleField name="Fe" type="float"></SimpleField>
+	<SimpleField name="K" type="float"></SimpleField>
+	<SimpleField name="Mg" type="float"></SimpleField>
+	<SimpleField name="Mn" type="float"></SimpleField>
+	<SimpleField name="P" type="float"></SimpleField>
+	<SimpleField name="Zn" type="float"></SimpleField>
+	<SimpleField name="N" type="float"></SimpleField>
+	<SimpleField name="N.min." type="float"></SimpleField>
+	<SimpleField name="pH" type="float"></SimpleField>
+	<SimpleField name="elevacion_media" type="float"></SimpleField>
+	<SimpleField name="pendiente_media" type="float"></SimpleField>
+	<SimpleField name="orientacion_media" type="float"></SimpleField>
+	<SimpleField name="curvatura_perfil_media" type="float"></SimpleField>
+	<SimpleField name="curvatura_tangencial_media" type="float"></SimpleField>
+	<SimpleField name="abundancia_global" type="float"></SimpleField>
+	<SimpleField name="riqueza_global" type="int"></SimpleField>
+</Schema>
+<Folder><name>matriz_ambiental</name>
+  <Placemark>
+	<name>1</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">Yes</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.6272</SimpleData>
+		<SimpleData name="UTM.EW">625753.967</SimpleData>
+		<SimpleData name="UTM.NS">1011568.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">10.02</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.83</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">10.76</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">7.26</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">67.07</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">3.28</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.78</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">901.0908</SimpleData>
+		<SimpleData name="B">0.79448</SimpleData>
+		<SimpleData name="Ca">1680.02076</SimpleData>
+		<SimpleData name="Cu">6.20312</SimpleData>
+		<SimpleData name="Fe">135.28696</SimpleData>
+		<SimpleData name="K">141.88128</SimpleData>
+		<SimpleData name="Mg">279.12912</SimpleData>
+		<SimpleData name="Mn">266.99972</SimpleData>
+		<SimpleData name="P">1.95248</SimpleData>
+		<SimpleData name="Zn">2.96948</SimpleData>
+		<SimpleData name="N">18.465</SimpleData>
+		<SimpleData name="N.min.">-3.88544</SimpleData>
+		<SimpleData name="pH">4.32432</SimpleData>
+		<SimpleData name="elevacion_media">136.551965100372</SimpleData>
+		<SimpleData name="pendiente_media">10.2266960762233</SimpleData>
+		<SimpleData name="orientacion_media">288.379512237954</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00283719714890139</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000520406373647114</SimpleData>
+		<SimpleData name="abundancia_global">4079</SimpleData>
+		<SimpleData name="riqueza_global">181</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8559432225936,9.14894708028349 -79.8550332276642,9.14894420765163 -79.8550303357082,9.14984852757637 -79.8559403329349,9.14985140049687 -79.8559432225936,9.14894708028349</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>2</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">Yes</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.3936</SimpleData>
+		<SimpleData name="UTM.EW">625753.967</SimpleData>
+		<SimpleData name="UTM.NS">1011668.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">34.77</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.36</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">10.65</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.64</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">47.97</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.57</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">4.88</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.16</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">954.24884</SimpleData>
+		<SimpleData name="B">0.66968</SimpleData>
+		<SimpleData name="Ca">1503.3648</SimpleData>
+		<SimpleData name="Cu">6.03148</SimpleData>
+		<SimpleData name="Fe">141.80804</SimpleData>
+		<SimpleData name="K">137.23932</SimpleData>
+		<SimpleData name="Mg">280.45236</SimpleData>
+		<SimpleData name="Mn">320.47864</SimpleData>
+		<SimpleData name="P">2.2474</SimpleData>
+		<SimpleData name="Zn">2.53208</SimpleData>
+		<SimpleData name="N">21.59896</SimpleData>
+		<SimpleData name="N.min.">5.64388</SimpleData>
+		<SimpleData name="pH">4.37548</SimpleData>
+		<SimpleData name="elevacion_media">142.090314483154</SimpleData>
+		<SimpleData name="pendiente_media">3.04780878966041</SimpleData>
+		<SimpleData name="orientacion_media">181.385187241886</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00133394814161945</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000751473957880421</SimpleData>
+		<SimpleData name="abundancia_global">3800</SimpleData>
+		<SimpleData name="riqueza_global">163</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8559403329349,9.14985140049687 -79.8550303357082,9.14984852757637 -79.8550274434543,9.15075284745521 -79.8559374429785,9.15075572066435 -79.8559403329349,9.14985140049687</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>3</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">625753.967</SimpleData>
+		<SimpleData name="UTM.NS">1011768.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">1.36</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">5.21</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">77.04</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">12.62</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">3.77</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1114.1122</SimpleData>
+		<SimpleData name="B">0.59516</SimpleData>
+		<SimpleData name="Ca">1182.31144</SimpleData>
+		<SimpleData name="Cu">6.79768</SimpleData>
+		<SimpleData name="Fe">157.08784</SimpleData>
+		<SimpleData name="K">98.69056</SimpleData>
+		<SimpleData name="Mg">230.39732</SimpleData>
+		<SimpleData name="Mn">445.07084</SimpleData>
+		<SimpleData name="P">1.95484</SimpleData>
+		<SimpleData name="Zn">2.24672</SimpleData>
+		<SimpleData name="N">20.24516</SimpleData>
+		<SimpleData name="N.min.">-4.06408</SimpleData>
+		<SimpleData name="pH">4.347</SimpleData>
+		<SimpleData name="elevacion_media">137.235502641785</SimpleData>
+		<SimpleData name="pendiente_media">10.5239369605228</SimpleData>
+		<SimpleData name="orientacion_media">164.901708475339</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000849622748893239</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000964961738264763</SimpleData>
+		<SimpleData name="abundancia_global">4611</SimpleData>
+		<SimpleData name="riqueza_global">171</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8559374429785,9.15075572066435 -79.8550274434543,9.15075284745521 -79.8550245509024,9.15165716728812 -79.8559345527242,9.1516600407859 -79.8559374429785,9.15075572066435</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>4</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">625753.967</SimpleData>
+		<SimpleData name="UTM.NS">1011868.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.16</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">10.99</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">84.18</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">4.53</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.14</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1023.57932</SimpleData>
+		<SimpleData name="B">0.5678</SimpleData>
+		<SimpleData name="Ca">1558.02024</SimpleData>
+		<SimpleData name="Cu">6.634</SimpleData>
+		<SimpleData name="Fe">153.17464</SimpleData>
+		<SimpleData name="K">98.36412</SimpleData>
+		<SimpleData name="Mg">228.94676</SimpleData>
+		<SimpleData name="Mn">407.75796</SimpleData>
+		<SimpleData name="P">2.63444</SimpleData>
+		<SimpleData name="Zn">2.44284</SimpleData>
+		<SimpleData name="N">20.84232</SimpleData>
+		<SimpleData name="N.min.">7.89012</SimpleData>
+		<SimpleData name="pH">4.46112</SimpleData>
+		<SimpleData name="elevacion_media">143.039826177063</SimpleData>
+		<SimpleData name="pendiente_media">9.79039623342231</SimpleData>
+		<SimpleData name="orientacion_media">221.307559970474</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000199261549268044</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000158958393610669</SimpleData>
+		<SimpleData name="abundancia_global">3906</SimpleData>
+		<SimpleData name="riqueza_global">163</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8559345527242,9.1516600407859 -79.8550245509024,9.15165716728812 -79.8550216580524,9.1525614870751 -79.8559316621722,9.15256436086153 -79.8559345527242,9.1516600407859</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>5</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.4608</SimpleData>
+		<SimpleData name="UTM.EW">625753.967</SimpleData>
+		<SimpleData name="UTM.NS">1011968.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">2.58</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">1.74</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">93.86</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.17</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">1.65</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1001.8848</SimpleData>
+		<SimpleData name="B">0.39876</SimpleData>
+		<SimpleData name="Ca">1242.25084</SimpleData>
+		<SimpleData name="Cu">6.44428</SimpleData>
+		<SimpleData name="Fe">149.25092</SimpleData>
+		<SimpleData name="K">94.07208</SimpleData>
+		<SimpleData name="Mg">202.68204</SimpleData>
+		<SimpleData name="Mn">250.54028</SimpleData>
+		<SimpleData name="P">1.86356</SimpleData>
+		<SimpleData name="Zn">2.13748</SimpleData>
+		<SimpleData name="N">16.945</SimpleData>
+		<SimpleData name="N.min.">8.53716</SimpleData>
+		<SimpleData name="pH">4.40128</SimpleData>
+		<SimpleData name="elevacion_media">154.126976690857</SimpleData>
+		<SimpleData name="pendiente_media">5.36832768121958</SimpleData>
+		<SimpleData name="orientacion_media">248.087292596436</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00176270409840228</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000394357188642346</SimpleData>
+		<SimpleData name="abundancia_global">4549</SimpleData>
+		<SimpleData name="riqueza_global">174</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8559316621722,9.15256436086153 -79.8550216580524,9.1525614870751 -79.8550187649044,9.15346580681616 -79.8559287713224,9.15346868089123 -79.8559316621722,9.15256436086153</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>6</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.0768</SimpleData>
+		<SimpleData name="UTM.EW">625853.967</SimpleData>
+		<SimpleData name="UTM.NS">1011568.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0.17</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">3.01</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0.86</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">5.57</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">72.04</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">8.85</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">1.9</SimpleData>
+		<SimpleData name="geomorf_valle_pct">7.6</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1091.4672</SimpleData>
+		<SimpleData name="B">0.7312</SimpleData>
+		<SimpleData name="Ca">1441.97732</SimpleData>
+		<SimpleData name="Cu">6.49552</SimpleData>
+		<SimpleData name="Fe">173.8682</SimpleData>
+		<SimpleData name="K">131.8928</SimpleData>
+		<SimpleData name="Mg">276.501</SimpleData>
+		<SimpleData name="Mn">477.32488</SimpleData>
+		<SimpleData name="P">1.61612</SimpleData>
+		<SimpleData name="Zn">2.63148</SimpleData>
+		<SimpleData name="N">20.29812</SimpleData>
+		<SimpleData name="N.min.">4.38948</SimpleData>
+		<SimpleData name="pH">4.57252</SimpleData>
+		<SimpleData name="elevacion_media">123.895860226776</SimpleData>
+		<SimpleData name="pendiente_media">10.7957289725363</SimpleData>
+		<SimpleData name="orientacion_media">244.448024416796</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.00315423620538345</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000368041674958718</SimpleData>
+		<SimpleData name="abundancia_global">3685</SimpleData>
+		<SimpleData name="riqueza_global">165</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8550332276642,9.14894420765163 -79.8541232330327,9.14894133273694 -79.8541203387796,9.14984565237282 -79.8550303357082,9.14984852757637 -79.8550332276642,9.14894420765163</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>7</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">Yes</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.3808</SimpleData>
+		<SimpleData name="UTM.EW">625853.967</SimpleData>
+		<SimpleData name="UTM.NS">1011668.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0.53</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">2.87</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">2.99</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">16.15</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">63.48</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">9.34</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.19</SimpleData>
+		<SimpleData name="geomorf_valle_pct">4.45</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1183.88368</SimpleData>
+		<SimpleData name="B">0.34012</SimpleData>
+		<SimpleData name="Ca">1111.443</SimpleData>
+		<SimpleData name="Cu">5.55292</SimpleData>
+		<SimpleData name="Fe">138.26784</SimpleData>
+		<SimpleData name="K">117.12156</SimpleData>
+		<SimpleData name="Mg">242.18336</SimpleData>
+		<SimpleData name="Mn">300.67564</SimpleData>
+		<SimpleData name="P">2.12696</SimpleData>
+		<SimpleData name="Zn">2.15556</SimpleData>
+		<SimpleData name="N">20.096</SimpleData>
+		<SimpleData name="N.min.">8.33632</SimpleData>
+		<SimpleData name="pH">4.55972</SimpleData>
+		<SimpleData name="elevacion_media">138.658142513092</SimpleData>
+		<SimpleData name="pendiente_media">12.8706040008403</SimpleData>
+		<SimpleData name="orientacion_media">218.300545054511</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.0018408726884181</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.00030225477843444</SimpleData>
+		<SimpleData name="abundancia_global">4527</SimpleData>
+		<SimpleData name="riqueza_global">173</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8550303357082,9.14984852757637 -79.8541203387796,9.14984565237282 -79.8541174442282,9.15074997196279 -79.8550274434543,9.15075284745521 -79.8550303357082,9.14984852757637</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>8</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">Yes</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.2112</SimpleData>
+		<SimpleData name="UTM.EW">625853.967</SimpleData>
+		<SimpleData name="UTM.NS">1011768.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0.26</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">9.53</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">88.2</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.35</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">1.66</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1256.14472</SimpleData>
+		<SimpleData name="B">0.32224</SimpleData>
+		<SimpleData name="Ca">1029.21028</SimpleData>
+		<SimpleData name="Cu">6.28208</SimpleData>
+		<SimpleData name="Fe">147.15632</SimpleData>
+		<SimpleData name="K">104.30808</SimpleData>
+		<SimpleData name="Mg">184.51472</SimpleData>
+		<SimpleData name="Mn">204.25324</SimpleData>
+		<SimpleData name="P">3.10668</SimpleData>
+		<SimpleData name="Zn">2.07284</SimpleData>
+		<SimpleData name="N">21.50216</SimpleData>
+		<SimpleData name="N.min.">-0.03472</SimpleData>
+		<SimpleData name="pH">4.41168</SimpleData>
+		<SimpleData name="elevacion_media">146.298637590881</SimpleData>
+		<SimpleData name="pendiente_media">7.77873617750406</SimpleData>
+		<SimpleData name="orientacion_media">205.692965438843</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00117824869191129</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000140464598686077</SimpleData>
+		<SimpleData name="abundancia_global">4376</SimpleData>
+		<SimpleData name="riqueza_global">176</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8550274434543,9.15075284745521 -79.8541174442282,9.15074997196279 -79.8541145493785,9.15165429150683 -79.8550245509024,9.15165716728812 -79.8550274434543,9.15075284745521</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>9</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">625853.967</SimpleData>
+		<SimpleData name="UTM.NS">1011868.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">2.24</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">6.45</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">84.34</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">3.75</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">3.11</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0.11</SimpleData>
+		<SimpleData name="Al">1122.32592</SimpleData>
+		<SimpleData name="B">0.4636</SimpleData>
+		<SimpleData name="Ca">1230.27116</SimpleData>
+		<SimpleData name="Cu">7.17968</SimpleData>
+		<SimpleData name="Fe">153.00336</SimpleData>
+		<SimpleData name="K">110.2442</SimpleData>
+		<SimpleData name="Mg">206.60872</SimpleData>
+		<SimpleData name="Mn">414.72836</SimpleData>
+		<SimpleData name="P">1.99128</SimpleData>
+		<SimpleData name="Zn">2.33068</SimpleData>
+		<SimpleData name="N">21.43224</SimpleData>
+		<SimpleData name="N.min.">0.05456</SimpleData>
+		<SimpleData name="pH">4.53336</SimpleData>
+		<SimpleData name="elevacion_media">149.002236850159</SimpleData>
+		<SimpleData name="pendiente_media">7.07929247690141</SimpleData>
+		<SimpleData name="orientacion_media">239.384071788075</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00106742608595721</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.00113605405466756</SimpleData>
+		<SimpleData name="abundancia_global">4381</SimpleData>
+		<SimpleData name="riqueza_global">162</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8550245509024,9.15165716728812 -79.8541145493785,9.15165429150683 -79.8541116542306,9.15255861100495 -79.8550216580524,9.1525614870751 -79.8550245509024,9.15165716728812</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>10</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">625853.967</SimpleData>
+		<SimpleData name="UTM.NS">1011968.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">1.03</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">5.83</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.03</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">86.46</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">1.54</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">4.82</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.29</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1171.60152</SimpleData>
+		<SimpleData name="B">0.31404</SimpleData>
+		<SimpleData name="Ca">1126.86388</SimpleData>
+		<SimpleData name="Cu">6.88668</SimpleData>
+		<SimpleData name="Fe">132.56612</SimpleData>
+		<SimpleData name="K">104.81508</SimpleData>
+		<SimpleData name="Mg">172.34528</SimpleData>
+		<SimpleData name="Mn">329.69304</SimpleData>
+		<SimpleData name="P">1.68548</SimpleData>
+		<SimpleData name="Zn">2.05104</SimpleData>
+		<SimpleData name="N">18.28212</SimpleData>
+		<SimpleData name="N.min.">7.69104</SimpleData>
+		<SimpleData name="pH">4.555</SimpleData>
+		<SimpleData name="elevacion_media">154.773692396912</SimpleData>
+		<SimpleData name="pendiente_media">4.15870743350238</SimpleData>
+		<SimpleData name="orientacion_media">274.611174424744</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000332863747088483</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000189794271097708</SimpleData>
+		<SimpleData name="abundancia_global">4057</SimpleData>
+		<SimpleData name="riqueza_global">163</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8550216580524,9.1525614870751 -79.8541116542306,9.15255861100495 -79.8541087587844,9.15346293045713 -79.8550187649044,9.15346580681616 -79.8550216580524,9.1525614870751</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>11</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.4032</SimpleData>
+		<SimpleData name="UTM.EW">625953.967</SimpleData>
+		<SimpleData name="UTM.NS">1011568.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">1.22</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">6.23</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">84.65</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">7.31</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.59</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1013.56244</SimpleData>
+		<SimpleData name="B">1.50976</SimpleData>
+		<SimpleData name="Ca">1873.07452</SimpleData>
+		<SimpleData name="Cu">7.484</SimpleData>
+		<SimpleData name="Fe">169.3424</SimpleData>
+		<SimpleData name="K">174.48772</SimpleData>
+		<SimpleData name="Mg">345.31828</SimpleData>
+		<SimpleData name="Mn">593.44412</SimpleData>
+		<SimpleData name="P">2.26524</SimpleData>
+		<SimpleData name="Zn">4.21016</SimpleData>
+		<SimpleData name="N">17.6616</SimpleData>
+		<SimpleData name="N.min.">12.43908</SimpleData>
+		<SimpleData name="pH">4.71792</SimpleData>
+		<SimpleData name="elevacion_media">118.916627493286</SimpleData>
+		<SimpleData name="pendiente_media">8.33006718584448</SimpleData>
+		<SimpleData name="orientacion_media">259.659078756446</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000743198636144855</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000795248303094496</SimpleData>
+		<SimpleData name="abundancia_global">3842</SimpleData>
+		<SimpleData name="riqueza_global">155</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8541232330327,9.14894133273694 -79.8532132386995,9.14893845553944 -79.8532103421491,9.14984277488623 -79.8541203387796,9.14984565237282 -79.8541232330327,9.14894133273694</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>12</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">625953.967</SimpleData>
+		<SimpleData name="UTM.NS">1011668.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.19</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">5.1</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">85.72</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">7.13</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">1.86</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1262.35264</SimpleData>
+		<SimpleData name="B">0.4812</SimpleData>
+		<SimpleData name="Ca">1189.90408</SimpleData>
+		<SimpleData name="Cu">5.33012</SimpleData>
+		<SimpleData name="Fe">159.76404</SimpleData>
+		<SimpleData name="K">89.17376</SimpleData>
+		<SimpleData name="Mg">206.34656</SimpleData>
+		<SimpleData name="Mn">411.44096</SimpleData>
+		<SimpleData name="P">3.04908</SimpleData>
+		<SimpleData name="Zn">2.65716</SimpleData>
+		<SimpleData name="N">16.41632</SimpleData>
+		<SimpleData name="N.min.">12.13188</SimpleData>
+		<SimpleData name="pH">4.2964</SimpleData>
+		<SimpleData name="elevacion_media">131.949752135742</SimpleData>
+		<SimpleData name="pendiente_media">10.5165154077023</SimpleData>
+		<SimpleData name="orientacion_media">269.617311317126</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000846793877519747</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000342544554457629</SimpleData>
+		<SimpleData name="abundancia_global">4027</SimpleData>
+		<SimpleData name="riqueza_global">169</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8541203387796,9.14984565237282 -79.8532103421491,9.14984277488623 -79.8532074453003,9.15074709418709 -79.8541174442282,9.15074997196279 -79.8541203387796,9.14984565237282</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>13</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">Yes</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.6624</SimpleData>
+		<SimpleData name="UTM.EW">625953.967</SimpleData>
+		<SimpleData name="UTM.NS">1011768.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">18.57</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.1</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">8.32</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">2.39</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">69.1</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.53</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.99</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1357.92468</SimpleData>
+		<SimpleData name="B">0.2354</SimpleData>
+		<SimpleData name="Ca">1045.21736</SimpleData>
+		<SimpleData name="Cu">4.62248</SimpleData>
+		<SimpleData name="Fe">177.7166</SimpleData>
+		<SimpleData name="K">98.93424</SimpleData>
+		<SimpleData name="Mg">188.16256</SimpleData>
+		<SimpleData name="Mn">120.35408</SimpleData>
+		<SimpleData name="P">5.0856</SimpleData>
+		<SimpleData name="Zn">2.51296</SimpleData>
+		<SimpleData name="N">17.5346</SimpleData>
+		<SimpleData name="N.min.">9.9918</SimpleData>
+		<SimpleData name="pH">4.12084</SimpleData>
+		<SimpleData name="elevacion_media">149.612631036499</SimpleData>
+		<SimpleData name="pendiente_media">8.04136106385142</SimpleData>
+		<SimpleData name="orientacion_media">241.093972409415</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00131507879321311</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000346445459693416</SimpleData>
+		<SimpleData name="abundancia_global">3995</SimpleData>
+		<SimpleData name="riqueza_global">169</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8541174442282,9.15074997196279 -79.8532074453003,9.15074709418709 -79.8532045481529,9.15165141344203 -79.8541145493785,9.15165429150683 -79.8541174442282,9.15074997196279</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>14</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.1472</SimpleData>
+		<SimpleData name="UTM.EW">625953.967</SimpleData>
+		<SimpleData name="UTM.NS">1011868.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">28.84</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">3.78</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.02</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">64.45</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">2.91</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1212.02144</SimpleData>
+		<SimpleData name="B">0.4402</SimpleData>
+		<SimpleData name="Ca">1236.22028</SimpleData>
+		<SimpleData name="Cu">6.3178</SimpleData>
+		<SimpleData name="Fe">167.26568</SimpleData>
+		<SimpleData name="K">91.46908</SimpleData>
+		<SimpleData name="Mg">198.46728</SimpleData>
+		<SimpleData name="Mn">341.34184</SimpleData>
+		<SimpleData name="P">2.64316</SimpleData>
+		<SimpleData name="Zn">2.4642</SimpleData>
+		<SimpleData name="N">19.22192</SimpleData>
+		<SimpleData name="N.min.">11.2444</SimpleData>
+		<SimpleData name="pH">4.1282</SimpleData>
+		<SimpleData name="elevacion_media">153.990788137695</SimpleData>
+		<SimpleData name="pendiente_media">2.97154099493735</SimpleData>
+		<SimpleData name="orientacion_media">200.957867769432</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00031812390947992</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000201512796551078</SimpleData>
+		<SimpleData name="abundancia_global">4111</SimpleData>
+		<SimpleData name="riqueza_global">180</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8541145493785,9.15165429150683 -79.8532045481529,9.15165141344203 -79.853201650707,9.15255573265105 -79.8541116542306,9.15255861100495 -79.8541145493785,9.15165429150683</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>15</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">625953.967</SimpleData>
+		<SimpleData name="UTM.NS">1011968.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">3.87</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.02</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">2.31</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.75</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">88.4</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.64</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.79</SimpleData>
+		<SimpleData name="geomorf_valle_pct">3.22</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1224.3872</SimpleData>
+		<SimpleData name="B">0.58436</SimpleData>
+		<SimpleData name="Ca">1366.20084</SimpleData>
+		<SimpleData name="Cu">8.605</SimpleData>
+		<SimpleData name="Fe">180.59228</SimpleData>
+		<SimpleData name="K">127.33096</SimpleData>
+		<SimpleData name="Mg">193.48524</SimpleData>
+		<SimpleData name="Mn">521.16892</SimpleData>
+		<SimpleData name="P">1.70724</SimpleData>
+		<SimpleData name="Zn">2.68512</SimpleData>
+		<SimpleData name="N">18.41064</SimpleData>
+		<SimpleData name="N.min.">12.541</SimpleData>
+		<SimpleData name="pH">4.1576</SimpleData>
+		<SimpleData name="elevacion_media">154.443531422302</SimpleData>
+		<SimpleData name="pendiente_media">4.35967368494421</SimpleData>
+		<SimpleData name="orientacion_media">206.810756778359</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000396205165133506</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000385781407909246</SimpleData>
+		<SimpleData name="abundancia_global">4559</SimpleData>
+		<SimpleData name="riqueza_global">173</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8541116542306,9.15255861100495 -79.853201650707,9.15255573265105 -79.8531987529626,9.15346005181413 -79.8541087587844,9.15346293045713 -79.8541116542306,9.15255861100495</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>16</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.4608</SimpleData>
+		<SimpleData name="UTM.EW">626053.967</SimpleData>
+		<SimpleData name="UTM.NS">1011568.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.41</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">1.86</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">96.65</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">1.08</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">958.60408</SimpleData>
+		<SimpleData name="B">1.02476</SimpleData>
+		<SimpleData name="Ca">1628.9744</SimpleData>
+		<SimpleData name="Cu">7.39196</SimpleData>
+		<SimpleData name="Fe">187.20824</SimpleData>
+		<SimpleData name="K">166.6376</SimpleData>
+		<SimpleData name="Mg">262.13736</SimpleData>
+		<SimpleData name="Mn">393.69428</SimpleData>
+		<SimpleData name="P">2.07072</SimpleData>
+		<SimpleData name="Zn">3.30712</SimpleData>
+		<SimpleData name="N">18.04436</SimpleData>
+		<SimpleData name="N.min.">20.04908</SimpleData>
+		<SimpleData name="pH">4.50452</SimpleData>
+		<SimpleData name="elevacion_media">120.643067899597</SimpleData>
+		<SimpleData name="pendiente_media">8.49614899787605</SimpleData>
+		<SimpleData name="orientacion_media">262.632261286683</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000479162059271334</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000434221800705507</SimpleData>
+		<SimpleData name="abundancia_global">3915</SimpleData>
+		<SimpleData name="riqueza_global">156</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8532132386995,9.14893845553944 -79.8523032446648,9.14893557605913 -79.8523003458172,9.14983989511659 -79.8532103421491,9.14984277488623 -79.8532132386995,9.14893845553944</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>17</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">626053.967</SimpleData>
+		<SimpleData name="UTM.NS">1011668.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">4.69</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">6.41</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">75.31</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">4.4</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">2.48</SimpleData>
+		<SimpleData name="geomorf_valle_pct">6.71</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1260.59808</SimpleData>
+		<SimpleData name="B">0.68944</SimpleData>
+		<SimpleData name="Ca">1314.79336</SimpleData>
+		<SimpleData name="Cu">4.80024</SimpleData>
+		<SimpleData name="Fe">141.08968</SimpleData>
+		<SimpleData name="K">110.83156</SimpleData>
+		<SimpleData name="Mg">269.06264</SimpleData>
+		<SimpleData name="Mn">294.67304</SimpleData>
+		<SimpleData name="P">4.1028</SimpleData>
+		<SimpleData name="Zn">2.95548</SimpleData>
+		<SimpleData name="N">18.92764</SimpleData>
+		<SimpleData name="N.min.">16.21112</SimpleData>
+		<SimpleData name="pH">4.46092</SimpleData>
+		<SimpleData name="elevacion_media">131.789413594788</SimpleData>
+		<SimpleData name="pendiente_media">7.98889940841421</SimpleData>
+		<SimpleData name="orientacion_media">235.046590959007</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.00233436263459089</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000325878185018826</SimpleData>
+		<SimpleData name="abundancia_global">3536</SimpleData>
+		<SimpleData name="riqueza_global">164</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8532103421491,9.14984277488623 -79.8523003458172,9.14983989511659 -79.8522974466708,9.15074421412813 -79.8532074453003,9.15074709418709 -79.8532103421491,9.14984277488623</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>18</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">Swamp</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.6592</SimpleData>
+		<SimpleData name="UTM.EW">626053.967</SimpleData>
+		<SimpleData name="UTM.NS">1011768.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">3.4</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">4.8</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.99</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">89.93</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.88</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1280.10328</SimpleData>
+		<SimpleData name="B">0.37996</SimpleData>
+		<SimpleData name="Ca">909.32608</SimpleData>
+		<SimpleData name="Cu">4.78156</SimpleData>
+		<SimpleData name="Fe">191.0236</SimpleData>
+		<SimpleData name="K">84.9496</SimpleData>
+		<SimpleData name="Mg">205.35932</SimpleData>
+		<SimpleData name="Mn">97.7732</SimpleData>
+		<SimpleData name="P">4.93916</SimpleData>
+		<SimpleData name="Zn">2.59364</SimpleData>
+		<SimpleData name="N">16.59108</SimpleData>
+		<SimpleData name="N.min.">15.43316</SimpleData>
+		<SimpleData name="pH">4.05204</SimpleData>
+		<SimpleData name="elevacion_media">147.938523610229</SimpleData>
+		<SimpleData name="pendiente_media">11.4404922143161</SimpleData>
+		<SimpleData name="orientacion_media">275.259965255022</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00247663466268232</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000387921912249556</SimpleData>
+		<SimpleData name="abundancia_global">3619</SimpleData>
+		<SimpleData name="riqueza_global">182</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8532074453003,9.15074709418709 -79.8522974466708,9.15074421412813 -79.8522945472258,9.15164853309374 -79.8532045481529,9.15165141344203 -79.8532074453003,9.15074709418709</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>19</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.0768</SimpleData>
+		<SimpleData name="UTM.EW">626053.967</SimpleData>
+		<SimpleData name="UTM.NS">1011868.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">86.1</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">5.08</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">7.17</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">1.65</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1304.17268</SimpleData>
+		<SimpleData name="B">0.5188</SimpleData>
+		<SimpleData name="Ca">1117.5724</SimpleData>
+		<SimpleData name="Cu">5.7734</SimpleData>
+		<SimpleData name="Fe">157.71204</SimpleData>
+		<SimpleData name="K">130.3694</SimpleData>
+		<SimpleData name="Mg">231.72528</SimpleData>
+		<SimpleData name="Mn">254.28652</SimpleData>
+		<SimpleData name="P">3.8532</SimpleData>
+		<SimpleData name="Zn">2.58732</SimpleData>
+		<SimpleData name="N">20.433</SimpleData>
+		<SimpleData name="N.min.">22.67264</SimpleData>
+		<SimpleData name="pH">4.24652</SimpleData>
+		<SimpleData name="elevacion_media">156.882252763855</SimpleData>
+		<SimpleData name="pendiente_media">1.68861168453321</SimpleData>
+		<SimpleData name="orientacion_media">202.630824242938</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000416471454617027</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000514341294011979</SimpleData>
+		<SimpleData name="abundancia_global">4387</SimpleData>
+		<SimpleData name="riqueza_global">176</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8532045481529,9.15165141344203 -79.8522945472258,9.15164853309374 -79.852291647482,9.15255285201342 -79.853201650707,9.15255573265105 -79.8532045481529,9.15165141344203</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>20</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.2112</SimpleData>
+		<SimpleData name="UTM.EW">626053.967</SimpleData>
+		<SimpleData name="UTM.NS">1011968.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">62.79</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">7.61</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.06</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">25.8</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.15</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">3.58</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.01</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1125.74068</SimpleData>
+		<SimpleData name="B">0.59432</SimpleData>
+		<SimpleData name="Ca">1271.2058</SimpleData>
+		<SimpleData name="Cu">6.777</SimpleData>
+		<SimpleData name="Fe">165.65836</SimpleData>
+		<SimpleData name="K">146.50684</SimpleData>
+		<SimpleData name="Mg">199.93204</SimpleData>
+		<SimpleData name="Mn">360.12848</SimpleData>
+		<SimpleData name="P">2.01588</SimpleData>
+		<SimpleData name="Zn">2.6746</SimpleData>
+		<SimpleData name="N">20.99108</SimpleData>
+		<SimpleData name="N.min.">15.7242</SimpleData>
+		<SimpleData name="pH">4.33736</SimpleData>
+		<SimpleData name="elevacion_media">155.451911906738</SimpleData>
+		<SimpleData name="pendiente_media">2.22343015674949</SimpleData>
+		<SimpleData name="orientacion_media">119.155078409884</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000106038286589342</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000207839503291876</SimpleData>
+		<SimpleData name="abundancia_global">5014</SimpleData>
+		<SimpleData name="riqueza_global">169</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.853201650707,9.15255573265105 -79.852291647482,9.15255285201342 -79.8522887474394,9.15345717088717 -79.8531987529626,9.15346005181413 -79.853201650707,9.15255573265105</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>21</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.2688</SimpleData>
+		<SimpleData name="UTM.EW">626153.967</SimpleData>
+		<SimpleData name="UTM.NS">1011568.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.13</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">15.62</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">76.77</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">5.2</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.02</SimpleData>
+		<SimpleData name="geomorf_valle_pct">2.26</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">804.96204</SimpleData>
+		<SimpleData name="B">1.17772</SimpleData>
+		<SimpleData name="Ca">1947.90596</SimpleData>
+		<SimpleData name="Cu">8.29748</SimpleData>
+		<SimpleData name="Fe">187.652</SimpleData>
+		<SimpleData name="K">207.58808</SimpleData>
+		<SimpleData name="Mg">316.05316</SimpleData>
+		<SimpleData name="Mn">443.95808</SimpleData>
+		<SimpleData name="P">1.7592</SimpleData>
+		<SimpleData name="Zn">4.25764</SimpleData>
+		<SimpleData name="N">30.09788</SimpleData>
+		<SimpleData name="N.min.">15.87932</SimpleData>
+		<SimpleData name="pH">4.77492</SimpleData>
+		<SimpleData name="elevacion_media">120.02278574939</SimpleData>
+		<SimpleData name="pendiente_media">9.50679489935636</SimpleData>
+		<SimpleData name="orientacion_media">272.875722255194</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000301543979847702</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000247465555592623</SimpleData>
+		<SimpleData name="abundancia_global">3749</SimpleData>
+		<SimpleData name="riqueza_global">170</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8523032446648,9.14893557605913 -79.8513932509288,9.14893269429601 -79.851390349784,9.14983701306391 -79.8523003458172,9.14983989511659 -79.8523032446648,9.14893557605913</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>22</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.2112</SimpleData>
+		<SimpleData name="UTM.EW">626153.967</SimpleData>
+		<SimpleData name="UTM.NS">1011668.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">7.06</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">2.09</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">6.31</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">72.85</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">2.03</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">2.34</SimpleData>
+		<SimpleData name="geomorf_valle_pct">7.32</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1157.26628</SimpleData>
+		<SimpleData name="B">0.70176</SimpleData>
+		<SimpleData name="Ca">1414.60264</SimpleData>
+		<SimpleData name="Cu">5.48304</SimpleData>
+		<SimpleData name="Fe">171.20196</SimpleData>
+		<SimpleData name="K">138.90496</SimpleData>
+		<SimpleData name="Mg">250.98012</SimpleData>
+		<SimpleData name="Mn">258.33724</SimpleData>
+		<SimpleData name="P">4.01948</SimpleData>
+		<SimpleData name="Zn">3.19204</SimpleData>
+		<SimpleData name="N">27.83632</SimpleData>
+		<SimpleData name="N.min.">20.57952</SimpleData>
+		<SimpleData name="pH">4.6726</SimpleData>
+		<SimpleData name="elevacion_media">129.741175127441</SimpleData>
+		<SimpleData name="pendiente_media">5.94952622368559</SimpleData>
+		<SimpleData name="orientacion_media">233.747267994654</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.00024009366830378</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">7.72688985844638e-05</SimpleData>
+		<SimpleData name="abundancia_global">4082</SimpleData>
+		<SimpleData name="riqueza_global">175</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8523003458172,9.14983989511659 -79.851390349784,9.14983701306391 -79.8513874483402,9.15074133178589 -79.8522974466708,9.15074421412813 -79.8523003458172,9.14983989511659</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>23</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">Swamp</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.624</SimpleData>
+		<SimpleData name="UTM.EW">626153.967</SimpleData>
+		<SimpleData name="UTM.NS">1011768.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">1.64</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">94.21</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">2.68</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.71</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.76</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1130.7224</SimpleData>
+		<SimpleData name="B">0.34772</SimpleData>
+		<SimpleData name="Ca">1121.98404</SimpleData>
+		<SimpleData name="Cu">5.29832</SimpleData>
+		<SimpleData name="Fe">204.55984</SimpleData>
+		<SimpleData name="K">111.69532</SimpleData>
+		<SimpleData name="Mg">223.81848</SimpleData>
+		<SimpleData name="Mn">136.71156</SimpleData>
+		<SimpleData name="P">4.76356</SimpleData>
+		<SimpleData name="Zn">3.03268</SimpleData>
+		<SimpleData name="N">23.78884</SimpleData>
+		<SimpleData name="N.min.">16.47284</SimpleData>
+		<SimpleData name="pH">4.2922</SimpleData>
+		<SimpleData name="elevacion_media">143.397564819458</SimpleData>
+		<SimpleData name="pendiente_media">12.8342717512101</SimpleData>
+		<SimpleData name="orientacion_media">280.004800880689</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.00115036874711454</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000761556827248432</SimpleData>
+		<SimpleData name="abundancia_global">4044</SimpleData>
+		<SimpleData name="riqueza_global">195</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8522974466708,9.15074421412813 -79.8513874483402,9.15074133178589 -79.8513845465974,9.15164565046195 -79.8522945472258,9.15164853309374 -79.8522974466708,9.15074421412813</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>24</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.4352</SimpleData>
+		<SimpleData name="UTM.EW">626153.967</SimpleData>
+		<SimpleData name="UTM.NS">1011868.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">66.92</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">7.21</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.01</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">25.79</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.07</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1055.48404</SimpleData>
+		<SimpleData name="B">0.76788</SimpleData>
+		<SimpleData name="Ca">1740.29988</SimpleData>
+		<SimpleData name="Cu">6.4956</SimpleData>
+		<SimpleData name="Fe">183.49752</SimpleData>
+		<SimpleData name="K">154.91056</SimpleData>
+		<SimpleData name="Mg">306.96672</SimpleData>
+		<SimpleData name="Mn">320.76696</SimpleData>
+		<SimpleData name="P">3.026</SimpleData>
+		<SimpleData name="Zn">3.44568</SimpleData>
+		<SimpleData name="N">31.06028</SimpleData>
+		<SimpleData name="N.min.">14.15144</SimpleData>
+		<SimpleData name="pH">4.69712</SimpleData>
+		<SimpleData name="elevacion_media">157.316824808228</SimpleData>
+		<SimpleData name="pendiente_media">2.81248554007835</SimpleData>
+		<SimpleData name="orientacion_media">196.853411272804</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00159047529977694</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.00034156611578012</SimpleData>
+		<SimpleData name="abundancia_global">3954</SimpleData>
+		<SimpleData name="riqueza_global">167</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8522945472258,9.15164853309374 -79.8513845465974,9.15164565046195 -79.8513816445556,9.15254996909207 -79.852291647482,9.15255285201342 -79.8522945472258,9.15164853309374</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>25</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.608</SimpleData>
+		<SimpleData name="UTM.EW">626153.967</SimpleData>
+		<SimpleData name="UTM.NS">1011968.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">56.95</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.03</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">4.82</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.02</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">33.66</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">4.25</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.27</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">943.2088</SimpleData>
+		<SimpleData name="B">0.90908</SimpleData>
+		<SimpleData name="Ca">1658.3516</SimpleData>
+		<SimpleData name="Cu">7.0382</SimpleData>
+		<SimpleData name="Fe">149.49928</SimpleData>
+		<SimpleData name="K">190.32096</SimpleData>
+		<SimpleData name="Mg">322.94476</SimpleData>
+		<SimpleData name="Mn">237.85752</SimpleData>
+		<SimpleData name="P">2.95544</SimpleData>
+		<SimpleData name="Zn">4.09124</SimpleData>
+		<SimpleData name="N">32.75832</SimpleData>
+		<SimpleData name="N.min.">9.87668</SimpleData>
+		<SimpleData name="pH">4.74796</SimpleData>
+		<SimpleData name="elevacion_media">155.797504218201</SimpleData>
+		<SimpleData name="pendiente_media">2.31287985505611</SimpleData>
+		<SimpleData name="orientacion_media">116.29268183022</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000183514050312886</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-4.85366336643608e-05</SimpleData>
+		<SimpleData name="abundancia_global">4351</SimpleData>
+		<SimpleData name="riqueza_global">181</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.852291647482,9.15255285201342 -79.8513816445556,9.15254996909207 -79.8513787422149,9.15345428767626 -79.8522887474394,9.15345717088717 -79.852291647482,9.15255285201342</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>26</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.3648</SimpleData>
+		<SimpleData name="UTM.EW">626253.967</SimpleData>
+		<SimpleData name="UTM.NS">1011568.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0.93</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.05</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">2.81</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">11.12</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">78.39</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">5.62</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.09</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.99</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">644.72224</SimpleData>
+		<SimpleData name="B">0.9788</SimpleData>
+		<SimpleData name="Ca">1566.80184</SimpleData>
+		<SimpleData name="Cu">6.24088</SimpleData>
+		<SimpleData name="Fe">165.5448</SimpleData>
+		<SimpleData name="K">149.67524</SimpleData>
+		<SimpleData name="Mg">242.24728</SimpleData>
+		<SimpleData name="Mn">334.3206</SimpleData>
+		<SimpleData name="P">1.5106</SimpleData>
+		<SimpleData name="Zn">4.92072</SimpleData>
+		<SimpleData name="N">33.83268</SimpleData>
+		<SimpleData name="N.min.">19.85712</SimpleData>
+		<SimpleData name="pH">4.96144</SimpleData>
+		<SimpleData name="elevacion_media">122.351488561676</SimpleData>
+		<SimpleData name="pendiente_media">8.22357991389632</SimpleData>
+		<SimpleData name="orientacion_media">234.197093545902</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000725550822392552</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000594396483817115</SimpleData>
+		<SimpleData name="abundancia_global">3537</SimpleData>
+		<SimpleData name="riqueza_global">138</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8513932509288,9.14893269429601 -79.8504832574918,9.14892981025008 -79.8504803540497,9.1498341287282 -79.851390349784,9.14983701306391 -79.8513932509288,9.14893269429601</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>27</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">626253.967</SimpleData>
+		<SimpleData name="UTM.NS">1011668.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">7.31</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0.1</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">1.7</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">3.75</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">3.03</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">69.02</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">3.36</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">8.76</SimpleData>
+		<SimpleData name="geomorf_valle_pct">2.97</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">848.15344</SimpleData>
+		<SimpleData name="B">0.64652</SimpleData>
+		<SimpleData name="Ca">1151.22992</SimpleData>
+		<SimpleData name="Cu">5.1384</SimpleData>
+		<SimpleData name="Fe">138.47796</SimpleData>
+		<SimpleData name="K">131.4102</SimpleData>
+		<SimpleData name="Mg">203.5124</SimpleData>
+		<SimpleData name="Mn">251.53632</SimpleData>
+		<SimpleData name="P">2.90336</SimpleData>
+		<SimpleData name="Zn">4.47264</SimpleData>
+		<SimpleData name="N">30.03868</SimpleData>
+		<SimpleData name="N.min.">19.38572</SimpleData>
+		<SimpleData name="pH">4.9748</SimpleData>
+		<SimpleData name="elevacion_media">131.063287269867</SimpleData>
+		<SimpleData name="pendiente_media">5.30618937646449</SimpleData>
+		<SimpleData name="orientacion_media">224.994538459279</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000771834702528682</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000676114381491675</SimpleData>
+		<SimpleData name="abundancia_global">3972</SimpleData>
+		<SimpleData name="riqueza_global">163</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.851390349784,9.14983701306391 -79.8504803540497,9.1498341287282 -79.8504774503085,9.15073844716039 -79.8513874483402,9.15074133178589 -79.851390349784,9.14983701306391</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>28</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.3328</SimpleData>
+		<SimpleData name="UTM.EW">626253.967</SimpleData>
+		<SimpleData name="UTM.NS">1011768.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">2.74</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">93.41</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">2.43</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.57</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.85</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">638.71768</SimpleData>
+		<SimpleData name="B">0.47056</SimpleData>
+		<SimpleData name="Ca">1010.58888</SimpleData>
+		<SimpleData name="Cu">3.7274</SimpleData>
+		<SimpleData name="Fe">94.50952</SimpleData>
+		<SimpleData name="K">100.97304</SimpleData>
+		<SimpleData name="Mg">182.0278</SimpleData>
+		<SimpleData name="Mn">101.42556</SimpleData>
+		<SimpleData name="P">2.07696</SimpleData>
+		<SimpleData name="Zn">3.8254</SimpleData>
+		<SimpleData name="N">30.91848</SimpleData>
+		<SimpleData name="N.min.">12.76032</SimpleData>
+		<SimpleData name="pH">4.84068</SimpleData>
+		<SimpleData name="elevacion_media">143.774204565613</SimpleData>
+		<SimpleData name="pendiente_media">11.591206511569</SimpleData>
+		<SimpleData name="orientacion_media">254.740971413779</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000182977468637046</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000957246027336566</SimpleData>
+		<SimpleData name="abundancia_global">4436</SimpleData>
+		<SimpleData name="riqueza_global">164</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8513874483402,9.15074133178589 -79.8504774503085,9.15073844716039 -79.850474546268,9.15164276554666 -79.8513845465974,9.15164565046195 -79.8513874483402,9.15074133178589</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>29</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldHigh</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.6528</SimpleData>
+		<SimpleData name="UTM.EW">626253.967</SimpleData>
+		<SimpleData name="UTM.NS">1011868.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">23.54</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">9.1</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">66.28</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">1.08</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1013.55576</SimpleData>
+		<SimpleData name="B">0.93808</SimpleData>
+		<SimpleData name="Ca">1379.61968</SimpleData>
+		<SimpleData name="Cu">6.09004</SimpleData>
+		<SimpleData name="Fe">143.43312</SimpleData>
+		<SimpleData name="K">161.6444</SimpleData>
+		<SimpleData name="Mg">269.93272</SimpleData>
+		<SimpleData name="Mn">284.21028</SimpleData>
+		<SimpleData name="P">4.04536</SimpleData>
+		<SimpleData name="Zn">5.16404</SimpleData>
+		<SimpleData name="N">36.89956</SimpleData>
+		<SimpleData name="N.min.">13.941</SimpleData>
+		<SimpleData name="pH">4.75024</SimpleData>
+		<SimpleData name="elevacion_media">157.524653088196</SimpleData>
+		<SimpleData name="pendiente_media">4.94023121452332</SimpleData>
+		<SimpleData name="orientacion_media">218.754634008062</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00122320274930948</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000245007602415228</SimpleData>
+		<SimpleData name="abundancia_global">3596</SimpleData>
+		<SimpleData name="riqueza_global">162</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8513845465974,9.15164565046195 -79.850474546268,9.15164276554666 -79.8504716419283,9.152547083887 -79.8513816445556,9.15254996909207 -79.8513845465974,9.15164565046195</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>30</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">Young</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.6144</SimpleData>
+		<SimpleData name="UTM.EW">626253.967</SimpleData>
+		<SimpleData name="UTM.NS">1011968.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">21.38</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0.46</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.21</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">65.81</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.62</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">10.72</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.8</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">841.9146</SimpleData>
+		<SimpleData name="B">0.78008</SimpleData>
+		<SimpleData name="Ca">1318.37768</SimpleData>
+		<SimpleData name="Cu">5.26196</SimpleData>
+		<SimpleData name="Fe">145.11908</SimpleData>
+		<SimpleData name="K">124.2156</SimpleData>
+		<SimpleData name="Mg">257.45124</SimpleData>
+		<SimpleData name="Mn">209.3292</SimpleData>
+		<SimpleData name="P">2.41024</SimpleData>
+		<SimpleData name="Zn">3.87976</SimpleData>
+		<SimpleData name="N">36.74812</SimpleData>
+		<SimpleData name="N.min.">11.19868</SimpleData>
+		<SimpleData name="pH">4.75976</SimpleData>
+		<SimpleData name="elevacion_media">157.325881881531</SimpleData>
+		<SimpleData name="pendiente_media">4.39577119872309</SimpleData>
+		<SimpleData name="orientacion_media">166.254045621002</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000954892343388149</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000385307996755961</SimpleData>
+		<SimpleData name="abundancia_global">3716</SimpleData>
+		<SimpleData name="riqueza_global">173</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8513816445556,9.15254996909207 -79.8504716419283,9.152547083887 -79.8504687372894,9.1534514021814 -79.8513787422149,9.15345428767626 -79.8513816445556,9.15254996909207</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>31</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.4928</SimpleData>
+		<SimpleData name="UTM.EW">626353.967</SimpleData>
+		<SimpleData name="UTM.NS">1011568.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0.46</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.6</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">2.86</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">6.32</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">82.26</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">5.26</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">1.32</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.92</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">836.80364</SimpleData>
+		<SimpleData name="B">1.3264</SimpleData>
+		<SimpleData name="Ca">1873.11988</SimpleData>
+		<SimpleData name="Cu">7.301</SimpleData>
+		<SimpleData name="Fe">160.57508</SimpleData>
+		<SimpleData name="K">197.62396</SimpleData>
+		<SimpleData name="Mg">259.63828</SimpleData>
+		<SimpleData name="Mn">327.855</SimpleData>
+		<SimpleData name="P">2.0094</SimpleData>
+		<SimpleData name="Zn">5.57804</SimpleData>
+		<SimpleData name="N">33.181</SimpleData>
+		<SimpleData name="N.min.">21.85324</SimpleData>
+		<SimpleData name="pH">5.00428</SimpleData>
+		<SimpleData name="elevacion_media">127.617023090515</SimpleData>
+		<SimpleData name="pendiente_media">6.84678100965731</SimpleData>
+		<SimpleData name="orientacion_media">236.984240791893</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000770631193238859</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000300139808286404</SimpleData>
+		<SimpleData name="abundancia_global">4196</SimpleData>
+		<SimpleData name="riqueza_global">169</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8504832574918,9.14892981025008 -79.849573264354,9.14892692392135 -79.8495703586147,9.14983124210945 -79.8504803540497,9.1498341287282 -79.8504832574918,9.14892981025008</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>32</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldHigh</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.7264</SimpleData>
+		<SimpleData name="UTM.EW">626353.967</SimpleData>
+		<SimpleData name="UTM.NS">1011668.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">1.38</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0.76</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">8.75</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">78.72</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">3.63</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">3.59</SimpleData>
+		<SimpleData name="geomorf_valle_pct">3.17</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">994.05956</SimpleData>
+		<SimpleData name="B">1.26224</SimpleData>
+		<SimpleData name="Ca">1836.41844</SimpleData>
+		<SimpleData name="Cu">7.2544</SimpleData>
+		<SimpleData name="Fe">150.13084</SimpleData>
+		<SimpleData name="K">200.43848</SimpleData>
+		<SimpleData name="Mg">305.0934</SimpleData>
+		<SimpleData name="Mn">336.47924</SimpleData>
+		<SimpleData name="P">4.90372</SimpleData>
+		<SimpleData name="Zn">6.4296</SimpleData>
+		<SimpleData name="N">28.85868</SimpleData>
+		<SimpleData name="N.min.">22.5326</SimpleData>
+		<SimpleData name="pH">5.15908</SimpleData>
+		<SimpleData name="elevacion_media">135.608514643127</SimpleData>
+		<SimpleData name="pendiente_media">7.93574402878694</SimpleData>
+		<SimpleData name="orientacion_media">216.708023817423</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.00204874027159419</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000397523998280315</SimpleData>
+		<SimpleData name="abundancia_global">4165</SimpleData>
+		<SimpleData name="riqueza_global">162</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8504803540497,9.1498341287282 -79.8495703586147,9.14983124210945 -79.849567452576,9.15073556025163 -79.8504774503085,9.15073844716039 -79.8504803540497,9.1498341287282</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>33</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c2</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldHigh</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.0768</SimpleData>
+		<SimpleData name="UTM.EW">626353.967</SimpleData>
+		<SimpleData name="UTM.NS">1011768.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.85</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">98.18</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.97</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">707.71672</SimpleData>
+		<SimpleData name="B">0.77364</SimpleData>
+		<SimpleData name="Ca">1186.61392</SimpleData>
+		<SimpleData name="Cu">4.34448</SimpleData>
+		<SimpleData name="Fe">117.07408</SimpleData>
+		<SimpleData name="K">117.20788</SimpleData>
+		<SimpleData name="Mg">186.69552</SimpleData>
+		<SimpleData name="Mn">205.45152</SimpleData>
+		<SimpleData name="P">3.11964</SimpleData>
+		<SimpleData name="Zn">4.2454</SimpleData>
+		<SimpleData name="N">30.78876</SimpleData>
+		<SimpleData name="N.min.">11.042</SimpleData>
+		<SimpleData name="pH">5.05812</SimpleData>
+		<SimpleData name="elevacion_media">150.028736798279</SimpleData>
+		<SimpleData name="pendiente_media">9.85579549429417</SimpleData>
+		<SimpleData name="orientacion_media">250.168291635132</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00178358899868424</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000375190859308668</SimpleData>
+		<SimpleData name="abundancia_global">4241</SimpleData>
+		<SimpleData name="riqueza_global">155</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8504774503085,9.15073844716039 -79.849567452576,9.15073556025163 -79.8495645462378,9.15163987834789 -79.850474546268,9.15164276554666 -79.8504774503085,9.15073844716039</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>34</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldHigh</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">626353.967</SimpleData>
+		<SimpleData name="UTM.NS">1011868.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">10.95</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">4.79</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.18</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">80.97</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.32</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">2.74</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.05</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1064.6256</SimpleData>
+		<SimpleData name="B">1.17532</SimpleData>
+		<SimpleData name="Ca">1656.36476</SimpleData>
+		<SimpleData name="Cu">7.4552</SimpleData>
+		<SimpleData name="Fe">164.64424</SimpleData>
+		<SimpleData name="K">159.9986</SimpleData>
+		<SimpleData name="Mg">286.40564</SimpleData>
+		<SimpleData name="Mn">388.03692</SimpleData>
+		<SimpleData name="P">5.21556</SimpleData>
+		<SimpleData name="Zn">5.91652</SimpleData>
+		<SimpleData name="N">36.53824</SimpleData>
+		<SimpleData name="N.min.">7.09476</SimpleData>
+		<SimpleData name="pH">5.05132</SimpleData>
+		<SimpleData name="elevacion_media">160.719992438477</SimpleData>
+		<SimpleData name="pendiente_media">4.47324006278217</SimpleData>
+		<SimpleData name="orientacion_media">241.89326444397</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000948190543732744</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.00020863770629396</SimpleData>
+		<SimpleData name="abundancia_global">4069</SimpleData>
+		<SimpleData name="riqueza_global">154</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.850474546268,9.15164276554666 -79.8495645462378,9.15163987834789 -79.8495616396002,9.1525441963982 -79.8504716419283,9.152547083887 -79.850474546268,9.15164276554666</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>35</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">Young</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.3328</SimpleData>
+		<SimpleData name="UTM.EW">626353.967</SimpleData>
+		<SimpleData name="UTM.NS">1011968.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">43.35</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">6.38</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">47.73</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.09</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">2.45</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1230.49468</SimpleData>
+		<SimpleData name="B">1.38336</SimpleData>
+		<SimpleData name="Ca">1643.11944</SimpleData>
+		<SimpleData name="Cu">7.82752</SimpleData>
+		<SimpleData name="Fe">183.7992</SimpleData>
+		<SimpleData name="K">168.62984</SimpleData>
+		<SimpleData name="Mg">270.86336</SimpleData>
+		<SimpleData name="Mn">400.37024</SimpleData>
+		<SimpleData name="P">3.80704</SimpleData>
+		<SimpleData name="Zn">5.39516</SimpleData>
+		<SimpleData name="N">32.63108</SimpleData>
+		<SimpleData name="N.min.">17.11192</SimpleData>
+		<SimpleData name="pH">4.85808</SimpleData>
+		<SimpleData name="elevacion_media">164.057784204651</SimpleData>
+		<SimpleData name="pendiente_media">2.92815627084747</SimpleData>
+		<SimpleData name="orientacion_media">205.939604325962</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000570767680005895</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000289344575603877</SimpleData>
+		<SimpleData name="abundancia_global">4048</SimpleData>
+		<SimpleData name="riqueza_global">147</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8504716419283,9.152547083887 -79.8495616396002,9.1525441963982 -79.8495587326631,9.15344851440258 -79.8504687372894,9.1534514021814 -79.8504716419283,9.152547083887</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>36</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.4032</SimpleData>
+		<SimpleData name="UTM.EW">626453.967</SimpleData>
+		<SimpleData name="UTM.NS">1011568.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">1.1</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">9.72</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">82.13</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">6.2</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.19</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.66</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">790.15336</SimpleData>
+		<SimpleData name="B">1.46984</SimpleData>
+		<SimpleData name="Ca">2288.02808</SimpleData>
+		<SimpleData name="Cu">9.328</SimpleData>
+		<SimpleData name="Fe">198.4392</SimpleData>
+		<SimpleData name="K">221.93992</SimpleData>
+		<SimpleData name="Mg">375.74852</SimpleData>
+		<SimpleData name="Mn">486.40336</SimpleData>
+		<SimpleData name="P">2.91232</SimpleData>
+		<SimpleData name="Zn">6.84324</SimpleData>
+		<SimpleData name="N">41.64388</SimpleData>
+		<SimpleData name="N.min.">22.15292</SimpleData>
+		<SimpleData name="pH">4.93364</SimpleData>
+		<SimpleData name="elevacion_media">128.125705101959</SimpleData>
+		<SimpleData name="pendiente_media">8.19470693940371</SimpleData>
+		<SimpleData name="orientacion_media">278.917405893808</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000848577331631787</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">5.65174005341589e-05</SimpleData>
+		<SimpleData name="abundancia_global">4051</SimpleData>
+		<SimpleData name="riqueza_global">165</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.849573264354,9.14892692392135 -79.8486632715156,9.14892403530982 -79.8486603634791,9.14982835320768 -79.8495703586147,9.14983124210945 -79.849573264354,9.14892692392135</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>37</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldHigh</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.3648</SimpleData>
+		<SimpleData name="UTM.EW">626453.967</SimpleData>
+		<SimpleData name="UTM.NS">1011668.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">7.45</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">2.77</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">4.55</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">3.55</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">67.63</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">4.81</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">8.26</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.98</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1119.73056</SimpleData>
+		<SimpleData name="B">1.1756</SimpleData>
+		<SimpleData name="Ca">1814.77328</SimpleData>
+		<SimpleData name="Cu">8.05352</SimpleData>
+		<SimpleData name="Fe">175.822</SimpleData>
+		<SimpleData name="K">207.7472</SimpleData>
+		<SimpleData name="Mg">314.90252</SimpleData>
+		<SimpleData name="Mn">491.51428</SimpleData>
+		<SimpleData name="P">3.40312</SimpleData>
+		<SimpleData name="Zn">6.7404</SimpleData>
+		<SimpleData name="N">38.92268</SimpleData>
+		<SimpleData name="N.min.">19.59704</SimpleData>
+		<SimpleData name="pH">4.9354</SimpleData>
+		<SimpleData name="elevacion_media">137.438612484009</SimpleData>
+		<SimpleData name="pendiente_media">6.52194609259479</SimpleData>
+		<SimpleData name="orientacion_media">231.668303087967</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.00193801825994599</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.00016003963296821</SimpleData>
+		<SimpleData name="abundancia_global">3946</SimpleData>
+		<SimpleData name="riqueza_global">160</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8495703586147,9.14983124210945 -79.8486603634791,9.14982835320768 -79.8486574551429,9.15073267105962 -79.849567452576,9.15073556025163 -79.8495703586147,9.14983124210945</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>38</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldHigh</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">626453.967</SimpleData>
+		<SimpleData name="UTM.NS">1011768.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0.2</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">8.99</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">85.96</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">4.17</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.68</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1102.96248</SimpleData>
+		<SimpleData name="B">1.43692</SimpleData>
+		<SimpleData name="Ca">2026.07276</SimpleData>
+		<SimpleData name="Cu">7.96676</SimpleData>
+		<SimpleData name="Fe">187.93804</SimpleData>
+		<SimpleData name="K">221.69932</SimpleData>
+		<SimpleData name="Mg">321.24588</SimpleData>
+		<SimpleData name="Mn">548.331</SimpleData>
+		<SimpleData name="P">6.19656</SimpleData>
+		<SimpleData name="Zn">7.36012</SimpleData>
+		<SimpleData name="N">39.04968</SimpleData>
+		<SimpleData name="N.min.">15.07688</SimpleData>
+		<SimpleData name="pH">4.88152</SimpleData>
+		<SimpleData name="elevacion_media">150.887903674744</SimpleData>
+		<SimpleData name="pendiente_media">9.8394327398628</SimpleData>
+		<SimpleData name="orientacion_media">274.161601037681</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00212839509259231</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000376848916301242</SimpleData>
+		<SimpleData name="abundancia_global">3753</SimpleData>
+		<SimpleData name="riqueza_global">153</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.849567452576,9.15073556025163 -79.8486574551429,9.15073267105962 -79.848654546507,9.15163698886562 -79.8495645462378,9.15163987834789 -79.849567452576,9.15073556025163</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>39</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldHigh</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0</SimpleData>
+		<SimpleData name="UTM.EW">626453.967</SimpleData>
+		<SimpleData name="UTM.NS">1011868.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">12.92</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">3.12</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.03</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">82.83</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.07</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">1.03</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1164.95112</SimpleData>
+		<SimpleData name="B">1.46856</SimpleData>
+		<SimpleData name="Ca">2032.29388</SimpleData>
+		<SimpleData name="Cu">7.94704</SimpleData>
+		<SimpleData name="Fe">183.26968</SimpleData>
+		<SimpleData name="K">215.24008</SimpleData>
+		<SimpleData name="Mg">376.53212</SimpleData>
+		<SimpleData name="Mn">553.71872</SimpleData>
+		<SimpleData name="P">6.25144</SimpleData>
+		<SimpleData name="Zn">7.05788</SimpleData>
+		<SimpleData name="N">31.66516</SimpleData>
+		<SimpleData name="N.min.">26.97056</SimpleData>
+		<SimpleData name="pH">4.93488</SimpleData>
+		<SimpleData name="elevacion_media">162.722335491577</SimpleData>
+		<SimpleData name="pendiente_media">5.8760560423784</SimpleData>
+		<SimpleData name="orientacion_media">252.493129439545</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000954963895103805</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000277677287010147</SimpleData>
+		<SimpleData name="abundancia_global">3716</SimpleData>
+		<SimpleData name="riqueza_global">146</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8495645462378,9.15163987834789 -79.848654546507,9.15163698886562 -79.8486516375715,9.15254130662569 -79.8495616396002,9.1525441963982 -79.8495645462378,9.15163987834789</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>40</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldHigh</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.6208</SimpleData>
+		<SimpleData name="UTM.EW">626453.967</SimpleData>
+		<SimpleData name="UTM.NS">1011968.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">69.15</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.09</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">3.17</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.07</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">21.8</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">5.72</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1172.94976</SimpleData>
+		<SimpleData name="B">1.23084</SimpleData>
+		<SimpleData name="Ca">1805.04468</SimpleData>
+		<SimpleData name="Cu">7.14824</SimpleData>
+		<SimpleData name="Fe">189.99692</SimpleData>
+		<SimpleData name="K">175.7906</SimpleData>
+		<SimpleData name="Mg">297.12196</SimpleData>
+		<SimpleData name="Mn">404.045</SimpleData>
+		<SimpleData name="P">5.6252</SimpleData>
+		<SimpleData name="Zn">7.08976</SimpleData>
+		<SimpleData name="N">30.54752</SimpleData>
+		<SimpleData name="N.min.">29.00896</SimpleData>
+		<SimpleData name="pH">4.77104</SimpleData>
+		<SimpleData name="elevacion_media">167.041874457886</SimpleData>
+		<SimpleData name="pendiente_media">2.2425321703136</SimpleData>
+		<SimpleData name="orientacion_media">213.994627034944</SimpleData>
+		<SimpleData name="curvatura_perfil_media">2.22390273909241e-06</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-7.96561078332161e-05</SimpleData>
+		<SimpleData name="abundancia_global">4263</SimpleData>
+		<SimpleData name="riqueza_global">161</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8495616396002,9.1525441963982 -79.8486516375715,9.15254130662569 -79.8486487283363,9.15344562433982 -79.8495587326631,9.15344851440258 -79.8495616396002,9.1525441963982</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>41</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.4032</SimpleData>
+		<SimpleData name="UTM.EW">626553.967</SimpleData>
+		<SimpleData name="UTM.NS">1011568.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.77</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">4.76</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">86.16</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">7.3</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">1.01</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">797.22592</SimpleData>
+		<SimpleData name="B">1.99308</SimpleData>
+		<SimpleData name="Ca">3114.36128</SimpleData>
+		<SimpleData name="Cu">12.13564</SimpleData>
+		<SimpleData name="Fe">246.92548</SimpleData>
+		<SimpleData name="K">310.86508</SimpleData>
+		<SimpleData name="Mg">582.56012</SimpleData>
+		<SimpleData name="Mn">550.88992</SimpleData>
+		<SimpleData name="P">2.57328</SimpleData>
+		<SimpleData name="Zn">10.78212</SimpleData>
+		<SimpleData name="N">38.1378</SimpleData>
+		<SimpleData name="N.min.">31.46776</SimpleData>
+		<SimpleData name="pH">4.89252</SimpleData>
+		<SimpleData name="elevacion_media">124.553622193237</SimpleData>
+		<SimpleData name="pendiente_media">8.63441385717466</SimpleData>
+		<SimpleData name="orientacion_media">254.049875441083</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.000650040697307759</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.00155214119751289</SimpleData>
+		<SimpleData name="abundancia_global">3978</SimpleData>
+		<SimpleData name="riqueza_global">174</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8486632715156,9.14892403530982 -79.8477532789768,9.14892114441549 -79.8477503686431,9.14982546202288 -79.8486603634791,9.14982835320768 -79.8486632715156,9.14892403530982</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>42</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.1472</SimpleData>
+		<SimpleData name="UTM.EW">626553.967</SimpleData>
+		<SimpleData name="UTM.NS">1011668.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">2.47</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0.8</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">8.65</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">81.87</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">3.68</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">2.39</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.14</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1033.7388</SimpleData>
+		<SimpleData name="B">1.16824</SimpleData>
+		<SimpleData name="Ca">2176.3146</SimpleData>
+		<SimpleData name="Cu">9.97004</SimpleData>
+		<SimpleData name="Fe">223.95776</SimpleData>
+		<SimpleData name="K">236.06648</SimpleData>
+		<SimpleData name="Mg">383.70024</SimpleData>
+		<SimpleData name="Mn">529.0872</SimpleData>
+		<SimpleData name="P">1.36512</SimpleData>
+		<SimpleData name="Zn">8.96552</SimpleData>
+		<SimpleData name="N">30.39916</SimpleData>
+		<SimpleData name="N.min.">26.46048</SimpleData>
+		<SimpleData name="pH">4.829</SimpleData>
+		<SimpleData name="elevacion_media">136.678957815125</SimpleData>
+		<SimpleData name="pendiente_media">7.15704020588472</SimpleData>
+		<SimpleData name="orientacion_media">265.941480464925</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-8.3207745664663e-05</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000948868348434492</SimpleData>
+		<SimpleData name="abundancia_global">4051</SimpleData>
+		<SimpleData name="riqueza_global">169</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8486603634791,9.14982835320768 -79.8477503686431,9.14982546202288 -79.8477474580095,9.15072977958434 -79.8486574551429,9.15073267105962 -79.8486603634791,9.14982835320768</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>43</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.0768</SimpleData>
+		<SimpleData name="UTM.EW">626553.967</SimpleData>
+		<SimpleData name="UTM.NS">1011768.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">2.13</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">97.47</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.4</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1166.23588</SimpleData>
+		<SimpleData name="B">1.17224</SimpleData>
+		<SimpleData name="Ca">2154.33472</SimpleData>
+		<SimpleData name="Cu">10.28108</SimpleData>
+		<SimpleData name="Fe">273.3936</SimpleData>
+		<SimpleData name="K">249.97808</SimpleData>
+		<SimpleData name="Mg">328.69116</SimpleData>
+		<SimpleData name="Mn">589.42424</SimpleData>
+		<SimpleData name="P">2.18936</SimpleData>
+		<SimpleData name="Zn">8.77904</SimpleData>
+		<SimpleData name="N">32.19116</SimpleData>
+		<SimpleData name="N.min.">27.4774</SimpleData>
+		<SimpleData name="pH">4.82804</SimpleData>
+		<SimpleData name="elevacion_media">149.489718618225</SimpleData>
+		<SimpleData name="pendiente_media">10.3967420735955</SimpleData>
+		<SimpleData name="orientacion_media">284.927604672289</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000299822387625304</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.00136171132453424</SimpleData>
+		<SimpleData name="abundancia_global">4531</SimpleData>
+		<SimpleData name="riqueza_global">167</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8486574551429,9.15073267105962 -79.8477474580095,9.15072977958434 -79.8477445470759,9.15163409709987 -79.848654546507,9.15163698886562 -79.8486574551429,9.15073267105962</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>44</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.5568</SimpleData>
+		<SimpleData name="UTM.EW">626553.967</SimpleData>
+		<SimpleData name="UTM.NS">1011868.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">13.36</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">6.08</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">6.65</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">73.91</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">1053.44256</SimpleData>
+		<SimpleData name="B">1.24832</SimpleData>
+		<SimpleData name="Ca">2222.04072</SimpleData>
+		<SimpleData name="Cu">9.00388</SimpleData>
+		<SimpleData name="Fe">261.28372</SimpleData>
+		<SimpleData name="K">251.34784</SimpleData>
+		<SimpleData name="Mg">348.04156</SimpleData>
+		<SimpleData name="Mn">525.75408</SimpleData>
+		<SimpleData name="P">2.31204</SimpleData>
+		<SimpleData name="Zn">7.831</SimpleData>
+		<SimpleData name="N">25.223</SimpleData>
+		<SimpleData name="N.min.">39.27656</SimpleData>
+		<SimpleData name="pH">4.94864</SimpleData>
+		<SimpleData name="elevacion_media">163.692642361206</SimpleData>
+		<SimpleData name="pendiente_media">9.30665352138728</SimpleData>
+		<SimpleData name="orientacion_media">283.388729221611</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00271966770321378</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.00142288954406819</SimpleData>
+		<SimpleData name="abundancia_global">4323</SimpleData>
+		<SimpleData name="riqueza_global">166</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.848654546507,9.15163698886562 -79.8477445470759,9.15163409709987 -79.8477416358425,9.15253841456947 -79.8486516375715,9.15254130662569 -79.848654546507,9.15163698886562</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>45</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">Yes</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.3424</SimpleData>
+		<SimpleData name="UTM.EW">626553.967</SimpleData>
+		<SimpleData name="UTM.NS">1011968.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">55.93</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">4.37</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">38.4</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.09</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">1.21</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">872.39684</SimpleData>
+		<SimpleData name="B">1.83836</SimpleData>
+		<SimpleData name="Ca">2721.2012</SimpleData>
+		<SimpleData name="Cu">8.45536</SimpleData>
+		<SimpleData name="Fe">260.26808</SimpleData>
+		<SimpleData name="K">264.50464</SimpleData>
+		<SimpleData name="Mg">455.7394</SimpleData>
+		<SimpleData name="Mn">513.52176</SimpleData>
+		<SimpleData name="P">3.17768</SimpleData>
+		<SimpleData name="Zn">9.39208</SimpleData>
+		<SimpleData name="N">25.70404</SimpleData>
+		<SimpleData name="N.min.">38.14724</SimpleData>
+		<SimpleData name="pH">5.02364</SimpleData>
+		<SimpleData name="elevacion_media">167.790134277283</SimpleData>
+		<SimpleData name="pendiente_media">3.5179997448029</SimpleData>
+		<SimpleData name="orientacion_media">214.325923252911</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.00183527930727173</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000613880114390395</SimpleData>
+		<SimpleData name="abundancia_global">3632</SimpleData>
+		<SimpleData name="riqueza_global">156</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8486516375715,9.15254130662569 -79.8477416358425,9.15253841456947 -79.8477387243091,9.15344273199312 -79.8486487283363,9.15344562433982 -79.8486516375715,9.15254130662569</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>46</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.1472</SimpleData>
+		<SimpleData name="UTM.EW">626653.967</SimpleData>
+		<SimpleData name="UTM.NS">1011568.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">1.82</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0.69</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">8.27</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">84.28</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">2.67</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.02</SimpleData>
+		<SimpleData name="geomorf_valle_pct">2.25</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">791.11768</SimpleData>
+		<SimpleData name="B">1.25436</SimpleData>
+		<SimpleData name="Ca">3189.71996</SimpleData>
+		<SimpleData name="Cu">7.04104</SimpleData>
+		<SimpleData name="Fe">228.12284</SimpleData>
+		<SimpleData name="K">256.95232</SimpleData>
+		<SimpleData name="Mg">620.89352</SimpleData>
+		<SimpleData name="Mn">371.13496</SimpleData>
+		<SimpleData name="P">1.51256</SimpleData>
+		<SimpleData name="Zn">12.97524</SimpleData>
+		<SimpleData name="N">21.79476</SimpleData>
+		<SimpleData name="N.min.">37.09404</SimpleData>
+		<SimpleData name="pH">4.68412</SimpleData>
+		<SimpleData name="elevacion_media">124.025328225586</SimpleData>
+		<SimpleData name="pendiente_media">9.89647479377389</SimpleData>
+		<SimpleData name="orientacion_media">286.405924758065</SimpleData>
+		<SimpleData name="curvatura_perfil_media">0.0033447898499724</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000263273516998015</SimpleData>
+		<SimpleData name="abundancia_global">3874</SimpleData>
+		<SimpleData name="riqueza_global">166</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8477532789768,9.14892114441549 -79.846843286738,9.14891825123838 -79.8468403741071,9.14982256855507 -79.8477503686431,9.14982546202288 -79.8477532789768,9.14892114441549</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>47</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.3648</SimpleData>
+		<SimpleData name="UTM.EW">626653.967</SimpleData>
+		<SimpleData name="UTM.NS">1011668.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0.02</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0.02</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">1.25</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">1.77</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">91.3</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">3.49</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">1.3</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.85</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">853.5622</SimpleData>
+		<SimpleData name="B">0.94416</SimpleData>
+		<SimpleData name="Ca">2272.75152</SimpleData>
+		<SimpleData name="Cu">7.10896</SimpleData>
+		<SimpleData name="Fe">190.7156</SimpleData>
+		<SimpleData name="K">189.502</SimpleData>
+		<SimpleData name="Mg">400.37</SimpleData>
+		<SimpleData name="Mn">410.18184</SimpleData>
+		<SimpleData name="P">1.20892</SimpleData>
+		<SimpleData name="Zn">10.63096</SimpleData>
+		<SimpleData name="N">14.89032</SimpleData>
+		<SimpleData name="N.min.">41.35176</SimpleData>
+		<SimpleData name="pH">4.52992</SimpleData>
+		<SimpleData name="elevacion_media">132.676592777283</SimpleData>
+		<SimpleData name="pendiente_media">6.04345448665023</SimpleData>
+		<SimpleData name="orientacion_media">273.686079791426</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-8.82296709514774e-06</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-0.000454854227212007</SimpleData>
+		<SimpleData name="abundancia_global">3960</SimpleData>
+		<SimpleData name="riqueza_global">165</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8477503686431,9.14982546202288 -79.8468403741071,9.14982256855507 -79.846837461176,9.15072688582583 -79.8477474580095,9.15072977958434 -79.8477503686431,9.14982546202288</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>48</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.4608</SimpleData>
+		<SimpleData name="UTM.EW">626653.967</SimpleData>
+		<SimpleData name="UTM.NS">1011768.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">1.16</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0.12</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">2.23</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">89.18</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">3.26</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">3.72</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0.33</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">787.20728</SimpleData>
+		<SimpleData name="B">1.32144</SimpleData>
+		<SimpleData name="Ca">2623.49316</SimpleData>
+		<SimpleData name="Cu">10.3872</SimpleData>
+		<SimpleData name="Fe">252.47976</SimpleData>
+		<SimpleData name="K">290.58492</SimpleData>
+		<SimpleData name="Mg">433.15976</SimpleData>
+		<SimpleData name="Mn">516.65944</SimpleData>
+		<SimpleData name="P">0.99936</SimpleData>
+		<SimpleData name="Zn">10.9244</SimpleData>
+		<SimpleData name="N">18.82576</SimpleData>
+		<SimpleData name="N.min.">42.19536</SimpleData>
+		<SimpleData name="pH">4.87296</SimpleData>
+		<SimpleData name="elevacion_media">140.77901443689</SimpleData>
+		<SimpleData name="pendiente_media">6.81292316961475</SimpleData>
+		<SimpleData name="orientacion_media">292.378060650513</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.00101991656756335</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">0.000187494217092217</SimpleData>
+		<SimpleData name="abundancia_global">4597</SimpleData>
+		<SimpleData name="riqueza_global">169</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8477474580095,9.15072977958434 -79.846837461176,9.15072688582583 -79.8468345479448,9.15163120305065 -79.8477445470759,9.15163409709987 -79.8477474580095,9.15072977958434</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>49</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldLow</SimpleData>
+		<SimpleData name="quebrada">No</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.4992</SimpleData>
+		<SimpleData name="UTM.EW">626653.967</SimpleData>
+		<SimpleData name="UTM.NS">1011868.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.38</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">98.5</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">0.52</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.6</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">612.2286</SimpleData>
+		<SimpleData name="B">1.76808</SimpleData>
+		<SimpleData name="Ca">2986.50232</SimpleData>
+		<SimpleData name="Cu">10.95828</SimpleData>
+		<SimpleData name="Fe">247.31548</SimpleData>
+		<SimpleData name="K">306.73588</SimpleData>
+		<SimpleData name="Mg">548.86048</SimpleData>
+		<SimpleData name="Mn">507.57932</SimpleData>
+		<SimpleData name="P">0.8434</SimpleData>
+		<SimpleData name="Zn">11.18948</SimpleData>
+		<SimpleData name="N">22.64272</SimpleData>
+		<SimpleData name="N.min.">41.89168</SimpleData>
+		<SimpleData name="pH">5.00388</SimpleData>
+		<SimpleData name="elevacion_media">148.398289144409</SimpleData>
+		<SimpleData name="pendiente_media">9.2224494705677</SimpleData>
+		<SimpleData name="orientacion_media">320.850627824486</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.00184126189910272</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-2.8625983477022e-05</SimpleData>
+		<SimpleData name="abundancia_global">4503</SimpleData>
+		<SimpleData name="riqueza_global">170</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8477445470759,9.15163409709987 -79.8468345479448,9.15163120305065 -79.8468316344134,9.15253552022954 -79.8477416358425,9.15253841456947 -79.8477445470759,9.15163409709987</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+  <Placemark>
+	<name>50</name>
+	<Style><LineStyle><color>ff0000ff</color></LineStyle><PolyStyle><fill>0</fill></PolyStyle></Style>
+	<ExtendedData><SchemaData schemaUrl="#matriz_ambiental">
+		<SimpleData name="categoria_de_edad">c3</SimpleData>
+		<SimpleData name="geologia">Tb</SimpleData>
+		<SimpleData name="habitat">OldSlope</SimpleData>
+		<SimpleData name="quebrada">Yes</SimpleData>
+		<SimpleData name="heterogeneidad_ambiental">0.6368</SimpleData>
+		<SimpleData name="UTM.EW">626653.967</SimpleData>
+		<SimpleData name="UTM.NS">1011968.985</SimpleData>
+		<SimpleData name="geomorf_llanura_pct">0</SimpleData>
+		<SimpleData name="geomorf_pico_pct">0</SimpleData>
+		<SimpleData name="geomorf_interfluvio_pct">0</SimpleData>
+		<SimpleData name="geomorf_hombrera_pct">0</SimpleData>
+		<SimpleData name="geomorf_espolón/gajo_pct">0.75</SimpleData>
+		<SimpleData name="geomorf_vertiente_pct">97.71</SimpleData>
+		<SimpleData name="geomorf_vaguada_pct">1.19</SimpleData>
+		<SimpleData name="geomorf_piedemonte_pct">0.35</SimpleData>
+		<SimpleData name="geomorf_valle_pct">0</SimpleData>
+		<SimpleData name="geomorf_sima_pct">0</SimpleData>
+		<SimpleData name="Al">569.53148</SimpleData>
+		<SimpleData name="B">1.7374</SimpleData>
+		<SimpleData name="Ca">2872.58048</SimpleData>
+		<SimpleData name="Cu">8.21896</SimpleData>
+		<SimpleData name="Fe">241.44388</SimpleData>
+		<SimpleData name="K">295.57168</SimpleData>
+		<SimpleData name="Mg">537.51992</SimpleData>
+		<SimpleData name="Mn">367.5458</SimpleData>
+		<SimpleData name="P">1.6646</SimpleData>
+		<SimpleData name="Zn">10.58664</SimpleData>
+		<SimpleData name="N">22.4054</SimpleData>
+		<SimpleData name="N.min.">38.22128</SimpleData>
+		<SimpleData name="pH">5.02052</SimpleData>
+		<SimpleData name="elevacion_media">153.627141950317</SimpleData>
+		<SimpleData name="pendiente_media">10.6438999570727</SimpleData>
+		<SimpleData name="orientacion_media">273.205329326346</SimpleData>
+		<SimpleData name="curvatura_perfil_media">-0.000996288807318473</SimpleData>
+		<SimpleData name="curvatura_tangencial_media">-3.44991513435673e-05</SimpleData>
+		<SimpleData name="abundancia_global">4034</SimpleData>
+		<SimpleData name="riqueza_global">193</SimpleData>
+	</SchemaData></ExtendedData>
+      <Polygon><outerBoundaryIs><LinearRing><coordinates>-79.8477416358425,9.15253841456947 -79.8468316344134,9.15253552022954 -79.8468287205818,9.15343983736248 -79.8477387243091,9.15344273199312 -79.8477416358425,9.15253841456947</coordinates></LinearRing></outerBoundaryIs></Polygon>
+  </Placemark>
+</Folder>
+</Document></kml>
