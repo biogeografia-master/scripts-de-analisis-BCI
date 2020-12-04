@@ -42,7 +42,7 @@ beta_multiplicativa
 #' 
 #' Notar que, para esta matriz de comunidad, la diversidad beta multiplicativa disminuye en escenarios donde se le otorga más importancia a la equidad que a la riqueza. En los datos de mi familia, y en general en cualquier conjunto de datos, esto puede atribuirse a la gran similaridad global entre sitios; en el contexto actual, con composiciones de especies autocorrelacionadas espacialmente, el reemplazo es bajo.
 #' 
-#' SCBD (species contribution to beta diversity) y LCBD (local contribution...)
+#' ### Contribución de especies a la diversidad beta (SCBD, *species contribution to beta diversity*) y contribución local a la diversidad beta (LCBD *local contribution to beta diversity*)
 #' 
 determinar_contrib_local_y_especie(
   mc = mi_fam,
@@ -61,4 +61,7 @@ mapa_cuadros <- mapView(
     lng = -79.85136,
     lat = 9.15097,
     zoom = 15)
+#' 
+#' Utilizar el mapa de cuadros para identificar aquellos que contribuyen más a la diversidad beta. Explorar mapas de variables ambientales (aec_6).
+#' 
 mapa_cuadros
