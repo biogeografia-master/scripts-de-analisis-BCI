@@ -25,14 +25,11 @@ load('biodata/matriz_ambiental.Rdata')
 st_write(
   bci_env_grid %>% rename(Name = id),
   driver = 'KML',
-  dsn = 'matriz_ambiental.kml',
-  delete_dsn = T)
+  dsn = 'matriz_ambiental.kml')
 st_write(
   bci_env_grid %>% rename(Name = id) %>% st_centroid(),
   driver = 'KML',
-  dsn = 'matriz_ambiental_puntos.kml',
-  delete_dsn = T
-)
+  dsn = 'matriz_ambiental_puntos.kml')
 #' 
 #' Uní los dos archivos anteriores en un único KML nombrado como `mapa_cuadros_1ha_para_google_earth.kml`, el cual muestra los puntos como rótulos identificadores de cada cuadro de 1 Ha dentro de sus correspondientes polígonos. Visualizar dicho archivo en GoogleEarth para un "recorrido virtual" por BCI.
 #' 

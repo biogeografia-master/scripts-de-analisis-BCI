@@ -49,11 +49,9 @@ load('biodata/matriz_ambiental.Rdata')
 st_write(
   bci_env_grid %>% rename(Name = id),
   driver = 'KML',
-  dsn = 'matriz_ambiental.kml',
-  delete_dsn = T)
+  dsn = 'matriz_ambiental.kml')
 ```
 
-    ## Deleting source `matriz_ambiental.kml' using driver `KML'
     ## Writing layer `matriz_ambiental' to data source `matriz_ambiental.kml' using driver `KML'
     ## Writing 50 features with 38 fields and geometry type Polygon.
 
@@ -61,15 +59,12 @@ st_write(
 st_write(
   bci_env_grid %>% rename(Name = id) %>% st_centroid(),
   driver = 'KML',
-  dsn = 'matriz_ambiental_puntos.kml',
-  delete_dsn = T
-)
+  dsn = 'matriz_ambiental_puntos.kml')
 ```
 
     ## Warning in st_centroid.sf(.): st_centroid assumes attributes are constant
     ## over geometries of x
 
-    ## Deleting source `matriz_ambiental_puntos.kml' using driver `KML'
     ## Writing layer `matriz_ambiental_puntos' to data source `matriz_ambiental_puntos.kml' using driver `KML'
     ## Writing 50 features with 38 fields and geometry type Point.
 
