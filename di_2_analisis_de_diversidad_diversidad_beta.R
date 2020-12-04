@@ -17,6 +17,7 @@ library(plyr)
 library(tidyverse)
 library(sf)
 library(vegetarian)
+library(mapview)
 source('biodata/funciones.R')
 #' 
 #' ### Cargar datos
@@ -25,10 +26,6 @@ load('biodata/Apocynaceae-Meliaceae-Sapotaceae.Rdata')
 load('biodata/matriz_ambiental.Rdata')
 mi_fam <- mc_apcyn_melic_saptc
 bci_env_grid %>% tibble
-grupos_upgma_k2 <- readRDS('grupos_upgma_k2.RDS')
-table(grupos_upgma_k2)
-grupos_ward_k3 <- readRDS('grupos_ward_k3.RDS')
-table(grupos_ward_k3)
 #' 
 #' ## Diversidad beta
 #' 
@@ -53,4 +50,15 @@ determinar_contrib_local_y_especie(
   nperm = 9999,
   metodo = 'hellinger')
 #' 
-#' 
+mapa_cuadros <- mapView(
+  bci_env_grid,
+  col.regions = 'grey80',
+  alpha.regions = 0.3,
+  map.types = 'OpenTopoMap',
+  legend = F, zoom = 14,
+  zcol = 'id') %>% addStaticLabels() %>%
+  leaflet::setView(
+    lng = -79.85136,
+    lat = 9.15097,
+    zoom = 15)
+mapa_cuadros

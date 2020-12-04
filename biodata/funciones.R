@@ -817,6 +817,7 @@ estimacion_riqueza_chao <- function(mc, n_raras = 10) {
 }
 
 calcular_beta_multiplicativa <- function(mc, orden) {
+  library(vegetarian)
   tabla <- map_df(orden, function(x) 
     d(mc, lev = 'beta', q=x, boot = TRUE)) %>% 
     setNames(c('beta', 'error')) %>% 
@@ -838,8 +839,34 @@ determinar_contrib_local_y_especie <- function(mc, alpha, nperm, metodo = 'helli
   beta <- beta.div(mc, method = metodo, nperm = nperm)
   scbd <- beta$SCBD[beta$SCBD >= mean(beta$SCBD)]
   lcbd <- row.names(mc[which(beta$p.LCBD <= alpha),])
+  plcbd_adj <- p.adjust(beta$p.LCBD, "holm")
+  lcbd_adj <- row.names(mc[which(plcbd_adj <= alpha),])
   return(list(
     betadiv = beta,
-    especies_contribuyes_betadiv = scbd,
-    sitios_contribuyen_betadiv = lcbd))
+    especies_contribuyen_betadiv = scbd,
+    sitios_contribuyen_betadiv = lcbd,
+    valor_de_ajustado_lcbd = plcbd_adj,
+    sitios_contribuyen_betadiv_ajustado = lcbd_adj)
+  )
+}
+
+calcular_componentes_diversidad_beta <- function(mc, amb, coeficiente = 'J', abun = TRUE) {
+  library(vegan)
+  library(adespatial)
+  componentes <- beta.div.comp(mc, coef = coeficiente, quant = abun)
+  riqueza_dif_m <- as.matrix(componentes$rich)
+  ordenacion <- dbrda(riqueza_dif_m ~ ., amb)
+  r2adj <- ordenacion %>% RsquareAdj()
+  return(list(
+    componentes,
+    matriz_diferencia_riqueza = riqueza_dif_m,
+    ordenacion = ordenacion,
+    r2_insesgado = r2adj
+  ))
+  # Ejemplo:
+  # calcular_componentes_diversidad_beta(
+  #   mc = mi_fam,
+  #   amb = bci_env_grid %>% st_drop_geometry %>% select_if(is.numeric) %>% select(-id),
+  #   coeficiente = 'J', 
+  #   abun = FALSE)
 }
