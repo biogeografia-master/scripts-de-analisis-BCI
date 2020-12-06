@@ -92,7 +92,7 @@ source('biodata/funciones.R')
 
 ``` r
 load('biodata/matriz_ambiental.Rdata')
-load('biodata/Apocynaceae-Meliaceae-Sapotaceae.Rdata')
+load('biodata/Piperaceae.Rdata')
 ```
 
 ## Modo Q: matrices de disimilaridad entre objetos
@@ -103,24 +103,26 @@ Aplicado a mi familia asignada de BCI, en la forma de matriz de
 distancia euclídea, utilizando la transformación *Hellinger*:
 
 ``` r
-mi_fam_d_hel <- dist.ldc(mc_apcyn_melic_saptc, "hellinger", silent = T)
+filas_sin_0 <- which(!rowSums(mc_piprc)==0)
+mc_piprc <- mc_piprc[filas_sin_0,]
+mi_fam_d_hel <- dist.ldc(mc_piprc, "hellinger", silent = T)
 mi_fam_d_hel %>% tidy # Para evitar desbordar la consola
 ```
 
-    ## # A tibble: 1,225 x 3
+    ## # A tibble: 1,035 x 3
     ##    item1 item2 distance
     ##    <int> <int>    <dbl>
-    ##  1     2     1    0.179
-    ##  2     3     1    0.329
-    ##  3     4     1    0.342
-    ##  4     5     1    0.350
-    ##  5     6     1    0.295
-    ##  6     7     1    0.323
-    ##  7     8     1    0.275
-    ##  8     9     1    0.342
-    ##  9    10     1    0.298
-    ## 10    11     1    0.238
-    ## # … with 1,215 more rows
+    ##  1     2     1    1.01 
+    ##  2     3     1    0.886
+    ##  3     4     1    0.963
+    ##  4     5     1    0.660
+    ##  5     6     1    1.11 
+    ##  6     7     1    1.24 
+    ##  7     8     1    0.888
+    ##  8     9     1    0.992
+    ##  9    10     1    0.943
+    ## 10    11     1    1.08 
+    ## # … with 1,025 more rows
 
 Para interpretar esta matriz, es necesario representarla gráficamente.
 En la representación elegida a continuación, color fucsia (magenta,
@@ -132,7 +134,7 @@ similares”:
 coldiss(mi_fam_d_hel, diag = T)
 ```
 
-![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](medicion_asociacion_2_modo_Q_piperaceae_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
 Puedes guardar el gráfico usando el botón `Export` de la pestaña `Plots`
 
@@ -145,7 +147,7 @@ cierro el dispositivo mediante `dev.off` Por ejemplo:
 
 ``` r
 png(
-  filename = 'matriz_disimilaridad_hellinger.png',
+  filename = 'matriz_disimilaridad_hellinger_piperaceae.png',
   width = 2400, height = 1200, pointsize = 32
 )
 coldiss(mi_fam_d_hel, diag = T)
@@ -200,29 +202,29 @@ A continuación, muestro cómo calcular la **distancia de Jaccard**
 (**D<sub>J</sub>**) en un único paso usando la función `vegdist`.
 
 ``` r
-mi_fam_jac <- vegdist(mc_apcyn_melic_saptc, method = 'jac', binary = T)
+mi_fam_jac <- vegdist(mc_piprc, method = 'jac', binary = T)
 mi_fam_jac %>% tidy # Mostrando sólo las primeras 10 combinaciones en modo data.frame
 ```
 
-    ## # A tibble: 1,225 x 3
+    ## # A tibble: 1,035 x 3
     ##    item1 item2 distance
     ##    <int> <int>    <dbl>
-    ##  1     2     1   0.0833
-    ##  2     3     1   0.154 
-    ##  3     4     1   0.154 
-    ##  4     5     1   0.267 
-    ##  5     6     1   0.231 
-    ##  6     7     1   0.231 
-    ##  7     8     1   0.231 
-    ##  8     9     1   0.231 
-    ##  9    10     1   0.231 
-    ## 10    11     1   0.154 
-    ## # … with 1,215 more rows
+    ##  1     2     1    0.714
+    ##  2     3     1    0.667
+    ##  3     4     1    0.667
+    ##  4     5     1    0.429
+    ##  5     6     1    0.833
+    ##  6     7     1    0.857
+    ##  7     8     1    0.667
+    ##  8     9     1    0.714
+    ##  9    10     1    0.714
+    ## 10    11     1    0.857
+    ## # … with 1,025 more rows
 
 El argumento `binary=T` en `vegdist` “ordena” que se realice primero
-`decostand(mc_apcyn_melic_saptc, method = 'pa')`, lo cual convierte la
-matriz de comunidad en una de presencia/ausencia, con la que
-posteriormente se calculará la matriz de distancia.
+`decostand(mc_piprc, method = 'pa')`, lo cual convierte la matriz de
+comunidad en una de presencia/ausencia, con la que posteriormente se
+calculará la matriz de distancia.
 
 En esta matriz de disimilaridad, al igual que en la anterior, un valor
 pequeño (rosa) significa que los sitios comparados son muy parecidos.
@@ -236,7 +238,7 @@ similares.
 coldiss(mi_fam_jac, diag = T)
 ```
 
-![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](medicion_asociacion_2_modo_Q_piperaceae_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 La distancia de Jaccard (**D<sub>J</sub>**) se puede expresar como “la
 proporción de especies no compartidas”. En este caso, para la
@@ -256,20 +258,20 @@ de distancia a 1 (**S<sub>J</sub>=1-D<sub>J</sub>**).
 (1 - mi_fam_jac) %>% tidy %>% rename(similaridad=distance) #Similaridad
 ```
 
-    ## # A tibble: 1,225 x 3
+    ## # A tibble: 1,035 x 3
     ##    item1 item2 similaridad
     ##    <int> <int>       <dbl>
-    ##  1     2     1       0.917
-    ##  2     3     1       0.846
-    ##  3     4     1       0.846
-    ##  4     5     1       0.733
-    ##  5     6     1       0.769
-    ##  6     7     1       0.769
-    ##  7     8     1       0.769
-    ##  8     9     1       0.769
-    ##  9    10     1       0.769
-    ## 10    11     1       0.846
-    ## # … with 1,215 more rows
+    ##  1     2     1       0.286
+    ##  2     3     1       0.333
+    ##  3     4     1       0.333
+    ##  4     5     1       0.571
+    ##  5     6     1       0.167
+    ##  6     7     1       0.143
+    ##  7     8     1       0.333
+    ##  8     9     1       0.286
+    ##  9    10     1       0.286
+    ## 10    11     1       0.143
+    ## # … with 1,025 more rows
 
 Dado que este resultado muestra la similaridad, podemos leerlo como “el
 sitio 1 y el 2 comparten un 91.67% de sus especies”.
@@ -283,7 +285,7 @@ Para obtener las variables **a**, **b** y **c**, usaré La función
 `betadiver` del paquete `vegan`:
 
 ``` r
-mi_fam_abc <- betadiver(mc_apcyn_melic_saptc) 
+mi_fam_abc <- betadiver(mc_piprc) 
 mi_fam_abc %>%
   map(tidy) %>%
   map(slice, 1) %>%
@@ -294,9 +296,9 @@ mi_fam_abc %>%
     ## # A tibble: 3 x 2
     ##   tipo  n_especies
     ##   <chr>      <dbl>
-    ## 1 a             11
-    ## 2 b              0
-    ## 3 c              1
+    ## 1 a              2
+    ## 2 b              1
+    ## 3 c              4
 
 Puedes notar que ambos sitios comparten 11 especies (**a**), que el
 sitio 2 no tiene especies exclusivas (**b**) y que el sitio 1 tiene 1
@@ -313,23 +315,23 @@ Con `betadiver` también puedes calcular índices de similaridad. Por
 ejemplo, el Jaccard se calcula así:
 
 ``` r
-betadiver(mc_apcyn_melic_saptc, method = 'j') %>% tidy
+betadiver(mc_piprc, method = 'j') %>% tidy
 ```
 
-    ## # A tibble: 1,225 x 3
+    ## # A tibble: 1,035 x 3
     ##    item1 item2 distance
     ##    <int> <int>    <dbl>
-    ##  1     2     1    0.917
-    ##  2     3     1    0.846
-    ##  3     4     1    0.846
-    ##  4     5     1    0.733
-    ##  5     6     1    0.769
-    ##  6     7     1    0.769
-    ##  7     8     1    0.769
-    ##  8     9     1    0.769
-    ##  9    10     1    0.769
-    ## 10    11     1    0.846
-    ## # … with 1,215 more rows
+    ##  1     2     1    0.286
+    ##  2     3     1    0.333
+    ##  3     4     1    0.333
+    ##  4     5     1    0.571
+    ##  5     6     1    0.167
+    ##  6     7     1    0.143
+    ##  7     8     1    0.333
+    ##  8     9     1    0.286
+    ##  9    10     1    0.286
+    ## 10    11     1    0.143
+    ## # … with 1,025 more rows
 
 No obstante, usaremos esta función en los análisis de diversidad beta
 más adelante.
@@ -338,30 +340,30 @@ Además de la distancia de Jaccard, otra distancia muy utilizada es la de
 Sorensen o Bray-Curtis. Se calcula fácilmente con la función `vegdist`:
 
 ``` r
-mi_fam_sor <- vegdist(mc_apcyn_melic_saptc, method = 'bray', binary = T)
+mi_fam_sor <- vegdist(mc_piprc, method = 'bray', binary = T)
 mi_fam_sor %>% tidy
 ```
 
-    ## # A tibble: 1,225 x 3
+    ## # A tibble: 1,035 x 3
     ##    item1 item2 distance
     ##    <int> <int>    <dbl>
-    ##  1     2     1   0.0435
-    ##  2     3     1   0.0833
-    ##  3     4     1   0.0833
-    ##  4     5     1   0.154 
-    ##  5     6     1   0.130 
-    ##  6     7     1   0.130 
-    ##  7     8     1   0.130 
-    ##  8     9     1   0.130 
-    ##  9    10     1   0.130 
-    ## 10    11     1   0.0833
-    ## # … with 1,215 more rows
+    ##  1     2     1    0.556
+    ##  2     3     1    0.5  
+    ##  3     4     1    0.5  
+    ##  4     5     1    0.273
+    ##  5     6     1    0.714
+    ##  6     7     1    0.75 
+    ##  7     8     1    0.5  
+    ##  8     9     1    0.556
+    ##  9    10     1    0.556
+    ## 10    11     1    0.75 
+    ## # … with 1,025 more rows
 
 ``` r
 coldiss(mi_fam_sor, diag = T)
 ```
 
-![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](medicion_asociacion_2_modo_Q_piperaceae_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 ### Modo Q para datos cuantitativos, NO de abundancia de especies (variables ambientales)
 
@@ -375,32 +377,34 @@ se obtendrían resultados inconsistentes.
 ``` r
 env_suelo_punt_z <- bci_env_grid %>%
   st_drop_geometry() %>% 
+  slice(filas_sin_0) %>%
+  column_to_rownames('id') %>% 
   dplyr::select(matches('^[A-T,Z]|^pH$', ignore.case = F)) %>% 
   scale()
 env_suelo_punt_z_d <- dist(env_suelo_punt_z)
 env_suelo_punt_z_d %>% tidy
 ```
 
-    ## # A tibble: 1,225 x 3
+    ## # A tibble: 1,035 x 3
     ##    item1 item2 distance
     ##    <int> <int>    <dbl>
-    ##  1     2     1     1.17
-    ##  2     3     1     2.26
-    ##  3     4     1     2.09
-    ##  4     5     1     2.02
-    ##  5     6     1     2.45
+    ##  1     2     1     1.18
+    ##  2     3     1     2.23
+    ##  3     4     1     2.08
+    ##  4     5     1     2.06
+    ##  5     6     1     2.39
     ##  6     7     1     2.51
-    ##  7     8     1     2.85
-    ##  8     9     1     2.38
-    ##  9    10     1     2.70
-    ## 10    11     1     3.86
-    ## # … with 1,215 more rows
+    ##  7     8     1     2.86
+    ##  8     9     1     2.36
+    ##  9    10     1     2.73
+    ## 10    11     1     3.79
+    ## # … with 1,025 more rows
 
 ``` r
 coldiss(env_suelo_punt_z_d, diag = T)
 ```
 
-![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](medicion_asociacion_2_modo_Q_piperaceae_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ### Modo Q para datos cualitativos y cuantitativos (mixtos), NO de abundancia de especies (variables ambientales)
 
@@ -423,13 +427,15 @@ igualmente para datos cualitativos solamente):
 
 ``` r
 env_mix <- bci_env_grid %>%
-  st_drop_geometry() %>%
+  st_drop_geometry() %>% 
+  slice(filas_sin_0) %>%
+  column_to_rownames('id') %>% 
   dplyr::select(heterogeneidad_ambiental, habitat, quebrada)
 env_mix_d <- daisy(x = env_mix, metric = 'gower')
 env_mix_d %>% as.dist %>% tidy
 ```
 
-    ## # A tibble: 1,225 x 3
+    ## # A tibble: 1,035 x 3
     ##    item1 item2 distance
     ##    <int> <int>    <dbl>
     ##  1     2     1    0.441
@@ -442,10 +448,10 @@ env_mix_d %>% as.dist %>% tidy
     ##  8     9     1    0.954
     ##  9    10     1    0.954
     ## 10    11     1    0.769
-    ## # … with 1,215 more rows
+    ## # … with 1,025 more rows
 
 ``` r
 env_mix_d %>% coldiss(diag = T)
 ```
 
-![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](medicion_asociacion_2_modo_Q_piperaceae_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
