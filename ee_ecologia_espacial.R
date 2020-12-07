@@ -46,6 +46,7 @@ centroides <- bci_env_grid %>% st_centroid
 bci_xy <- centroides %>% st_coordinates %>% as.data.frame
 (vecindad <- bci_env_grid_sp %>% poly2nb)
 (pesos_b <- nb2listw(vecindad, style = 'B'))
+#+ fig.width=12, fig.height=6
 plot(bci_env_grid_sp)
 plot(vecindad, coords = bci_xy, add=T, col = 'red')
 #' 
@@ -60,35 +61,37 @@ ph_correl <- sp.correlogram(vecindad,
                             method = "I",
                             zero.policy = TRUE)
 print(ph_correl, p.adj.method = 'holm')
+#+ fig.width=12, fig.height=6
 plot(ph_correl)
 #'
 #' ### Autocorrelación espacial de múltiples variables
 #' 
 #' #### Autocorrelación espacial de especies (matriz de comunidad)
 #' 
-suppressWarnings(auto_spp_hel <- calcular_autocorrelacion_especies(
+suppressWarnings(auto_spp_hel <- calcular_autocorrelacion(
   df_fuente = mi_fam_hel,
   orden = 9,
   obj_vecindad = vecindad,
   pos_var = '(matriz Hellinger)'))
 print(auto_spp_hel, p.adj.method = 'holm')
 dim_panel <- rev(n2mfrow(ncol(mi_fam_hel)))
+#+ fig.width=12, fig.height=10
 par(mfrow = dim_panel)
 suppressWarnings(invisible(lapply(auto_spp_hel, function(x) plot(x, main = x$var))))
 #' 
 #' #### Autocorrelación espacial de datos ambientales (matriz ambiental)
 #' 
-#+ fig.width=12, fig.height=12
 bci_env_grid_num <- bci_env_grid %>%
   st_drop_geometry %>% 
   select_if(is.numeric) %>% 
   select(-id, -UTM.EW, -UTM.NS)
-suppressWarnings(auto_amb <- calcular_autocorrelacion_especies(
+suppressWarnings(auto_amb <- calcular_autocorrelacion(
   df_fuente = bci_env_grid_num,
   orden = 9,
   obj_vecindad = vecindad))
 print(auto_amb, p.adj.method = 'holm')
 dim_panel <- rev(n2mfrow(ncol(bci_env_grid_num)))
+#+ fig.width=12, fig.height=12
 par(mfrow = dim_panel)
 suppressWarnings(invisible(lapply(auto_amb, function(x) plot(x, main = x$var))))
 #' 

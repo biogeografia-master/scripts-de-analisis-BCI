@@ -248,7 +248,7 @@ plot(bci_env_grid_sp)
 plot(vecindad, coords = bci_xy, add=T, col = 'red')
 ```
 
-![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
 ## Autocorrelación espacial
 
@@ -293,14 +293,14 @@ print(ph_correl, p.adj.method = 'holm')
 plot(ph_correl)
 ```
 
-![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
 
 ### Autocorrelación espacial de múltiples variables
 
 #### Autocorrelación espacial de especies (matriz de comunidad)
 
 ``` r
-suppressWarnings(auto_spp_hel <- calcular_autocorrelacion_especies(
+suppressWarnings(auto_spp_hel <- calcular_autocorrelacion(
   df_fuente = mi_fam_hel,
   orden = 9,
   obj_vecindad = vecindad,
@@ -661,11 +661,14 @@ print(auto_spp_hel, p.adj.method = 'holm')
 
 ``` r
 dim_panel <- rev(n2mfrow(ncol(mi_fam_hel)))
+```
+
+``` r
 par(mfrow = dim_panel)
 suppressWarnings(invisible(lapply(auto_spp_hel, function(x) plot(x, main = x$var))))
 ```
 
-![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 #### Autocorrelación espacial de datos ambientales (matriz ambiental)
 
@@ -674,7 +677,7 @@ bci_env_grid_num <- bci_env_grid %>%
   st_drop_geometry %>% 
   select_if(is.numeric) %>% 
   select(-id, -UTM.EW, -UTM.NS)
-suppressWarnings(auto_amb <- calcular_autocorrelacion_especies(
+suppressWarnings(auto_amb <- calcular_autocorrelacion(
   df_fuente = bci_env_grid_num,
   orden = 9,
   obj_vecindad = vecindad))
@@ -1398,11 +1401,14 @@ print(auto_amb, p.adj.method = 'holm')
 
 ``` r
 dim_panel <- rev(n2mfrow(ncol(bci_env_grid_num)))
+```
+
+``` r
 par(mfrow = dim_panel)
 suppressWarnings(invisible(lapply(auto_amb, function(x) plot(x, main = x$var))))
 ```
 
-![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
 ### Correlograma Mantel de matriz datos comunidad sin tendencia (residuos)
 
@@ -1425,12 +1431,12 @@ mi_fam_sin_tendencia_d <- dist(mi_fam_sin_tendencia)
     ## mantel.correlog(D.eco = mi_fam_sin_tendencia_d, XY = bci_xy,      nperm = 999) 
     ## 
     ##         class.index     n.dist Mantel.cor Pr(Mantel) Pr(corrected)   
-    ## D.cl.1   136.870241 144.000000   0.064513      0.003         0.003 **
-    ## D.cl.2   210.610723 376.000000   0.038638      0.079         0.079 . 
-    ## D.cl.3   284.351204 390.000000  -0.052374      0.028         0.056 . 
-    ## D.cl.4   358.091686 148.000000  -0.042984      0.028         0.084 . 
-    ## D.cl.5   431.832168 372.000000  -0.059022      0.035         0.112   
-    ## D.cl.6   505.572649 266.000000  -0.052373      0.005         0.025 * 
+    ## D.cl.1   136.870241 144.000000   0.064513      0.002         0.002 **
+    ## D.cl.2   210.610723 376.000000   0.038638      0.091         0.091 . 
+    ## D.cl.3   284.351204 390.000000  -0.052374      0.026         0.052 . 
+    ## D.cl.4   358.091686 148.000000  -0.042984      0.023         0.069 . 
+    ## D.cl.5   431.832168 372.000000  -0.059022      0.023         0.092 . 
+    ## D.cl.6   505.572649 266.000000  -0.052373      0.004         0.020 * 
     ## D.cl.7   579.313131 168.000000         NA         NA            NA   
     ## D.cl.8   653.053613 100.000000         NA         NA            NA   
     ## D.cl.9   726.794094 154.000000         NA         NA            NA   
@@ -1444,7 +1450,7 @@ mi_fam_sin_tendencia_d <- dist(mi_fam_sin_tendencia)
 plot(mi_fam_correlograma)
 ```
 
-![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ### Determinación de autocorrelación global de residuos por medio de prueba de permutación del I de Moran
 
@@ -1485,19 +1491,19 @@ lisamaps_amb$leyenda <- gtable_filter(ggplot_gtable(ggplot_build(lisamaps_amb[[1
 grid.arrange(do.call('arrangeGrob', c(lisamaps_amb[1:12], nrow = 3)), lisamaps_amb$leyenda, heights=c(1.1, 0.1), nrow = 2)
 ```
 
-![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ``` r
 grid.arrange(do.call('arrangeGrob', c(lisamaps_amb[13:22], nrow = 3)), lisamaps_amb$leyenda, heights=c(1.1, 0.1), nrow = 2)
 ```
 
-![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-12-2.png)<!-- -->
+![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-16-2.png)<!-- -->
 
 ``` r
 grid.arrange(do.call('arrangeGrob', c(lisamaps_amb[23:31], nrow = 3)), lisamaps_amb$leyenda, heights=c(1.1, 0.1), nrow = 2)
 ```
 
-![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-12-3.png)<!-- -->
+![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-16-3.png)<!-- -->
 
 ### Determinación de autocorrelación local de abundancias transformadas (Hellinger) por medio de prueba de I de Moran
 
@@ -1523,10 +1529,10 @@ lisamaps_mifam$leyenda <- gtable_filter(ggplot_gtable(ggplot_build(lisamaps_mifa
 grid.arrange(do.call('arrangeGrob', c(lisamaps_mifam[1:8], nrow = 3)), lisamaps_mifam$leyenda, heights=c(1.1, 0.1), nrow = 2)
 ```
 
-![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
 ``` r
 grid.arrange(do.call('arrangeGrob', c(lisamaps_mifam[9:16], nrow = 3)), lisamaps_mifam$leyenda, heights=c(1.1, 0.1), nrow = 2)
 ```
 
-![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-13-2.png)<!-- -->
+![](ee_ecologia_espacial_files/figure-gfm/unnamed-chunk-17-2.png)<!-- -->

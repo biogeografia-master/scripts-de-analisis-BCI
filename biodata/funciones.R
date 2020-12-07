@@ -1749,7 +1749,7 @@ scalog <- function(res, np = 999, alpha = c(0.05, 0.01, 0.001), cex=2)
   invisible(test)
 }
 
-calcular_autocorrelacion_especies <- function(df_fuente, orden, obj_vecindad, pre_var = NULL, pos_var = NULL){
+calcular_autocorrelacion <- function(df_fuente, orden, obj_vecindad, pre_var = NULL, pos_var = NULL){
   library(tidyverse)
   library(spdep)
   nombres <- colnames(df_fuente)
