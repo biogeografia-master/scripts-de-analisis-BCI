@@ -1749,20 +1749,86 @@ scalog <- function(res, np = 999, alpha = c(0.05, 0.01, 0.001), cex=2)
   invisible(test)
 }
 
-calcular_autocorrelacion_especies <- function(mc, area_sitio, orden){
+calcular_autocorrelacion_especies <- function(df_fuente, orden, obj_vecindad, pre_var = NULL, pos_var = NULL){
   library(tidyverse)
   library(spdep)
-  sp <- colnames(mc)
-  invisible(sapply(sp,
+  nombres <- colnames(df_fuente)
+  invisible(sapply(nombres,
          function(x) {
-           sp_vec <- mi_fam %>% pull(x)
-           sp_correl <- sp.correlogram(vecindad,
-                                       sp_vec/area_sitio,
+           sp_vec <- df_fuente %>% pull(x)
+           sp_correl <- sp.correlogram(obj_vecindad,
+                                       sp_vec,
                                        order = orden,
                                        method = "I",
                                        zero.policy = TRUE)
-           sp_correl$var <- paste('Densidad de', x)
+           sp_correl$var <- paste0(
+             ifelse(is.null(pre_var), '', paste0(' ', pre_var)),
+             x,
+             ifelse(is.null(pos_var), '', paste0(' ', pos_var))
+           )
            resumen <- sp_correl
            return(resumen)
          }, simplify = FALSE))
+}
+
+
+lisamap <- function(objesp = NULL, var = 'mivariable_pct_log', pesos = NULL,
+                    titulomapa = NULL, anchuratitulo = NULL, tamanotitulo = NULL,
+                    tituloleyenda = NULL, leyenda = T, fuentedatos = NULL) {
+  require(tidyverse)
+  require(spdep)
+  require(sf)
+  require(ggplot2)
+  
+  # Variable en forma vectorial
+  varvectorial <- objesp[var] %>% st_drop_geometry %>% dplyr::select(var) %>% pull
+  
+  # Moral local
+  lomo <- localmoran(varvectorial, listw = pesos)
+  
+  # Puntuaciones z
+  objesp$puntuacionz <- varvectorial %>% scale %>% as.vector
+  
+  # Crear variable con rezago
+  objesp$lagpuntuacionz <- lag.listw(pesos, objesp$puntuacionz)
+  
+  # Variable nueva sobre significancia de la correlación local, rellena con NAs
+  objesp$quad_sig <- NA
+  
+  # Cuadrante high-high quadrant
+  objesp[(objesp$puntuacionz >= 0 & 
+            objesp$lagpuntuacionz >= 0) & 
+           (lomo[, 5] <= 0.05), "quad_sig"] <- "high-high"
+  # Cuadrante low-low
+  objesp[(objesp$puntuacionz <= 0 & 
+            objesp$lagpuntuacionz <= 0) & 
+           (lomo[, 5] <= 0.05), "quad_sig"] <- "low-low"
+  # Cuadrante high-low
+  objesp[(objesp$puntuacionz >= 0 & 
+            objesp$lagpuntuacionz <= 0) & 
+           (lomo[, 5] <= 0.05), "quad_sig"] <- "high-low"
+  # Cuadrante low-high
+  objesp[(objesp$puntuacionz <= 0 
+          & objesp$lagpuntuacionz >= 0) & 
+           (lomo[, 5] <= 0.05), "quad_sig"] <- "low-high"
+  # No significativas
+  objesp[(lomo[, 5] > 0.05), "quad_sig"] <- "not signif."  
+  
+  #Convertir a factorial
+  objesp$quad_sig <- as.factor(objesp$quad_sig)
+  
+  # Mapa
+  p <- objesp %>% 
+    ggplot() +
+    aes(fill = quad_sig) + 
+    geom_sf(color = "black", size = .05)  +
+    theme_bw() +
+    scale_fill_manual(values = c("high-high" = "red", "low-low" = "blue", "high-low" = "lightblue", "low-high" = "pink", "not signif." = "light grey")) +
+    labs(title = stringr::str_wrap(titulomapa, width = anchuratitulo),
+         fill = tituloleyenda,
+         caption = paste('Fuente de datos:', fuentedatos)) +
+    scale_x_continuous(breaks = -68:-72) +
+    scale_y_continuous(breaks = 18:20) +
+    theme(plot.title = element_text(size = tamanotitulo), legend.position = {`if`(leyenda, 'right', 'none')}) 
+  return(list(grafico = p, objeto = objesp))
 }
