@@ -367,11 +367,87 @@ summary {
 
 <div id="scripts-de-análisis-de-bci" class="section level1">
 <h1>Scripts de análisis de BCI</h1>
+<p>Por José Ramón Martínez Batlle</p>
+<p>Dentro de la asignatura <a href="https://github.com/biogeografia-master/material-de-apoyo">“Biogeografía (GEO-131)”</a>, de la Universidad Autónoma de Santo Domingo (UASD), asigno la redacción de un manuscrito basado en ecología numérica, utilizando como referencia el trabajo de Borcard et al. (2018).</p>
+<p>Para obtener resultados empíricos consistentes, se necesitan datos de comunidad y ambientales de calidad. El <a href="http://ctfs.si.edu/webatlas/datasets/bci">conjunto de datos de BCI</a> es idóneo en este sentido, puesto que dispone de múltiples variables ambientales e información de la comunidad basada en repetidos censos desde la década de los 80 del siglo XX (Condit, 1998; Hubbel et al., 1999; Hubbel et al., 2005). Los datos están bien documentados y contienen todas las variables necesarias para cualquier análisis de ecología numérica.</p>
 <blockquote>
-<p>Nota. No clonar este repo dentro del repo de manuscrito. En general, no clonar nunca un repo dentro de otro.</p>
+<p>Aviso para estudiantes. No clones este repo dentro del de manuscrito. Es preferible visualizarlo desde GitHub. Si lo clonas, asegúrate de hacerlo fuera del repo de manuscrito.</p>
 </blockquote>
-<div id="análisis-exploratorio-de-datos-parte-1" class="section level2">
-<h2><a href="aed_1.R">Análisis exploratorio de datos, parte 1</a></h2>
+<div id="recursos-vídeos-y-scripts" class="section level2">
+<h2>Recursos: vídeos y scripts</h2>
+<div id="herramientas-rmarkdown-github" class="section level3">
+<h3>Herramientas Rmarkdown, GitHub</h3>
+<ul>
+<li><p><a href="https://drive.google.com/file/d/1DK7QNUbicjoeVUusm6Kwpk299H8oD6Jj/view?usp=sharing">Cómo introducir referencias bibliográficas citas APA usando Bibtex, insertar imágenes y tablas externas (no generadas por R en consola) en el manuscrito formato RMarkdown</a></p></li>
+<li><p><a href="https://drive.google.com/file/d/1roecMRxQYIOmUA3--pa7Syh4hQls7Y6v/view?usp=sharing">Video corto sobre clonar un repositorio desde GitHub a RStudio, identificarme como usuario ante GitHub, hacer commit y push</a></p></li>
+</ul>
+</div>
+<div id="bci" class="section level3">
+<h3>BCI</h3>
+<ul>
+<li><a href="https://drive.google.com/file/d/1pHQi-9NQYGQnXKXX02eZOpTDoQarvrXl/view?usp=sharing">Datos censales parcela permanente 50 ha árboles BCI, explicado por el tali</a></li>
+</ul>
+</div>
+<div id="scripts-de-análisis" class="section level3">
+<h3>Scripts de análisis</h3>
+<blockquote>
+<p>Te recomiendo usar las versiones <code>*.md</code> de los scripts de análisis para ver el contenido desarrollado en cada caso, y las versiones no tejidas o scripts de <code>*.R</code> crudos para copiar código, pegarlo en R y reproducir los análisis.</p>
+</blockquote>
+<ul>
+<li><p>Análisis exploratorio de datos</p>
+<ul>
+<li><p><a href="aed_1.md">aed_1: Crear script de análisis para generar objetos, tales como tablas de R y gráficos (por ejemplo, gráficos de mosaico, gráficos de dispersión), e insertarlos en documento de manuscrito formato RMarkdown (análisis exploratorio de datos)</a>. <a href="https://drive.google.com/file/d/1gZwltgEHpF_jdzpF-hWDZWd5QyMb3iT3/view?usp=sharing">Vídeo asociado. T39:19</a></p></li>
+<li><p><a href="aed_2_tidyverse.md">aed_2: Tutorial de <code>tidyverse</code>. Este vídeo tiene finalidad didáctica. Los análisis mostrados en éste son sólo demostrativos, y no tienen por qué terminar en tu manuscrito, a menos que así lo desees. En otros vídeos si ejecutaré análisis que podrían serte útiles en tu manuscrito, aplicando lo mostrado en este tutorial</a>. <a href="https://drive.google.com/file/d/1YUDPMgKsxzxXSUQAImY5SvBUQdciP19G/view?usp=sharing">Vídeo asociado. T1:48:09</a></p></li>
+<li><p><a href="aed_3_mapas_riqueza_abun_global_mi_familia.md">aed_3: Cómo crear mapas de riqueza y abundancia global y de mi familia de plantas asignada. En este vídeo, verás cómo crear mapas interactivos y estáticos de abundancia y riqueza, que podrás insertar en tu manuscrito</a>. <a href="https://drive.google.com/file/d/1BCNyc_z6ikS2UdADzSudfoaOtCqPfX7L/view?usp=sharing">Vídeo asociado. T35:31</a></p></li>
+<li><p><a href="aed_4_mapas_variables_ambientales.md">aed_4: Cómo crear mapas de variables ambientales</a>. <a href="https://drive.google.com/file/d/1O8wfLqeTCES8M1UPi5HGuLcTqjDoNxNm/view?usp=sharing">Vídeo asociado. T27:37</a></p></li>
+<li><p><a href="aed_5_correlaciones_variables_ambientales.md">aed_5: Cómo realizar análisis y paneles de correlación entre variables ambientales</a>. <a href="https://drive.google.com/file/d/1LqxUdjn_M8qqWoIw3JqLTYcWDPnj75zE/view?usp=sharing">Vídeo asociado. T40:39</a></p></li>
+<li><p><a href="aed_6_mapas_por_lotes.md">aed_6: Mapas de variables ambientales <strong>por lotes</strong></a>. <a href="https://drive.google.com/file/d/14U2Yrk4c5FelcZFznjMc0uXnBa7XfCdY/view?usp=sharing">Vídeo asociado. T15:33</a></p></li>
+</ul></li>
+<li><p>Medición de asociación</p>
+<ul>
+<li><p><a href="medicion_asociacion_1_modo_Q_paradoja_orloci.md">ma_1: Modos de análisis Q y R. Paradoja de Orlóci</a>. <a href="https://drive.google.com/file/d/1Ie3wws6ZCaKnDQtQEVMRa6TwjSni6v4J/view?usp=sharing">Vídeo asociado. T29:12</a></p></li>
+<li><p><a href="medicion_asociacion_2_modo_Q_mi_familia.md">ma_2: Modo de análisis Q, para comparar asociación entre objetos (sitios) usando métricas de distancia</a>. <a href="https://drive.google.com/file/d/12_Rha9iQFD5MWOFmwiNfXTA767d1JT2e/view?usp=sharing">Vídeo asociado. T36:11</a></p></li>
+<li><p><a href="medicion_asociacion_3_modo_R_mi_familia.md">ma_3: Modo de análisis R, para comparar dependencia entre descriptores (variables) usando tanto métricas de distancia como de correlación</a>. <a href="https://drive.google.com/file/d/1HoR1phyXfmr8cICWG36NClv17l00nyxS/view?usp=sharing">Vídeo asociado. T28:16</a></p></li>
+</ul></li>
+<li><p>Análisis de agrupamiento (<em>cluster analysis</em>)</p>
+<ul>
+<li><p><a href="aa_analisis_de_agrupamiento_1_jerarquico.md">aa_1: agrupamiento jerárquico</a>. <a href="https://drive.google.com/file/d/1nvxyygYLlaK2lFuIbfxeApGtFN85wXFU/view?usp=sharing">Vídeo asociado. T38:14</a></p></li>
+<li><p><a href="aa_analisis_de_agrupamiento_2_intepretacion_resultados.md">aa_2: Interpretación y comparación de resultados</a>. <a href="https://drive.google.com/file/d/14Mh6eEGJnvfy7uw969KvJGEqF7DW33rw/view?usp=sharing">Vídeo asociado. T1:11:54</a></p></li>
+<li><p><a href="aa_analisis_de_agrupamiento_3_variables_ambientales_segun_grupos.md">aa_3: Grupos (clústers), variables ambientales y mapas</a>. <a href="https://drive.google.com/file/d/16MpxVlnNRnYrTT7pz-ydT5n61_Ns517P/view?usp=sharing">Vídeo asociado. T33:49</a></p></li>
+<li><p><a href="aa_analisis_de_agrupamiento_4_especies_indicadoras_preferencia_por_habitat.md">aa_4: Especies indicadoras, especies con preferencia por hábitats</a>. <a href="https://drive.google.com/file/d/1EKKR7tePhnZFTButwWWRXcbgNuRnc9j3/view?usp=sharing">Vídeo asociado. T55:05</a></p></li>
+</ul></li>
+<li><p>Análisis de ordenación simple (no restringida) y canónica (restringida)</p>
+<ul>
+<li><p><a href="to_tecnicas_de_ordenacion_1_ordenacion_no_restringida_PCA_CA_MCA.md">to_1: Ordenación no restringida. PCA, CA y PCoA</a>. <a href="https://drive.google.com/file/d/1WpOmbkbZ4EVQBCisVb8ggDUXQ0guDmO3/view?usp=sharing">Vídeo asociado. T2:08:05</a></p></li>
+<li><p><a href="to_tecnicas_de_ordenacion_2_ordenacion_restringida_RDA_CCA.md">to_2: Ordenación restringida o ‘canónica’. RDA, CCA</a>. <a href="https://drive.google.com/file/d/18_WRG5hSxm6iftOiqMkNKKXxp3PhqBwe/view?usp=sharing">Vídeo asociado. T1:11:44</a></p></li>
+</ul></li>
+<li><p>Análisis de diversidad alpha y beta</p>
+<ul>
+<li><p><a href="di_1_analisis_de_diversidad_diversidad_alpha.md">di_1: Diversidad alpha</a>. <a href="https://drive.google.com/file/d/1bsNkshm7PsrqkO7qMwkLdWItCeyblztE/view?usp=sharing">Vídeo asociado. T1:45:15</a></p></li>
+<li><p><a href="di_2_analisis_de_diversidad_diversidad_beta.md">di_2: Diversidad beta</a>. <a href="https://drive.google.com/file/d/1bsNkshm7PsrqkO7qMwkLdWItCeyblztE/view?usp=sharing">Vídeo asociado. T23:29</a></p></li>
+</ul></li>
+<li><p>Ecología espacial</p>
+<ul>
+<li><a href="ee_ecologia_espacial.md">ee: Autocorrelación T</a>. <a href="https://drive.google.com/file/d/14S4fSKfcm3T39WTLcnW69OJV2tKQtw6p/view?usp=sharing">Vídeo asociado. T1:09:52</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="otros-recursos" class="section level3">
+<h3>Otros recursos:</h3>
+<ul>
+<li><p><a href="https://drive.google.com/drive/folders/12NbRrZlw6qBtaEWH6KqiAw1XaSutxFDg?usp=sharing">Drive de Google conteniendo presentaciones de diapositivas</a></p></li>
+<li><p><a href="https://geofis.shinyapps.io/tutorial1/">Introducción a R (tutorial1), para aprender sobre objetos de R</a></p></li>
+</ul>
+</div>
+</div>
+<div id="referencias" class="section level2">
+<h2>Referencias</h2>
+<ul>
+<li><p>Borcard, D., Gillet, F., &amp; Legendre, P. (2018). <em>Numerical ecology with R</em>. Springer.</p></li>
+<li><p><a href="http://ctfs.si.edu/webatlas/datasets/bci/">Hubbell, S.P., Condit, R., and Foster, R.B. 2005. Barro Colorado Forest Census Plot Data. URL http://ctfs.si.edu/webatlas/datasets/bci</a></p></li>
+<li><p>Condit, R. 1998. Tropical Forest Census Plots. Springer-Verlag and R. G. Landes Company, Berlin, Germany, and Georgetown, Texas.</p></li>
+<li><p>Hubbell, S.P., R.B. Foster, S.T. O’Brien, K.E. Harms, R. Condit, B. Wechsler, S.J. Wright, and S. Loo de Lao. 1999. Light gap disturbances, recruitment limitation, and tree diversity in a neotropical forest. Science 283: 554-557.</p></li>
+</ul>
 </div>
 </div>
 
