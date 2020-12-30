@@ -1,5 +1,8 @@
 # Scripts de análisis de BCI
 Por José Ramón Martínez Batlle
+[![DOI](https://zenodo.org/badge/303678546.svg)](https://zenodo.org/badge/latestdoi/303678546)
+
+Entrada BibTeX, [aquí](#entrada-bibtex)
 
 Dentro de la asignatura ["Biogeografía (GEO-131)"](https://github.com/biogeografia-master/material-de-apoyo), de la Universidad Autónoma de Santo Domingo (UASD), asigno la redacción de un manuscrito basado en ecología numérica, utilizando como referencia el trabajo de Borcard et al. (2018).
 
@@ -86,3 +89,19 @@ Para obtener resultados empíricos consistentes, se necesitan datos de comunidad
 * Condit, R. 1998. Tropical Forest Census Plots. Springer-Verlag and R. G. Landes Company, Berlin, Germany, and Georgetown, Texas.
 
 * Hubbell, S.P., R.B. Foster, S.T. O'Brien, K.E. Harms, R. Condit, B. Wechsler, S.J. Wright, and S. Loo de Lao. 1999. Light gap disturbances, recruitment limitation, and tree diversity in a neotropical forest. Science 283: 554-557.
+
+## Entrada BibTex
+
+```
+@software{jose_ramon_martinez_batlle_2020_4402362,
+  author       = {José Ramón Martínez Batlle},
+  title        = {{biogeografia-master/scripts-de-analisis-BCI: Long 
+                   coding sessions}},
+  month        = dec,
+  year         = 2020,
+  publisher    = {Zenodo},
+  version      = {v0.0.0.9000},
+  doi          = {10.5281/zenodo.4402362},
+  url          = {https://doi.org/10.5281/zenodo.4402362}
+}
+```
