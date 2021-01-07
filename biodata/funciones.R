@@ -241,10 +241,12 @@ ezonalobj <- function(objraster = NULL, nombre = '', objgeometrias = NULL, expor
   return(geomsout)
 }
 
-coldissgg <- function(dist, ordered = T, nc = 100, fsz = 4) {
-  #dist = matriz de distancias
+coldissgg <- function(dist, ordered = T, nc = 4, fsz = 2) {
+  #dist = distance matrix
   #ordered = ordered by distance value
   #nc = number of colors
+  #fsz = font-size
+  #usage: coldissgg(mi_fam_d_hel, ordered = T, nc = 4, fsz = 2)
   require(reshape2)
   require(tidyr)
   require(dplyr)
@@ -256,14 +258,22 @@ coldissgg <- function(dist, ordered = T, nc = 100, fsz = 4) {
   dist.g$Var2 <- factor(dist.g$Var2, levels=sort(levels(dist.g$Var2)))
   dist.g[dist.g$Var1==dist.g$Var2,'value'] <- NA
   dist.g$type <- 'Dissimilarity matrix'
-  dist.g.o <- dist.g
+  reorder <- function(distmat){
+    hc <- hclust(distmat)
+    distmat <- as.matrix(distmat)[hc$order, hc$order]
+    return(distmat)
+  }
+  dist.o <- reorder(dist)
+  dist.g.o <- melt(dist.o, na.rm = TRUE)
+  dist.g.o$Var1 <- factor(dist.g.o$Var1)
+  dist.g.o$Var2 <- factor(dist.g.o$Var2)
   dist.g.o$Var1 <- factor(dist.g.o$Var1, levels=levels(dist.g.o$Var1)[order.single(1-dist)])
   dist.g.o$Var2 <- factor(dist.g.o$Var2, levels=levels(dist.g.o$Var2)[order.single(1-dist)])
   dist.g.o$type <- 'Ordered dissimilarity matrix'
-  mypalette <- colorRampPalette(rev(brewer.pal(4, "YlOrRd")), space="Lab")#Borrowed from Heatmap.R with spectral palette: https://gist.github.com/dsparks/3710171
+  mypalette <- rev(cm.colors(nc))
   gg1 <- ggplot(dist.g, aes(Var1, Var2)) +
     geom_tile(aes(fill=value), colour = "white") +
-    scale_fill_gradientn(colours = mypalette(nc), na.value = 'white') +
+    scale_fill_gradientn(colours = mypalette, na.value = 'white') +
     geom_text(aes(label=round(value,2)), size = fsz) +
     labs(title='Dissimilarity matrix') +
     theme(
@@ -273,11 +283,11 @@ coldissgg <- function(dist, ordered = T, nc = 100, fsz = 4) {
       axis.title.y=element_blank(),
       legend.position = 'none',
       plot.title = element_text(size=18, hjust = 0.5)
-      ) +
+    ) +
     coord_equal()
   gg2 <- ggplot(dist.g.o, aes(Var1, Var2)) +
     geom_tile(aes(fill=value), colour = "white") +
-    scale_fill_gradientn(colours = mypalette(nc), na.value = 'white') +
+    scale_fill_gradientn(colours = mypalette, na.value = 'white') +
     geom_text(aes(label=round(value,2)), size = fsz) +
     labs(title='Ordered dissimilarity matrix') +
     theme(
@@ -285,13 +295,12 @@ coldissgg <- function(dist, ordered = T, nc = 100, fsz = 4) {
       axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
       axis.title.x=element_blank(),
       axis.title.y=element_blank(),
-      legend.position = 'none',
+      # legend.position = 'none',
       plot.title = element_text(size=18, hjust = 0.5)
     ) +
     coord_equal()
   if(ordered) print(gg2) else print(gg1)
 }
-
 
 # panelutils.R 
 #

@@ -58,14 +58,14 @@ library(broom)
 library(tidyverse)
 ```
 
-    ## ── Attaching packages ──────────────────────────────── tidyverse 1.2.1 ──
+    ## ── Attaching packages ───────────────────────────────────── tidyverse 1.2.1 ──
 
     ## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
     ## ✓ tibble  3.0.3     ✓ dplyr   0.8.3
     ## ✓ tidyr   1.0.0     ✓ stringr 1.4.0
     ## ✓ readr   1.3.1     ✓ forcats 0.4.0
 
-    ## ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
+    ## ── Conflicts ──────────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -133,6 +133,34 @@ coldiss(mi_fam_d_hel, diag = T)
 ```
 
 ![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+Mejorable el gráfico, quizá este es más explícito:
+
+``` r
+coldissgg(mi_fam_d_hel, ordered = T, nc = 4, fsz = 0)
+```
+
+    ## Loading required package: reshape2
+
+    ## 
+    ## Attaching package: 'reshape2'
+
+    ## The following object is masked from 'package:tidyr':
+    ## 
+    ##     smiths
+
+    ## Loading required package: RColorBrewer
+
+![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+Con valores de distancia sobreimpresos (se empastan un
+poco)
+
+``` r
+coldissgg(mi_fam_d_hel, ordered = T, nc = 4, fsz = 1.5)
+```
+
+![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 Puedes guardar el gráfico usando el botón `Export` de la pestaña `Plots`
 
@@ -236,7 +264,7 @@ similares.
 coldiss(mi_fam_jac, diag = T)
 ```
 
-![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
 
 La distancia de Jaccard (**D<sub>J</sub>**) se puede expresar como “la
 proporción de especies no compartidas”. En este caso, para la
@@ -361,7 +389,7 @@ mi_fam_sor %>% tidy
 coldiss(mi_fam_sor, diag = T)
 ```
 
-![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ### Modo Q para datos cuantitativos, NO de abundancia de especies (variables ambientales)
 
@@ -400,7 +428,7 @@ env_suelo_punt_z_d %>% tidy
 coldiss(env_suelo_punt_z_d, diag = T)
 ```
 
-![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ### Modo Q para datos cualitativos y cuantitativos (mixtos), NO de abundancia de especies (variables ambientales)
 
@@ -448,4 +476,4 @@ env_mix_d %>% as.dist %>% tidy
 env_mix_d %>% coldiss(diag = T)
 ```
 
-![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](medicion_asociacion_2_modo_Q_mi_familia_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->

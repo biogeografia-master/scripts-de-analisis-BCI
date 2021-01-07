@@ -37,6 +37,14 @@ mi_fam_d_hel %>% tidy # Para evitar desbordar la consola
 #' 
 coldiss(mi_fam_d_hel, diag = T)
 #' 
+#' Mejorable el gráfico, quizá este es más explícito:
+#' 
+coldissgg(mi_fam_d_hel, ordered = T, nc = 4, fsz = 0)
+#' 
+#' Con valores de distancia sobreimpresos (se empastan un poco)
+#' 
+coldissgg(mi_fam_d_hel, ordered = T, nc = 4, fsz = 1.5)
+#' 
 #' Puedes guardar el gráfico usando el botón `Export` de la pestaña `Plots`
 #' 
 #' Una forma alterna de guardar el gráfico es mediante funciones de R. La calidad de gráficos exigida en revistas, suele requerir usar dichas funciones específicas, porque permiten más control. A continuación uso una de ellas, la función `png`, con la cual "abro un dispositivo gráfico. Luego, imprimo el gráfico que deseo guardar y finalmente cierro el dispositivo mediante `dev.off` Por ejemplo:
