@@ -1841,3 +1841,19 @@ lisamap <- function(objesp = NULL, var = 'mivariable_pct_log', pesos = NULL,
     theme(plot.title = element_text(size = tamanotitulo), legend.position = {`if`(leyenda, 'right', 'none')}) 
   return(list(grafico = p, objeto = objesp))
 }
+
+crear_panel <- function(..., nfilas = 1, rotulos = NULL) {
+  # Uso: crear_panel('mapa_cuadros_pendiente.png', 'mapa_cuadros_abun_global.png')
+  # nfilas entero, número filas del panel
+  # Se pueden especificar rótulos personalizados, e.g. rotulos = c('A', 'B'), de lo contrario,
+  # la función los genera usando letras minúsculas entre paréntesis, e.g. (a), (b)
+  library(cowplot)
+  library(ggplot2)
+  library(magick)
+  library(purrr)
+  l <- list(...)
+  if(is.null(rotulos)) rotulos <- paste0('(', letters[1:length(l)], ')')
+  lp <- map(l, function(x) ggdraw() + draw_image(x, scale = 0.9))
+  p <- plot_grid(plotlist = lp, labels = rotulos, nrow = nfilas)
+  return(p)
+}
