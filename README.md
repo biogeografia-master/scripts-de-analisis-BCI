@@ -72,7 +72,7 @@ Para obtener resultados empíricos consistentes, se necesitan datos de comunidad
       
 * Ecología espacial
   
-    * [ee: Autocorrelación T](ee_ecologia_espacial.md). [Vídeo asociado. T1:09:52](https://drive.google.com/file/d/14S4fSKfcm3T39WTLcnW69OJV2tKQtw6p/view?usp=sharing)
+    * [ee: Análisis espacial de datos ecológicos. Autocorrelación](ee_ecologia_espacial.md). [Vídeo asociado. T1:09:52](https://drive.google.com/file/d/14S4fSKfcm3T39WTLcnW69OJV2tKQtw6p/view?usp=sharing)
 
 ### Otros recursos:
 
