@@ -94,7 +94,7 @@ Para obtener resultados empíricos consistentes, se necesitan datos de comunidad
 
 ```
 @software{jose_ramon_martinez_batlle_2020_4402362,
-  author       = {José Ramón Martínez Batlle},
+  author       = {Martínez Batlle, José Ramón},
   title        = {{biogeografia-master/scripts-de-analisis-BCI: Long 
                    coding sessions}},
   month        = dec,
